@@ -43,8 +43,21 @@
 			</nav>
 		</header>
 
+		<div class="header-parallax">
+		  <div class="bg"></div>
+		  <div class="layer layer1"></div>
+		  <div class="layer layer2"></div>
+		  <div class="layer layer3"></div>
+		</div>
+
 		<main class="page">
 			<div class="content">
+
+				<div class="header">
+					<div class="logo">
+						<img src='logo128.png'>KiraStudio
+					</div>					
+				</div>
 
 				<h1 id="highlights">A Music Studio in your pocket</h1>
 
@@ -251,5 +264,24 @@
 		</main>
 
 	</body>
+
+	<script>
+	  const header = document.querySelector('.header-parallax');
+	  const layers = [
+	  	{ el: document.querySelector('.bg'), speed: 0.2 },
+	    { el: document.querySelector('.layer1'), speed: 0.35 },
+	    { el: document.querySelector('.layer2'), speed: 0.5 },
+	    { el: document.querySelector('.layer3'), speed: 0.65 },
+	  ];
+
+	  window.addEventListener('scroll', () => {
+			const scrollY = window.scrollY;
+	    
+	    for (const layer of layers) {
+	      layer.el.style.transform =
+	        `translateX(-50%) translateY(${scrollY * -layer.speed}px)`;
+	    }
+	  });
+	</script>	
 
 </html>
