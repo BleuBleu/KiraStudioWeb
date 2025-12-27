@@ -268,8 +268,9 @@ p.note {
 
 .bg {
   background-image: url(bg.png);
-  opacity: 1.0;
+  background-color: #16181F;
   mix-blend-mode: normal;
+  opacity: 1.0;
 }
 
 .layer1 {
