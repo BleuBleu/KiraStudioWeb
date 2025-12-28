@@ -267,6 +267,7 @@ p.note {
 
 .layer {
   position: fixed;
+  min-width: 768px;
   max-width: 1200px;
   top: 0;
   left: 50%;
