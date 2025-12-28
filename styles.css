@@ -251,6 +251,16 @@ p.note {
   filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.7));
 }
 
+@media (max-width: 768px) {
+  .logo {
+    font-size: 48px;
+  }
+  .logo img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
 .layer {
   position: fixed;
   max-width: 1200px;
