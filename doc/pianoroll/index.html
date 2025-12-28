@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="description" content="The Piano Roll is where you enter notes inside of patterns and likely where you will be spending most of your time in the app.">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Editing Notes in the Piano Roll - KiraStudio Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/darcula.min.css" disabled>
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" >
+        <link href="../css/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">KiraStudio Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Welcome</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">User Guide</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../install/" class="dropdown-item">Installation</a>
+</li>
+                                    
+<li>
+    <a href="../basics/" class="dropdown-item">Basics</a>
+</li>
+                                    
+<li>
+    <a href="../sequencer/" class="dropdown-item">Editing Channels, Tracks & Patterns</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Editing Notes in the Piano Roll</a>
+</li>
+                                    
+<li>
+    <a href="../autotrack/" class="dropdown-item">Editing Automation Tracks</a>
+</li>
+                                    
+<li>
+    <a href="../instruments/" class="dropdown-item">Editing Instruments, Effects & Automating Parameters</a>
+</li>
+                                    
+<li>
+    <a href="../envelopes/" class="dropdown-item">Editing ADSR Envelopes, Custom Curves & Sequences</a>
+</li>
+                                    
+<li>
+    <a href="../samples/" class="dropdown-item">Editing Samples</a>
+</li>
+                                    
+<li>
+    <a href="../wavetables/" class="dropdown-item">Editing WaveTables</a>
+</li>
+                                    
+<li>
+    <a href="../generators/" class="dropdown-item">Generators Reference</a>
+</li>
+                                    
+<li>
+    <a href="../troubleshooting/" class="dropdown-item">Troubleshooting</a>
+</li>
+                                    
+<li>
+    <a href="../thanks/" class="dropdown-item">Acknowledgements & Licences</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Change Log</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../changelog/" class="dropdown-item">All Version History</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../sequencer/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../autotrack/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#overview" class="nav-link">Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#editing-notes" class="nav-link">Editing Notes</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#adding-deleting-notes" class="nav-link">Adding &amp; deleting notes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#selecting-notes" class="nav-link">Selecting notes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#moving-transposing-resizing-notes" class="nav-link">Moving, transposing &amp; resizing notes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#duplicating-notes" class="nav-link">Duplicating notes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#snapping-to-beats" class="nav-link">Snapping to beats</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#slide-notes" class="nav-link">Slide notes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#disabling-attack" class="nav-link">Disabling attack</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#arpeggio-chords" class="nav-link">Arpeggio chords</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#release-modes" class="nav-link">Release modes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ghost-notes" class="nav-link">Ghost notes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#note-parameters" class="nav-link">Note Parameters</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#editing-note-parameters" class="nav-link">Editing note parameters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#snapping" class="nav-link">Snapping</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="overview">Overview</h1>
+<p>The <strong>Piano Roll</strong> is where you enter notes inside of patterns and likely where you will be spending most of your time in the app.</p>
+<p>The piano roll is makde of a few components:</p>
+<ul>
+<li>On the left is the <strong>Vertical Piano</strong> which can be used to preview the instrument of the selected channel. Note that the selected channel may not necessarely be the one being edited.</li>
+<li>On the top is the <strong>Timeline</strong> which display the beats in a <code>Bar.Beat</code> format.</li>
+<li>In the middle is the piano roll itself where notes are edited.</li>
+<li>At the bottom is the <strong>Note Parameter Editor</strong> where extra note parameters (velocity, pan, aftertouch, etc.) can be edited.</li>
+<li>In the top-right corner is the <strong>Floating Toolbar</strong> which contains various snapping and view options.</li>
+</ul>
+<p><img alt="" src="../images/PianoRoll.png#center" /></p>
+<p>Unlike other apps like FL Studio, the piano roll does not only show you the notes of the current pattern in a vacuum, it displays a continuous view of a track. Notes can be freely moved from one pattern to another. Notes can extend beyong the end of a pattern, but they belong to the pattern where they start from.</p>
+<h1 id="editing-notes">Editing Notes</h1>
+<p>We will focus our attention to the center of the piano roll where all the notes lie.</p>
+<h2 id="adding-deleting-notes">Adding &amp; deleting notes</h2>
+<p>To add a new note, simply click on an empty space.</p>
+<ul>
+<li>On desktop, you can click and drag to adjust the final position of the note.</li>
+<li>On mobile, it just a tap.</li>
+</ul>
+<p>On all platforms, deleting single notes is achieve by double-clicking. <strong>Shift-Click</strong> is also an alternate option on desktop.</p>
+<h2 id="selecting-notes">Selecting notes</h2>
+<p>Selected notes have a white outline around them and can be modified as a group.</p>
+<ul>
+<li>On desktop, you can select notes by right-clicking in the background and dragging to drag a rectangle. </li>
+<li>On mobile, you can longpress in the background and start drawing a rectangle once the pulsating circle appears. </li>
+</ul>
+<p>You can also select a time range of notes by doing a selection from the timeline, which is the row with the bar/beat numbers at the top.</p>
+<h2 id="moving-transposing-resizing-notes">Moving, transposing &amp; resizing notes</h2>
+<p>To move notes simple click and drag. When starting a drag from a selected note, all the selected notes will together.</p>
+<ul>
+<li>On desktop, notes can be resized by grabbing the left or right side edge and dragging. Desktop can also move notes using the arrow keys. Pressing up/down will transpose by 1 semitone or 1 octave if <strong>Ctrl</strong> is held at the same time. Pressing left/right will move by the amount of the currently selected snapping precision.</li>
+<li>On mobile, notes are resized by using one of the big colored resize handle.</li>
+</ul>
+<h2 id="duplicating-notes">Duplicating notes</h2>
+<p>When there are more than 1 note selected, the entire selection can be duplicated by dragging from the <strong>Colored Paperstack Icon</strong> that appears and release it where you want to create the copy. On desktop, the same can also be accomplished by pressing and holding <strong>Ctrl</strong> while dragging notes.</p>
+<blockquote>
+<p>TODO : A mobile/desktop GIF here would be nice.</p>
+</blockquote>
+<h2 id="snapping-to-beats">Snapping to beats</h2>
+<p>Snapping to beats can be toggled from the floating toolbar on the right and the precision can be adjusted. </p>
+<p>The snapping precision is expressed in beats. This mean that in a 4/4 time signature, for example, snapping to 1/4 Beat snaps to 1/16th notes.</p>
+<h2 id="slide-notes">Slide notes</h2>
+<p>Slide notes are notes that start at a given pitch (the pitch of the note) and slowly change to hit a target pitch which is represented by where the triangle ends.</p>
+<blockquote>
+<p>TODO : Image here.</p>
+</blockquote>
+<p>To create a slide note, simple select one of the 3 slide note mode from the contextual menu that appears when right-clicking (long-pressing on mobile) on a note. </p>
+<p>There are 3 types of slide notes:</p>
+<ul>
+<li><strong>Note Linear</strong> : This is roughly the equivalent of doing a glissando on a piano. The note value itself (ex: A4 to A5) will be interpolated, leading to a natural sounding slide. Unless you are trying to achieve a specific retro or chiptune effect, use this mode.</li>
+<li><strong>Frequency Linear</strong> : This will interpolate the frequency of the note (ex: 440Hz to 880Hz) and use the result as the final frequency. </li>
+<li><strong>Period Linear</strong> : This will interpolate the period (ex: 1/440Hz to 1/880Hz) and use this as the final frequency. This mode is particularly useful to mimic the behavior of retro/chiptune slides.</li>
+</ul>
+<p>The frequency and period linear modes will display a convex or concave slide note. Please note that this is simply a rough visual cue and does not accurately represent the pitch of the note that will actually play. </p>
+<p>The target and duration of a slide note can be modified by dragging the <strong>Four-Arrows Icon</strong> that will appear if a slide note is present. </p>
+<ul>
+<li>When using the <a href="#release-modes">note end release mode</a>, slide notes can extend beyond the release of the note, as sound can still be heard during the release. </li>
+<li>When using the <a href="#release-modes">manual release mode</a>, slide notes we be required to end exactly at the end of the note, as this represent a hard-kill. When using the </li>
+</ul>
+<h2 id="disabling-attack">Disabling attack</h2>
+<p>By default, notes have an attack which mean they will restart their envelopes from the beginning. </p>
+<p>The attack can be toggled for a particular note by selecting the <strong>Toggle Note Attack</strong> option from the contextual menu that appear when right-clicking (long-pressing on mobile). </p>
+<p>Notes with no attack will show an ellipsis (...) before their value.</p>
+<blockquote>
+<p>TODO : Image here.</p>
+</blockquote>
+<p>Disabling the attack in the piano roll does not mean it will always work, there are a few rules to understand on how the audio player uses them. </p>
+<p>Generally speaking, when the player encounter a note without attack, it will look for a previous note still producing sound that can be continued by the note without attack.</p>
+<ul>
+<li>If the note without attack is <strong>immediately</strong> after the end of an existing note, it will continue it.</li>
+<li>If the note without attack is shortly after the end of an existing note, while its release is still playing, it will continue it.</li>
+<li>If there are multiple candidate notes that could be continued, it will take the one with the closest matching pitch. This test will consider slides in this calculation (ex: a note without attack being near the end of a slide notes).</li>
+</ul>
+<h2 id="arpeggio-chords">Arpeggio chords</h2>
+<p><strong>Arpeggio Chords</strong> take the notes of a chord and arpeggiate it rapidly in a pre-defined sequence. This option is there to mimic a trick often used in chiptune songs where composers would quickly play notes of a chords to make up for the lack of polyphony on old hardware.</p>
+<p>To enable arpeggio chords, simply select the notes of a chord, right-click on any selected note (long-press on mobile) and select <strong>Toggle Selection Arpeggio Chords</strong> from the contextual menu. Visually, notes with arpeggio chords enabled will be drawn with a stripe pattern.</p>
+<blockquote>
+<p>TODO : Image here.</p>
+</blockquote>
+<p>The speed and order in which individual notes of an arpeggio is played is controlled in the channel settings (TODO link + make sure this is documented somewhere). </p>
+<blockquote>
+<p>TODO : Image of the channel settings too? Where does that go?</p>
+</blockquote>
+<h2 id="release-modes">Release modes</h2>
+<ul>
+<li>Explain both release modes</li>
+</ul>
+<h2 id="ghost-notes">Ghost notes</h2>
+<h1 id="note-parameters">Note Parameters</h1>
+<h2 id="editing-note-parameters">Editing note parameters</h2>
+<h2 id="snapping">Snapping</h2></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -5,8 +5,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <meta name="description" content="TODO">
-        
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
@@ -53,11 +51,43 @@
 </li>
                                     
 <li>
+    <a href="../sequencer/" class="dropdown-item">Editing Channels, Tracks & Patterns</a>
+</li>
+                                    
+<li>
+    <a href="../pianoroll/" class="dropdown-item">Editing Notes in the Piano Roll</a>
+</li>
+                                    
+<li>
+    <a href="../autotrack/" class="dropdown-item">Editing Automation Tracks</a>
+</li>
+                                    
+<li>
+    <a href="../instruments/" class="dropdown-item">Editing Instruments, Effects & Automating Parameters</a>
+</li>
+                                    
+<li>
+    <a href="../envelopes/" class="dropdown-item">Editing ADSR Envelopes, Custom Curves & Sequences</a>
+</li>
+                                    
+<li>
+    <a href="../samples/" class="dropdown-item">Editing Samples</a>
+</li>
+                                    
+<li>
+    <a href="../wavetables/" class="dropdown-item">Editing WaveTables</a>
+</li>
+                                    
+<li>
+    <a href="../generators/" class="dropdown-item">Generators Reference</a>
+</li>
+                                    
+<li>
     <a href="../troubleshooting/" class="dropdown-item">Troubleshooting</a>
 </li>
                                     
 <li>
-    <a href="../thanks/" class="dropdown-item">Acknowledgements</a>
+    <a href="../thanks/" class="dropdown-item">Acknowledgements & Licences</a>
 </li>
                                 </ul>
                             </li>
@@ -84,7 +114,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../troubleshooting/" class="nav-link">
+                                <a rel="next" href="../sequencer/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -107,7 +137,20 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#concepts" class="nav-link">Concepts</a>
+            <li class="nav-item" data-bs-level="1"><a href="#controls" class="nav-link">Controls</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#basic-desktop-controls" class="nav-link">Basic Desktop Controls</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#basic-mobile-controls" class="nav-link">Basic Mobile Controls</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#main-window" class="nav-link">Main Window</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -116,8 +159,67 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="concepts">Concepts</h1>
-<p>TODO</p></div>
+<h1 id="controls">Controls</h1>
+<h2 id="basic-desktop-controls">Basic Desktop Controls</h2>
+<p>Most of the operations are performed with the mouse. In general:</p>
+<ul>
+<li>The <strong>Left mouse button</strong> adds and removes stuff. <ul>
+<li><strong>Single-clicking</strong> add notes/patterns.</li>
+<li><strong>Double-clicking</strong> deletes notes/patterns.</li>
+</ul>
+</li>
+<li>The <strong>Light mouse button</strong> opens context menus and selects things.<ul>
+<li><strong>Right-clicking</strong> quickly will open a context menu.</li>
+<li><strong>Right-clicking + holding and dragging</strong> will select a range of notes or patterns in the piano roll or sequencer.</li>
+</ul>
+</li>
+<li>The <strong>Middle mouse button</strong> is used for navigation:<ul>
+<li><strong>Middle-clicking + holding and dragging</strong> will pan the viewport.</li>
+<li><strong>Rotating the mouse wheel</strong> will zoom the viewport in/out.</li>
+</ul>
+</li>
+</ul>
+<p>If you are working on a trackpad, please check out how to enable <a href="config.md#input-configuration">Trackpad controls</a> in the configuration dialog.</p>
+<h2 id="basic-mobile-controls">Basic Mobile Controls</h2>
+<p>On mobile, there are 4 main gestures used:</p>
+<ul>
+<li>A <strong>Quick Tap</strong> will usually add stuff such as pattern, notes or vertices on a curve. </li>
+<li>A <strong>Swipe</strong> will pan the viewport around.</li>
+<li>A <strong>Pinch</strong> will zoom the viewport in/out.</li>
+<li>A <strong>Long Press</strong> on something will reveal advanced options or start a rectangular selection. In some cases where multiple actions are available (ex: selection + contextual menu), a pulsing circle will appears to give you a choice.</li>
+</ul>
+<h1 id="main-window">Main Window</h1>
+<p>The main window is composed of a few main controls:</p>
+<ul>
+<li>
+<p>The <strong>Toolbar</strong> contains shortcuts to various common functions such as undo/redo, copy/paste, etc. </p>
+</li>
+<li>
+<p>The <strong><a href="../sequencer/">Sequencer</a></strong> (or Pattern Editor) is where you add or remove channels &amp; tracks. It is also where organize your patterns, which are reusable little snippets of music that form the high-level structure of your songs. On mobile, this is your home base and where you always return to when you close every views. </p>
+</li>
+<li>
+<p>Below the Sequencer are various views such as the <strong><a href="../pianoroll/">Piano Roll</a></strong>, <strong><a href="../autotrack/">Automation Tracks Editor</a></strong>, various <strong><a href="../envelopes/">Curve Editor</a></strong>, etc. On phones, these views are full-screen and are opened and closed as needed. </p>
+</li>
+<li>
+<p>The right side pannel is the <strong><a href="../instruments/">Project Explorer</a></strong>. This panel allows navigating through the various objects in your projects (songs, instruments, effects, etc). It also allows editing and automating the parameters of these objects. On mobile, this panel retracts and can be opened by either pressing the <strong>Project</strong> button in the toolbar, or by double-tapping a channel in the Sequencer. </p>
+</li>
+<li>
+<p>The <strong>Pop-up Piano</strong> is at the very bottom. This piano allows previewing the instrument associated with the <strong>Active Channel</strong>, which is the highlighted channel in the Sequencer. This piano can be toggled using the <strong>Piano</strong> button in the toolbar.</p>
+</li>
+</ul>
+<blockquote>
+<p>TODO : Tablet screenshot + crop titlebar + write name of things on images.</p>
+</blockquote>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Desktop</label><div class="tabbed-content">
+<p><img alt="" src="../images/MainWindowDesktop.png#fixed-height" /></p>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Phone</label><div class="tabbed-content">
+<p><img alt="" src="../images/MainWindowMobile.png#fixed-height" /></p>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Tablet</label><div class="tabbed-content">
+<p><img alt="" src="../images/MainWindowMobile.png#fixed-height" /></p>
+</div>
+</div></div>
             </div>
         </div>
 
