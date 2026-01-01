@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
+        <meta name="description" content="This page contains some reference on all the generators present in the app. Generators are little modules able to produce one type of sound and are the building blocks of instruments.">
+        
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
@@ -83,6 +85,10 @@
 </li>
                                     
 <li>
+    <a href="../effects/" class="dropdown-item">Effects Reference</a>
+</li>
+                                    
+<li>
     <a href="../troubleshooting/" class="dropdown-item">Troubleshooting</a>
 </li>
                                     
@@ -118,7 +124,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../troubleshooting/" class="nav-link">
+                                <a rel="next" href="../effects/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -140,12 +146,289 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#generators-reference" class="nav-link">Generators Reference</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#generic" class="nav-link">Generic</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#generic-saw" class="nav-link">Generic Saw</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#generic-square" class="nav-link">Generic Square</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#generic-triangle" class="nav-link">Generic Triangle</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#generic-sine" class="nav-link">Generic Sine</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#generic-234-op-fm" class="nav-link">Generic 2/3/4-OP FM</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#generic-wavetable" class="nav-link">Generic WaveTable</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#generic-pcm-sampler" class="nav-link">Generic PCM Sampler</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#the-8-bit-calculator" class="nav-link">The 8-bit Calculator</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#soundfont" class="nav-link">SoundFont</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#yamaha" class="nav-link">Yamaha</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#ym2413-fm-opll" class="nav-link">YM2413 FM (OPLL)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ym2612-fm-opn2" class="nav-link">YM2612 FM (OPN2)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ym3812-fm-opl2" class="nav-link">YM3812 FM (OPL2)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ym262f-fm-opl3" class="nav-link">YM262F FM (OPL3)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ym2149-ssg" class="nav-link">YM2149 SSG</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ym2610-sample-opna" class="nav-link">YM2610 Sample (OPNA)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#famicomnes" class="nav-link">Famicom/NES</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#nes-square" class="nav-link">NES Square</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#nes-triangle" class="nav-link">NES Triangle</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#nes-noise" class="nav-link">NES Noise</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#nes-1-bit-dpcm" class="nav-link">NES 1-Bit DPCM</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#nes-7-bit-pcm" class="nav-link">NES 7-Bit PCM</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#nes-famicom-disk-system" class="nav-link">NES Famicom Disk System</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#nes-vrc6-square" class="nav-link">NES VRC6 Square</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#nes-vrc6-saw" class="nav-link">NES VRC6 Saw</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#nes-vrc7" class="nav-link">NES VRC7</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#nes-sunsoft-5b" class="nav-link">NES Sunsoft 5B</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#nes-namco-163" class="nav-link">NES Namco 163</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#game-boy" class="nav-link">Game Boy</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#game-boy-square" class="nav-link">Game Boy Square</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#game-boy-noise" class="nav-link">Game Boy Noise</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#game-boy-wave" class="nav-link">Game Boy Wave</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h1 id="generators-reference">Generators Reference</h1>
+<p>This page contains some reference on all the generators present in the app. Generators are little modules able to produce one type of sound and are the building blocks of instruments.</p>
+<p>For generators emulating actual hardware, some notes about the emulation accuracy will be provided for each.</p>
+<p>Please note that in-general, for these retro consoles, this app is not trying to achieve high-accuracy emulation. It provides users with a lot of "fakebit" freedoms such as unlimited ROM space and enhanced polyphony. Thereform some compromises are made to strike a balance between fidelity and ease-of-use. </p>
+<p>For accurate emulation, trackers and other dedicated tools should be used.</p>
+<h1 id="generic">Generic</h1>
+<p>The generic generators are basic synths provided with the app. They do not try to emulate any particular device. They are meant easy to use and customizable. </p>
+<p>This list will likely grow in future versions.</p>
+<h2 id="generic-saw">Generic Saw</h2>
+<p>xxx</p>
+<h2 id="generic-square">Generic Square</h2>
+<p>xxx</p>
+<h2 id="generic-triangle">Generic Triangle</h2>
+<p>xxx</p>
+<h2 id="generic-sine">Generic Sine</h2>
+<p>xxx</p>
+<h2 id="generic-234-op-fm">Generic 2/3/4-OP FM</h2>
+<p>xxx</p>
+<h2 id="generic-wavetable">Generic WaveTable</h2>
+<p>xxx</p>
+<h2 id="generic-pcm-sampler">Generic PCM Sampler</h2>
+<p>xxx</p>
+<h2 id="the-8-bit-calculator">The 8-bit Calculator</h2>
+<p>xxx</p>
+<h2 id="soundfont">SoundFont</h2>
+<p>xxx</p>
+<h1 id="yamaha">Yamaha</h1>
+<h2 id="ym2413-fm-opll">YM2413 FM (OPLL)</h2>
+<p>xxx</p>
+<h2 id="ym2612-fm-opn2">YM2612 FM (OPN2)</h2>
+<p>xxx</p>
+<h2 id="ym3812-fm-opl2">YM3812 FM (OPL2)</h2>
+<p>xxx</p>
+<h2 id="ym262f-fm-opl3">YM262F FM (OPL3)</h2>
+<p>xxx</p>
+<h2 id="ym2149-ssg">YM2149 SSG</h2>
+<p>xxx</p>
+<h2 id="ym2610-sample-opna">YM2610 Sample (OPNA)</h2>
+<p>xxx</p>
+<h1 id="famicomnes">Famicom/NES</h1>
+<p>This section will cover the various Famicom/NES generators and their parameters. </p>
+<p>Below is a table summarizing the what KiraStudio emulates correctly and incorrectly when it comes to NES.</p>
+<table>
+<thead>
+<tr>
+<th>Generator</th>
+<th>Correct</th>
+<th>Incorrect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>General</td>
+<td>• Mono<br>• Stereo Toto Titi Tata<br>• Surround</td>
+<td>C</td>
+</tr>
+<tr>
+<td>Squares</td>
+<td>E</td>
+<td>F</td>
+</tr>
+<tr>
+<td>Triangle</td>
+<td>H</td>
+<td>I</td>
+</tr>
+<tr>
+<td>1-Bit DPCM</td>
+<td>H</td>
+<td>I</td>
+</tr>
+<tr>
+<td>7-Bit PCM</td>
+<td>H</td>
+<td>I</td>
+</tr>
+<tr>
+<td>Famicom Disk System</td>
+<td>H</td>
+<td>I</td>
+</tr>
+<tr>
+<td>VRC6 Square</td>
+<td>H</td>
+<td>I</td>
+</tr>
+<tr>
+<td>VRC6 Saw</td>
+<td>H</td>
+<td>I</td>
+</tr>
+<tr>
+<td>VRC7</td>
+<td>H</td>
+<td>I</td>
+</tr>
+<tr>
+<td>Sunsoft 5B</td>
+<td>H</td>
+<td>I</td>
+</tr>
+<tr>
+<td>Namco 163</td>
+<td>H</td>
+<td>I</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nes-square">NES Square</h2>
+<p>xxx</p>
+<h2 id="nes-triangle">NES Triangle</h2>
+<p>xxx</p>
+<h2 id="nes-noise">NES Noise</h2>
+<p>xxx</p>
+<h2 id="nes-1-bit-dpcm">NES 1-Bit DPCM</h2>
+<p>xxx</p>
+<h2 id="nes-7-bit-pcm">NES 7-Bit PCM</h2>
+<p>xxx</p>
+<h2 id="nes-famicom-disk-system">NES Famicom Disk System</h2>
+<p>xxx</p>
+<h2 id="nes-vrc6-square">NES VRC6 Square</h2>
+<p>xxx</p>
+<h2 id="nes-vrc6-saw">NES VRC6 Saw</h2>
+<p>xxx</p>
+<h2 id="nes-vrc7">NES VRC7</h2>
+<p>xxx</p>
+<h2 id="nes-sunsoft-5b">NES Sunsoft 5B</h2>
+<p>xxx</p>
+<h2 id="nes-namco-163">NES Namco 163</h2>
+<p>xxx</p>
+<h1 id="game-boy">Game Boy</h1>
+<h2 id="game-boy-square">Game Boy Square</h2>
+<p>xxx</p>
+<h2 id="game-boy-noise">Game Boy Noise</h2>
+<p>xxx</p>
+<h2 id="game-boy-wave">Game Boy Wave</h2>
+<p>xxx</p></div>
             </div>
         </div>
 
