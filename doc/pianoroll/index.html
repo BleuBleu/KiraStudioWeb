@@ -166,6 +166,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#changing-the-zoom-level" class="nav-link">Changing the zoom level</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#slide-notes" class="nav-link">Slide notes</a>
               <ul class="nav flex-column">
               </ul>
@@ -199,6 +203,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#changing-the-zoom-level_1" class="nav-link">Changing the zoom level</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#note-parameter-curves" class="nav-link">Note parameter curves</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -213,13 +225,16 @@
 <li>On the left is the <strong>Vertical Piano</strong> which can be used to preview the instrument of the selected channel. Note that the selected channel may not necessarely be the one being edited.</li>
 <li>On the top is the <strong>Timeline</strong> which display the beats in a <code>Bar.Beat</code> format.</li>
 <li>In the middle is the piano roll itself where notes are edited.</li>
-<li>At the bottom is the <strong>Note Parameter Editor</strong> where extra note parameters (velocity, pan, aftertouch, etc.) can be edited.</li>
 <li>In the top-right corner is the <strong>Floating Toolbar</strong> which contains various snapping and view options.</li>
+<li>At the bottom is the <strong>Note Parameter Editor</strong> where extra note parameters (velocity, pan, aftertouch, etc.) can be edited. This panel revealed by using the optionon the floating toolbar.</li>
 </ul>
 <p><img alt="" src="../images/PianoRoll.png#center" /></p>
-<p>Unlike other apps like FL Studio, the piano roll does not only show you the notes of the current pattern in a vacuum, it displays a continuous view of a track. Notes can be freely moved from one pattern to another. Notes can extend beyong the end of a pattern, but they belong to the pattern where they start from.</p>
+<p>Unlike other apps like FL Studio, the piano roll does not only show you the notes of the current pattern in a vacuum, it displays a continuous view of a track. Notes can be freely moved from one pattern to another. Notes can extend far beyond the end of a pattern, but ultimately they belong to the pattern where they start from.</p>
 <h1 id="editing-notes">Editing Notes</h1>
 <p>We will focus our attention to the center of the piano roll where all the notes lie.</p>
+<blockquote>
+<p>TODO : Image here.</p>
+</blockquote>
 <h2 id="adding-deleting-notes">Adding &amp; deleting notes</h2>
 <p>To add a new note, simply click on an empty space.</p>
 <ul>
@@ -231,29 +246,35 @@
 <p>Selected notes have a white outline around them and can be modified as a group.</p>
 <ul>
 <li>On desktop, you can select notes by right-clicking in the background and dragging to drag a rectangle. </li>
-<li>On mobile, you can longpress in the background and start drawing a rectangle once the pulsating circle appears. </li>
+<li>On mobile, you can long-press in the background and start drawing a rectangle once the pulsating circle appears. </li>
 </ul>
 <p>You can also select a time range of notes by doing a selection from the timeline, which is the row with the bar/beat numbers at the top.</p>
 <h2 id="moving-transposing-resizing-notes">Moving, transposing &amp; resizing notes</h2>
 <p>To move notes simple click and drag. When starting a drag from a selected note, all the selected notes will together.</p>
 <ul>
-<li>On desktop, notes can be resized by grabbing the left or right side edge and dragging. Desktop can also move notes using the arrow keys. Pressing up/down will transpose by 1 semitone or 1 octave if <strong>Ctrl</strong> is held at the same time. Pressing left/right will move by the amount of the currently selected snapping precision.</li>
+<li>On desktop, notes can be resized by grabbing their left or right side edge and dragging. Desktop can also move notes using the arrow keys. Pressing up/down will transpose by 1 semitone or 1 octave if <strong>Ctrl</strong> is held at the same time. Pressing left/right will move by the amount of the currently selected snapping precision.</li>
 <li>On mobile, notes are resized by using one of the big colored resize handle.</li>
 </ul>
 <h2 id="duplicating-notes">Duplicating notes</h2>
-<p>When there are more than 1 note selected, the entire selection can be duplicated by dragging from the <strong>Colored Paperstack Icon</strong> that appears and release it where you want to create the copy. On desktop, the same can also be accomplished by pressing and holding <strong>Ctrl</strong> while dragging notes.</p>
+<p>When there us more than 1 note selected, the entire selection can be duplicated by dragging from the <strong>Colored Paperstack Icon</strong> and release it where you want to create the copy. On desktop, the same can also be accomplished by pressing and holding <strong>Ctrl</strong> while dragging notes.</p>
 <blockquote>
 <p>TODO : A mobile/desktop GIF here would be nice.</p>
 </blockquote>
 <h2 id="snapping-to-beats">Snapping to beats</h2>
-<p>Snapping to beats can be toggled from the floating toolbar on the right and the precision can be adjusted. </p>
-<p>The snapping precision is expressed in beats. This mean that in a 4/4 time signature, for example, snapping to 1/4 Beat snaps to 1/16th notes.</p>
+<p>Snapping to beats (i.e. vertical grid) can be toggled from the floating toolbar on the right and the precision can be adjusted. </p>
+<p>The snapping precision is expressed in beats. This mean that using a 4/4 time signature, for example, snapping to 1/4 Beat snaps to 1/16th notes.</p>
+<h2 id="changing-the-zoom-level">Changing the zoom level</h2>
+<blockquote>
+<p>TODO : Check link to trackpad controls!</p>
+</blockquote>
+<p>On desktop, like in most views of the app, zooming horizontally is done using the mouse wheel, or a pinch gesture when using <a href="config.md">trackpad controls</a>. To zoom in vertically, simply use the mousewheel (or pinch on trackpad) on the vertical piano on the left. </p>
+<p>On mobile, all zooming is done with a pinch gesture. </p>
 <h2 id="slide-notes">Slide notes</h2>
 <p>Slide notes are notes that start at a given pitch (the pitch of the note) and slowly change to hit a target pitch which is represented by where the triangle ends.</p>
 <blockquote>
 <p>TODO : Image here.</p>
 </blockquote>
-<p>To create a slide note, simple select one of the 3 slide note mode from the contextual menu that appears when right-clicking (long-pressing on mobile) on a note. </p>
+<p>To create a slide note, simple select one of the 3 slide note mode from the contextual menu that appears when right-clicking (long-pressing on mobile) on a note. Alternatively on desktop, holding the <strong>S</strong> key, clicking on a note and dragging up/down will start the creation of a slide note.</p>
 <p>There are 3 types of slide notes:</p>
 <ul>
 <li><strong>Note Linear</strong> : This is roughly the equivalent of doing a glissando on a piano. The note value itself (ex: A4 to A5) will be interpolated, leading to a natural sounding slide. Unless you are trying to achieve a specific retro or chiptune effect, use this mode.</li>
@@ -273,20 +294,20 @@
 <blockquote>
 <p>TODO : Image here.</p>
 </blockquote>
-<p>Disabling the attack in the piano roll does not mean it will always work, there are a few rules to understand on how the audio player uses them. </p>
-<p>Generally speaking, when the player encounter a note without attack, it will look for a previous note still producing sound that can be continued by the note without attack.</p>
-<ul>
+<p>Disabling the attack in the piano roll does not garantee it will always work. In general, you should try to keep the note without attack in close proximity to the end of another note. Failure to do so may result in the attack still playing.</p>
+<p>Here is a more technical breakdown of how it all work. When the player encounter a note without attack, it will look for a previous note still producing sound that can be continued by the note without attack.</p>
+<ol>
 <li>If the note without attack is <strong>immediately</strong> after the end of an existing note, it will continue it.</li>
-<li>If the note without attack is shortly after the end of an existing note, while its release is still playing, it will continue it.</li>
-<li>If there are multiple candidate notes that could be continued, it will take the one with the closest matching pitch. This test will consider slides in this calculation (ex: a note without attack being near the end of a slide notes).</li>
-</ul>
+<li>If the note without attack is shortly after the end of an existing note, while its release is still playing, it will continue it and stay in the release state.</li>
+</ol>
+<p>If there are multiple candidate notes, it will take the one with the closest matching pitch. This test will consider slides in this calculation (ex: a note without attack being near the end of a slide notes).</p>
 <h2 id="arpeggio-chords">Arpeggio chords</h2>
-<p><strong>Arpeggio Chords</strong> take the notes of a chord and arpeggiate it rapidly in a pre-defined sequence. This option is there to mimic a trick often used in chiptune songs where composers would quickly play notes of a chords to make up for the lack of polyphony on old hardware.</p>
+<p><strong>Arpeggio Chords</strong> take the notes of a chord and arpeggiate it rapidly in a pre-defined sequence. This option is mostly there to mimic a trick often used in chiptune songs where composers would play notes of a chords in quick succession to make up for the lack of polyphony on old hardware.</p>
 <p>To enable arpeggio chords, simply select the notes of a chord, right-click on any selected note (long-press on mobile) and select <strong>Toggle Selection Arpeggio Chords</strong> from the contextual menu. Visually, notes with arpeggio chords enabled will be drawn with a stripe pattern.</p>
 <blockquote>
 <p>TODO : Image here.</p>
 </blockquote>
-<p>The speed and order in which individual notes of an arpeggio is played is controlled in the channel settings (TODO link + make sure this is documented somewhere). </p>
+<p>The speed and order in which individual notes of an arpeggio is played is controlled in the channel settings, under the <strong>Arpeggio</strong> tab.</p>
 <blockquote>
 <p>TODO : Image of the channel settings too? Where does that go?</p>
 </blockquote>
@@ -295,9 +316,37 @@
 <li>Explain both release modes</li>
 </ul>
 <h2 id="ghost-notes">Ghost notes</h2>
+<p><strong>Ghost Notes</strong> are a visual tool allowing you to see a semi-transparent version of the notes of another channel while editing another. This can be useful to align things to each other. </p>
+<p>As of version 1.0, the feature is quite primitive. Ghost notes can be enabled for a single channel, or for all channels at once using the option from the floating toolbar.</p>
+<blockquote>
+<p>TODO : Image of the channel settings too? Where does that go?</p>
+</blockquote>
 <h1 id="note-parameters">Note Parameters</h1>
+<p>The note parameter editor can be opening using the option in the floating toolbar. This panel allows you to edit additional properties of notes, such as note velocity, stereo panning, etc.</p>
+<blockquote>
+<p>TODO : Image here.</p>
+</blockquote>
+<p>This editor only shows one parameter at a given time and you can chose which one by using the option in the floating toolbar.</p>
 <h2 id="editing-note-parameters">Editing note parameters</h2>
-<h2 id="snapping">Snapping</h2></div>
+<p>Editing note parameters is quite simple, simply click and drag to paint values. If notes are currently selected, only the selected notes can be edited. </p>
+<h2 id="snapping">Snapping</h2>
+<p>You can snap the painted values to the major grid by enabling the <strong>Parameter Values</strong> option in the Snap section of the floating toolbar.</p>
+<h2 id="changing-the-zoom-level_1">Changing the zoom level</h2>
+<p>On desktop, you can zoom vertically and get more precision when editing note parameters by simply use the mousewheel (or pinch on trackpad) on the scale on the left side of the parameter editor. </p>
+<h2 id="note-parameter-curves">Note parameter curves</h2>
+<p>Some parameters, such as Velocity, only support a single constant values for each note. Other types of parameter may support having their parameter value change during the playback of a note. </p>
+<p>The type of value for a given note parameter can be changed through the <strong>Value Type</strong> option of the floating toolbar while one or more notes are selected. If the option is greyed out, it means this parameter does not support curves.</p>
+<ul>
+<li><strong>Constant</strong> : a single value that remains constant.</li>
+<li><strong>Curve</strong> : a value that can change abrutly.</li>
+<li><strong>Curve (Interpolated)</strong> : a value that changes smoothly</li>
+</ul>
+<p>Once a note is set to either curve modes, you can edit its curve by enabling the <strong>Curve Edit Mode</strong> from the floating toolbar. As of version 1.0, this feature is quite primitive and can only be enabled when a single note is selected.</p>
+<p>When curve edit mode is active, a single-click on the curve will add a new vertex, and double-click with delete and existing one.  The first and last vertex cannot be deleted and the last vertex is currently required to be at the end of the note duration. </p>
+<p>Vertices can be moved by dragging and will respect any snapping setting.</p>
+<blockquote>
+<p>TODO : Animated GIF here.</p>
+</blockquote></div>
             </div>
         </div>
 
@@ -311,6 +360,7 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../js/base.js"></script>
+        <script src="../javascript/extra.js"></script>
         <script src="../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

@@ -179,6 +179,10 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#patterns-bars" class="nav-link">Patterns &amp; Bars</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#difference-with-other-daws" class="nav-link">Difference with other DAWs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#adding-deleting-resizing-patterns" class="nav-link">Adding, Deleting &amp; Resizing patterns</a>
               <ul class="nav flex-column">
               </ul>
@@ -224,8 +228,9 @@
 <li>In the top-right corner is the floating toolbar containing a few view options</li>
 </ul>
 <p><img alt="" src="../images/Sequencer.png#center" /></p>
-<p>Each column of the sequencer represents exactly 1 bar of music, and each row represent a <strong>Track</strong>. A track is always part of a <strong>Channel</strong> and a channel may have zero or more tracks. </p>
-<p>Please note that the names channels and tracks do not correspond to the concept of MIDI channels or tracks. This app is not concerned with MIDI beyond import or export. </p>
+<p>Each column of the sequencer represents exactly <strong>1 Bar</strong> of music, and each row represent a <strong>Track</strong>. A track is always part of a <strong>Channel</strong> and will display the color of its parent channel. A channel may have zero or more tracks. </p>
+<p>Visually all tracks of a channel are the same color and the first track of a channel will have a little icon next to its names, allowing you to mute/solo it.</p>
+<p>Please note that the terms channels and tracks do not correspond to the concept of MIDI channels or tracks. This app is not concerned with MIDI beyond import or export. </p>
 <p>There are 2 types of tracks:</p>
 <ul>
 <li><a href="../pianoroll/">Piano Roll</a> tracks contain musical notes. </li>
@@ -234,24 +239,26 @@
 <p>There are 3 types of channel:</p>
 <ul>
 <li><strong>Instrument Channels</strong> use an instruments to generate sound. Instrument channel can have either piano roll and automation tracks.</li>
-<li><strong>Effect Chains</strong> only contain effects and can only use automation track to automate the value of the effect parameters.</li>
+<li><strong>Effect Chains</strong> only contain effects and can optionally use automation track to modify the values of effect parameters.</li>
 <li>The <strong>Master Channel</strong> is always present and cannot be deleted. It is effectively the final effect chain but can do special things such as automate the BPM of the song.</li>
 </ul>
-<p>Visually each row is a track and all track of a channel are the same color. Channels have a little icon next to their names.</p>
 <h1 id="channels-tracks">Channels &amp; Tracks</h1>
 <p>On the left side of the sequencer are all the channel &amp; tracks of the current song. </p>
+<blockquote>
+<p>TODO : Image, make sure "Bitcrushed Drums 1" is selection.</p>
+</blockquote>
 <h2 id="selected-channel">Selected channel</h2>
-<p>The <strong>Selected Channel</strong> is diplayed with lighter color in the sequencer and is the channel that will be previewed when playing the pop-up piano, or pressing keys on a MIDI controller. To change the selected channel, simply click on an instrument channel.</p>
+<p>The <strong>Selected Channel</strong> is displayed with lighter color in the sequencer and is the channel that will be previewed when playing the pop-up piano, or pressing keys on a MIDI controller. To change the selected channel, simply click on an instrument channel.</p>
 <p>In the above screenshot, the "Bitcrushed Drums 1" channel is selected channel.</p>
 <h2 id="adding-channels-tracks">Adding channels &amp; Tracks</h2>
 <p>To add a new channel, simply press the <strong>(+) Add</strong> button below the last track. You will be prompted with the type of channel to add.</p>
-<p>Additionally, if there is an selected channel, you'll have the option to add a piano roll track to it. Having multiple piano roll track on a channel is mostly for your own organization, althrough there are some cases where it is genuinely useful (arpeggios, playing the same note twice, etc.).</p>
+<p>Additionally, if there is a selected channel, you'll have the option to add a piano roll track to it. Having multiple piano roll track on a channel is mostly for your own organization, although there are some cases where it is genuinely useful (arpeggios, playing the same note twice, etc.).</p>
 <p>To add an automation track, you need to choose a parameter to automate in the <a href="../instruments/">project explorer</a></p>
 <p><img alt="" src="../images/AddChannel.png#center" /></p>
 <h2 id="deleting-channels-tracks">Deleting channels &amp; tracks</h2>
 <p>To delete a track or a channel, simply right-click on its name or long press on mobile. A contextual menu will give you the option to delete.</p>
 <h2 id="muting-soloing-channels">Muting &amp; Soloing channels</h2>
-<p>Muting a channel is done by clicking on its icon. Visually, muted channels have their icon dimmed. A single click will mute a channel, while a double click will solo it but muting all the other channels.</p>
+<p>Muting a channel is done by clicking on its icon. Visually, muted channels have their icon dimmed. A single click will mute a channel, while a double click will solo it by muting all the other channels.</p>
 <h2 id="changing-channel-parameters">Changing channel parameters</h2>
 <p>When clicking on any track of channel, the project explorer will navigate to that channel, allowing you to edit its properties. </p>
 <p>On mobile, double tapping on a channel name will also pop open the project explorer from the right on the screen.</p>
@@ -262,29 +269,36 @@
 <p><img alt="" src="../images/MixerView.png#center" /></p>
 <h2 id="reordering-channels-tracks">Reordering channels &amp; tracks</h2>
 <p>On the right of the mixer view are the <strong>Reordering Grips</strong> which allow reordering channel &amp; tracks.</p>
-<p>To reorder a channel, grab the first track of the channel and you will be able to move the entire channel up or down relative to others.</p>
-<p>To reorder a track inside a channel, grab any track that is not the first one, and you will be able to moving it relative to other tracks inside that channel. Please do note that piano roll tracks always come before automation tracks in a channel.</p>
+<p>To reorder a channel (i.e. move all the tracks a channel relative to other channels), grab the first track of the channel and you will be able to move the entire channel up or down relative to others.</p>
+<p>To reorder a track inside a channel, grab any track that is not the first one, and you will be able to moving it relative to other tracks inside that channel. Please do note that piano roll tracks always come before automation tracks in a channel and this will be enforced during reordering.</p>
 <h1 id="patterns-bars">Patterns &amp; Bars</h1>
-<p>At the center of the sequencer are all the patterns of the current song. Patterns can be as small as 1 bar, but can be much longer too. Patterns are re-usable little units of notes or automation tat you can re-use multiple times on a given track.</p>
+<p>At the center of the sequencer are all the patterns of the current song. Patterns can be as small as 1 bar, but can be much longer too. Patterns are re-usable little units of notes or automation tat you can re-use multiple times on a given track. </p>
+<blockquote>
+<p>TODO : Image here.</p>
+</blockquote>
+<h2 id="difference-with-other-daws">Difference with other DAWs</h2>
+<p>Before we start, please note that patterns, sometimes called clips in other apps, are edited slightly differently from mainstream DAWs. In some DAWs (e.g. FL Studio Mobile), resizing a pattern makes it loop multiple times. In KiraStudio, resizing a pattern simply changes its duration, repetition is done using <strong>Instancing</strong> which creates a linked copy of a pattern. </p>
+<p>Another difference is that patterns, when opening in the piano roll or automation editor are shown with the rest of the song. In other DAWs, clips are editing individually, without seeing the outside context. In KiraStudio, the piano roll or automation editor are basically an extreme close up on a track.</p>
+<p>Please do keep these differences in mind as you read the next few sections.</p>
 <h2 id="adding-deleting-resizing-patterns">Adding, Deleting &amp; Resizing patterns</h2>
 <p>Patterns are simply added by clicking in an empty space in the grid. </p>
 <ul>
 <li>On desktop, patterns are deleted using a double-click and they are resized by grabbing the left or right edge and resizing.</li>
-<li>On mobile a double-tap opens the pattern in the appropriate editor, either the piano roll or automation track editor. To delete a pattern on mobile, you can simply press the <strong>Delete</strong> button from the toolbar (big <strong>X</strong> icon) to delete any selected pattern(s). To help resizing on small screens, the mobile version will display big colored resize handles for the selected pattern(s), allowing you to resize it from the left or right side.</li>
+<li>On mobile a double-tap opens the pattern in the appropriate editor, either the piano roll or automation track editor. To any selected pattern(s) on mobile, you can simply press the <strong>Delete</strong> button from the toolbar (big <strong>X</strong> icon), or use the contextual menu that appears when long-pressing a pattern. To help resizing on small screens, the mobile version will display big colored resize handles for the selected pattern(s), allowing you to resize it from the left or right side.</li>
 </ul>
 <h2 id="selecting-patterns">Selecting patterns</h2>
 <p>Selected patterns have a white outline around them and can be moved and resized as a group.</p>
 <ul>
 <li>On desktop, you can select patterns by right-clicking anywhere in the grid and dragging to drag a rectangle. </li>
-<li>On mobile, you can longpress somewhere and start drawing a rectangle once the pulsating circle appears. </li>
+<li>On mobile, you can long-press somewhere and start drawing a rectangle once the pulsating circle appears. </li>
 </ul>
 <p>You can also select entire columns of patterns by doing a selection from the timeline, which is the row with the bar numbers at the top. </p>
-<p>When selecting patterns this way, you will notice that the bar numbers also get a white outline around them. This is important and means that if you move these patterns left or right, the associated <a href="#custom-time-signatures">custom time signatures</a> will also be moved with them. </p>
+<p>When selecting patterns this way, you will notice that the bar numbers also get a white outline around them. This is important and means that if you copy these patterns, or move them left/right, the associated <a href="#custom-time-signatures">custom time signatures</a> will also be moved with them. Without the bar highlight, only the patterns are move and no tempo information is.</p>
 <blockquote>
 <p>TODO : A mobile/desktop GIF here would be nice.</p>
 </blockquote>
 <h2 id="copying-instancing-patterns">Copying &amp; instancing patterns</h2>
-<p>Patterns have an associated 3-digit numbers. This number is unique for a given track and allows you to tell if a pattern is used multiple times inside a track. Re-using a pattern multiple times in a track is called <strong>instancing</strong>. When modifying a pattern, all of the its instances will be modified at the same time. </p>
+<p>Patterns have an associated 3-digit numbers. This number is a unique pattern on a given track and allows you to tell if a pattern is used multiple times inside a track. Re-using a pattern multiple times in a track is called <strong>instancing</strong>. When modifying a pattern, all of the its instances will be modified at the same time. </p>
 <p>Another way to tell if a pattern is an instance of another is simply to select it and to look for the <strong>chain link icon</strong>. When a pattern is selected, all of its instances will show this icon and the 3-digit numbers will appear white. In the example below, pattern 000 is selected and a few other instance are shown.</p>
 <p><img alt="" src="../images/Instance.png#center" /></p>
 <p>To create an instance of an existing pattern, simply selected it and drag from the little <strong>Colored Chain-Link Button</strong> that appears at the bottom left and release where you want to create the instance. Note that trying to create an instance on a different track will force a copy.</p>
@@ -321,6 +335,7 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../js/base.js"></script>
+        <script src="../javascript/extra.js"></script>
         <script src="../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
