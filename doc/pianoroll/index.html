@@ -162,6 +162,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#copy-pasting-notes" class="nav-link">Copy &amp; pasting notes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#snapping-to-beats" class="nav-link">Snapping to beats</a>
               <ul class="nav flex-column">
               </ul>
@@ -220,10 +224,10 @@
 
 <h1 id="overview">Overview</h1>
 <p>The <strong>Piano Roll</strong> is where you enter notes inside of patterns and likely where you will be spending most of your time in the app.</p>
-<p>The piano roll is makde of a few components:</p>
+<p>The piano roll is made of a few components:</p>
 <ul>
 <li>On the left is the <strong>Vertical Piano</strong> which can be used to preview the instrument of the selected channel. Note that the selected channel may not necessarely be the one being edited.</li>
-<li>On the top is the <strong>Timeline</strong> which display the beats in a <code>Bar.Beat</code> format.</li>
+<li>On the top is the <strong>Timeline</strong> which display the beats in a <code>Bar.Beat</code> format and the pattern names/colors.</li>
 <li>In the middle is the piano roll itself where notes are edited.</li>
 <li>In the top-right corner is the <strong>Floating Toolbar</strong> which contains various snapping and view options.</li>
 <li>At the bottom is the <strong>Note Parameter Editor</strong> where extra note parameters (velocity, pan, aftertouch, etc.) can be edited. This panel revealed by using the optionon the floating toolbar.</li>
@@ -232,23 +236,24 @@
 <p>Unlike other apps like FL Studio, the piano roll does not only show you the notes of the current pattern in a vacuum, it displays a continuous view of a track. Notes can be freely moved from one pattern to another. Notes can extend far beyond the end of a pattern, but ultimately they belong to the pattern where they start from.</p>
 <h1 id="editing-notes">Editing Notes</h1>
 <p>We will focus our attention to the center of the piano roll where all the notes lie.</p>
-<blockquote>
-<p>TODO : Image here.</p>
-</blockquote>
 <h2 id="adding-deleting-notes">Adding &amp; deleting notes</h2>
 <p>To add a new note, simply click on an empty space.</p>
+<p>On desktop, you can choose between 2 editing modes in the floating toolbar. Both will create a note of the last duration used, they only differ on what happens when you move afterwards, while still holding the mouse button</p>
 <ul>
-<li>On desktop, you can click and drag to adjust the final position of the note.</li>
-<li>On mobile, it just a tap.</li>
+<li><strong>Click &amp; Move</strong> : Moving after the initial click will allow you to reposition the note.</li>
+<li><strong>Click &amp; Resize</strong> : Moving after the initial click will allow you to change the duration of the note.</li>
 </ul>
 <p>On all platforms, deleting single notes is achieve by double-clicking. <strong>Shift-Click</strong> is also an alternate option on desktop.</p>
 <h2 id="selecting-notes">Selecting notes</h2>
 <p>Selected notes have a white outline around them and can be modified as a group.</p>
 <ul>
-<li>On desktop, you can select notes by right-clicking in the background and dragging to drag a rectangle. </li>
+<li>On desktop, you can select notes by right-clicking in the background and dragging to draw a rectangle. </li>
 <li>On mobile, you can long-press in the background and start drawing a rectangle once the pulsating circle appears. </li>
 </ul>
 <p>You can also select a time range of notes by doing a selection from the timeline, which is the row with the bar/beat numbers at the top.</p>
+<blockquote>
+<p>TODO : Animated GIF, desktop/mobile.</p>
+</blockquote>
 <h2 id="moving-transposing-resizing-notes">Moving, transposing &amp; resizing notes</h2>
 <p>To move notes simple click and drag. When starting a drag from a selected note, all the selected notes will together.</p>
 <ul>
@@ -257,9 +262,20 @@
 </ul>
 <h2 id="duplicating-notes">Duplicating notes</h2>
 <p>When there us more than 1 note selected, the entire selection can be duplicated by dragging from the <strong>Colored Paperstack Icon</strong> and release it where you want to create the copy. On desktop, the same can also be accomplished by pressing and holding <strong>Ctrl</strong> while dragging notes.</p>
-<blockquote>
-<p>TODO : A mobile/desktop GIF here would be nice.</p>
-</blockquote>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Desktop</label><div class="tabbed-content">
+<p><img alt="" src="../images/DuplicateNotesDesktop.gif#center" /></p>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Mobile</label><div class="tabbed-content">
+<p><img alt="" src="../images/DuplicateNotesMobile.gif#center" /></p>
+</div>
+</div>
+<h2 id="copy-pasting-notes">Copy &amp; pasting notes</h2>
+<p>An alternative way of duplicating notes is to use copy &amp; paste. This provides more flexibility as it allows copy and pasting notes between tracks.</p>
+<ol>
+<li>Copy notes to the clipboard by making a selection and pressing <strong>Ctrl+C</strong>, or use the toolbar button.</li>
+<li>Position the playhead at the desired location </li>
+<li>Paste the stored notes using <strong>Ctrl+V</strong>, or use the toolbar button on mobile.</li>
+</ol>
 <h2 id="snapping-to-beats">Snapping to beats</h2>
 <p>Snapping to beats (i.e. vertical grid) can be toggled from the floating toolbar on the right and the precision can be adjusted. </p>
 <p>The snapping precision is expressed in beats. This mean that using a 4/4 time signature, for example, snapping to 1/4 Beat snaps to 1/16th notes.</p>
@@ -271,9 +287,7 @@
 <p>On mobile, all zooming is done with a pinch gesture. </p>
 <h2 id="slide-notes">Slide notes</h2>
 <p>Slide notes are notes that start at a given pitch (the pitch of the note) and slowly change to hit a target pitch which is represented by where the triangle ends.</p>
-<blockquote>
-<p>TODO : Image here.</p>
-</blockquote>
+<p><img alt="" src="../images/SlideNotes.png#center" /></p>
 <p>To create a slide note, simple select one of the 3 slide note mode from the contextual menu that appears when right-clicking (long-pressing on mobile) on a note. Alternatively on desktop, holding the <strong>S</strong> key, clicking on a note and dragging up/down will start the creation of a slide note.</p>
 <p>There are 3 types of slide notes:</p>
 <ul>
@@ -290,10 +304,7 @@
 <h2 id="disabling-attack">Disabling attack</h2>
 <p>By default, notes have an attack which mean they will restart their envelopes from the beginning. </p>
 <p>The attack can be toggled for a particular note by selecting the <strong>Toggle Note Attack</strong> option from the contextual menu that appear when right-clicking (long-pressing on mobile). </p>
-<p>Notes with no attack will show an ellipsis (...) before their value.</p>
-<blockquote>
-<p>TODO : Image here.</p>
-</blockquote>
+<p>Notes with no attack will show an ellipsis (...) before their value. This can be seen in the image above where is note following a slide note has its attack disabled to create a single, long, gliding note.</p>
 <p>Disabling the attack in the piano roll does not garantee it will always work. In general, you should try to keep the note without attack in close proximity to the end of another note. Failure to do so may result in the attack still playing.</p>
 <p>Here is a more technical breakdown of how it all work. When the player encounter a note without attack, it will look for a previous note still producing sound that can be continued by the note without attack.</p>
 <ol>
@@ -304,28 +315,23 @@
 <h2 id="arpeggio-chords">Arpeggio chords</h2>
 <p><strong>Arpeggio Chords</strong> take the notes of a chord and arpeggiate it rapidly in a pre-defined sequence. This option is mostly there to mimic a trick often used in chiptune songs where composers would play notes of a chords in quick succession to make up for the lack of polyphony on old hardware.</p>
 <p>To enable arpeggio chords, simply select the notes of a chord, right-click on any selected note (long-press on mobile) and select <strong>Toggle Selection Arpeggio Chords</strong> from the contextual menu. Visually, notes with arpeggio chords enabled will be drawn with a stripe pattern.</p>
-<blockquote>
-<p>TODO : Image here.</p>
-</blockquote>
+<p><img alt="" src="../images/ArpeggioChord.png#center" /></p>
 <p>The speed and order in which individual notes of an arpeggio is played is controlled in the channel settings, under the <strong>Arpeggio</strong> tab.</p>
+<p><img alt="" src="../images/ArpeggioSettings.png#center" /></p>
 <blockquote>
-<p>TODO : Image of the channel settings too? Where does that go?</p>
+<p>TODO : Do we explain the settings here? Or in PE page?</p>
 </blockquote>
 <h2 id="release-modes">Release modes</h2>
-<ul>
-<li>Explain both release modes</li>
-</ul>
+<blockquote>
+<p>TODO : Explain both modes, with images.</p>
+</blockquote>
 <h2 id="ghost-notes">Ghost notes</h2>
 <p><strong>Ghost Notes</strong> are a visual tool allowing you to see a semi-transparent version of the notes of another channel while editing another. This can be useful to align things to each other. </p>
+<p><img alt="" src="../images/GhostNotes.png#center" /></p>
 <p>As of version 1.0, the feature is quite primitive. Ghost notes can be enabled for a single channel, or for all channels at once using the option from the floating toolbar.</p>
-<blockquote>
-<p>TODO : Image of the channel settings too? Where does that go?</p>
-</blockquote>
 <h1 id="note-parameters">Note Parameters</h1>
 <p>The note parameter editor can be opening using the option in the floating toolbar. This panel allows you to edit additional properties of notes, such as note velocity, stereo panning, etc.</p>
-<blockquote>
-<p>TODO : Image here.</p>
-</blockquote>
+<p><img alt="" src="../images/NoteParamEditor.png#center" /></p>
 <p>This editor only shows one parameter at a given time and you can chose which one by using the option in the floating toolbar.</p>
 <h2 id="editing-note-parameters">Editing note parameters</h2>
 <p>Editing note parameters is quite simple, simply click and drag to paint values. If notes are currently selected, only the selected notes can be edited. </p>
@@ -344,9 +350,7 @@
 <p>Once a note is set to either curve modes, you can edit its curve by enabling the <strong>Curve Edit Mode</strong> from the floating toolbar. As of version 1.0, this feature is quite primitive and can only be enabled when a single note is selected.</p>
 <p>When curve edit mode is active, a single-click on the curve will add a new vertex, and double-click with delete and existing one.  The first and last vertex cannot be deleted and the last vertex is currently required to be at the end of the note duration. </p>
 <p>Vertices can be moved by dragging and will respect any snapping setting.</p>
-<blockquote>
-<p>TODO : Animated GIF here.</p>
-</blockquote></div>
+<p><img alt="" src="../images/NoteParamCurve.gif#center" /></p></div>
             </div>
         </div>
 

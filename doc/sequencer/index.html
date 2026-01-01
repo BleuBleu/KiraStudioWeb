@@ -244,9 +244,7 @@
 </ul>
 <h1 id="channels-tracks">Channels &amp; Tracks</h1>
 <p>On the left side of the sequencer are all the channel &amp; tracks of the current song. </p>
-<blockquote>
-<p>TODO : Image, make sure "Bitcrushed Drums 1" is selection.</p>
-</blockquote>
+<p><img alt="" src="../images/TrackList.png#center" /></p>
 <h2 id="selected-channel">Selected channel</h2>
 <p>The <strong>Selected Channel</strong> is displayed with lighter color in the sequencer and is the channel that will be previewed when playing the pop-up piano, or pressing keys on a MIDI controller. To change the selected channel, simply click on an instrument channel.</p>
 <p>In the above screenshot, the "Bitcrushed Drums 1" channel is selected channel.</p>
@@ -272,13 +270,13 @@
 <p>To reorder a channel (i.e. move all the tracks a channel relative to other channels), grab the first track of the channel and you will be able to move the entire channel up or down relative to others.</p>
 <p>To reorder a track inside a channel, grab any track that is not the first one, and you will be able to moving it relative to other tracks inside that channel. Please do note that piano roll tracks always come before automation tracks in a channel and this will be enforced during reordering.</p>
 <h1 id="patterns-bars">Patterns &amp; Bars</h1>
-<p>At the center of the sequencer are all the patterns of the current song. Patterns can be as small as 1 bar, but can be much longer too. Patterns are re-usable little units of notes or automation tat you can re-use multiple times on a given track. </p>
-<blockquote>
-<p>TODO : Image here.</p>
-</blockquote>
+<p>At the center of the sequencer are all the patterns of the current song. </p>
+<p>Patterns are re-usable little units of notes or automation that you can re-use multiple times on a given track. They can be as small as 1 bar, but can be much longer too. </p>
+<p><img alt="" src="../images/PatternEditor.png#center" /></p>
 <h2 id="difference-with-other-daws">Difference with other DAWs</h2>
-<p>Before we start, please note that patterns, sometimes called clips in other apps, are edited slightly differently from mainstream DAWs. In some DAWs (e.g. FL Studio Mobile), resizing a pattern makes it loop multiple times. In KiraStudio, resizing a pattern simply changes its duration, repetition is done using <strong>Instancing</strong> which creates a linked copy of a pattern. </p>
-<p>Another difference is that patterns, when opening in the piano roll or automation editor are shown with the rest of the song. In other DAWs, clips are editing individually, without seeing the outside context. In KiraStudio, the piano roll or automation editor are basically an extreme close up on a track.</p>
+<p>Before we start, please note that patterns, sometimes called clips in other apps, are edited slightly differently from mainstream DAWs. </p>
+<p>In some DAWs (e.g. FL Studio Mobile), resizing a pattern makes it loop multiple times. In KiraStudio, resizing a pattern simply changes its duration, repetition is done using <strong>Instancing</strong> which creates a linked copy of a pattern. </p>
+<p>Another difference is that, when opening in the piano roll or automation editor, patterns are shown with the rest of the song. In other DAWs, clips are editing in a vacuum, without seeing the outside context. In KiraStudio, the piano roll or automation editor are basically an extreme close up on a track.</p>
 <p>Please do keep these differences in mind as you read the next few sections.</p>
 <h2 id="adding-deleting-resizing-patterns">Adding, Deleting &amp; Resizing patterns</h2>
 <p>Patterns are simply added by clicking in an empty space in the grid. </p>
@@ -294,18 +292,26 @@
 </ul>
 <p>You can also select entire columns of patterns by doing a selection from the timeline, which is the row with the bar numbers at the top. </p>
 <p>When selecting patterns this way, you will notice that the bar numbers also get a white outline around them. This is important and means that if you copy these patterns, or move them left/right, the associated <a href="#custom-time-signatures">custom time signatures</a> will also be moved with them. Without the bar highlight, only the patterns are move and no tempo information is.</p>
-<blockquote>
-<p>TODO : A mobile/desktop GIF here would be nice.</p>
-</blockquote>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Desktop</label><div class="tabbed-content">
+<p><img alt="" src="../images/SelectPatternsDesktop.gif#center" /></p>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Mobile</label><div class="tabbed-content">
+<p><img alt="" src="../images/SelectPatternsMobile.gif#center" /></p>
+</div>
+</div>
 <h2 id="copying-instancing-patterns">Copying &amp; instancing patterns</h2>
 <p>Patterns have an associated 3-digit numbers. This number is a unique pattern on a given track and allows you to tell if a pattern is used multiple times inside a track. Re-using a pattern multiple times in a track is called <strong>instancing</strong>. When modifying a pattern, all of the its instances will be modified at the same time. </p>
 <p>Another way to tell if a pattern is an instance of another is simply to select it and to look for the <strong>chain link icon</strong>. When a pattern is selected, all of its instances will show this icon and the 3-digit numbers will appear white. In the example below, pattern 000 is selected and a few other instance are shown.</p>
 <p><img alt="" src="../images/Instance.png#center" /></p>
 <p>To create an instance of an existing pattern, simply selected it and drag from the little <strong>Colored Chain-Link Button</strong> that appears at the bottom left and release where you want to create the instance. Note that trying to create an instance on a different track will force a copy.</p>
 <p>To create a completely separate copy of a pattern, a copy that will retain no connection to the original, simply drag from the <strong>Colored Paperstack Icon</strong> that appears and release it where you want to create the copy.</p>
-<blockquote>
-<p>TODO : A mobile/desktop GIF here would be nice.</p>
-</blockquote>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Desktop</label><div class="tabbed-content">
+<p><img alt="" src="../images/InstanceCopyPatternsDesktop.gif#center" /></p>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Mobile</label><div class="tabbed-content">
+<p><img alt="" src="../images/InstanceCopyPatternsMobile.gif#center" /></p>
+</div>
+</div>
 <h2 id="de-instancing-patterns">De-instancing patterns</h2>
 <p>If you have created instances of a pattern, but have second thoughts and want to make a unique copy, you can simply right-click on a pattern (long-press on mobile) and select the <strong>Make Pattern(s) Unique</strong> option. This will create a completely independent copy of it which its own unique 3-digit number.</p>
 <h2 id="merging-identical-patterns">Merging identical patterns</h2>
@@ -319,9 +325,7 @@
 <h2 id="custom-time-signatures">Custom time signatures</h2>
 <p>Songs have a default time signature, which is usually the time signature that covers most of the song. But for each bar of the song, a <strong>Custom Time Signature</strong> can be specified. </p>
 <p>To set a custom time signature for a given bar, right-click (long-press on mobile) on the bar number and select the <strong>Edit Custom Time Signature...</strong> option. If multiple bars are selected using the timeline selection mode, the changes will be applied to all selected bars.</p>
-<blockquote>
-<p>TODO : Image here would be nice.</p>
-</blockquote></div>
+<p><img alt="" src="../images/CustomTimeSignature.gif#center" /></p></div>
             </div>
         </div>
 
