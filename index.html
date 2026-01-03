@@ -7,7 +7,6 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="styles.css">
-		<script type="text/javascript" src="script.js"></script>
 		<link href="https://kirastudio.org" rel="canonical">
 		<link rel="icon" type="image/png" href="logo32.png">
 		<meta charset="utf-8" name="viewport" content= "width=device-width, initial-scale=1.0">
@@ -89,6 +88,19 @@
 						</div>				
 					</div>
 
+				</div>
+
+				<div class="lightbox">
+					<button class="close">
+						<img class="lightbox-button-img" src='close.png'>	
+					</button>
+					<button class="prev">
+						<img class="lightbox-button-img" src='prev.png'>	
+					</button>
+					<img class="lightbox-img" src='layer1.png'>
+					<button class="next">
+						<img class="lightbox-button-img" src='next.png'>	
+					</button>
 				</div>
 
 				<h1 id="news">News</h1>
@@ -265,26 +277,9 @@
 			
 			</div>
 		</main>
+		
+		<script src="script.js"></script>
 
 	</body>
-
-	<script>
-	  const header = document.querySelector('.header-parallax');
-	  const layers = [
-	  	{ el: document.querySelector('.bg'), speed: 0.2 },
-	    { el: document.querySelector('.layer1'), speed: 0.35 },
-	    { el: document.querySelector('.layer2'), speed: 0.5 },
-	    { el: document.querySelector('.layer3'), speed: 0.65 },
-	  ];
-
-	  window.addEventListener('scroll', () => {
-			const scrollY = window.scrollY;
-	    
-	    for (const layer of layers) {
-	      layer.el.style.transform =
-	        `translateX(-50%) translateY(${scrollY * -layer.speed}px)`;
-	    }
-	  });
-	</script>	
 
 </html>
