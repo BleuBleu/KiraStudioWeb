@@ -331,6 +331,13 @@ p.note {
   max-height: 80%;
 }
 
+@media (max-width: 768px) {
+  .lightbox-img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
 .lightbox button {
   position: absolute;
   background: none;
@@ -348,3 +355,8 @@ p.note {
 .close { top: 0.5rem; right: 0.5rem; }
 .prev  { left: 0.5rem; }
 .next  { right: 0.5rem; }
+
+@media (max-width: 768px) {
+  .prev  { bottom: 0.5rem; }
+  .next  { bottom: 0.5rem; }
+}
