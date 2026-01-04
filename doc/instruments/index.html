@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
+        <meta name="description" content="The Project Explorer allows editing the various parameters of the objects in your projects : songs, instruments, generators, effects, samples, etc.">
+        
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
@@ -144,12 +146,133 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#overview" class="nav-link">Overview</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#project-structure" class="nav-link">Project structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#editing-songs" class="nav-link">Editing songs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#editing-channels" class="nav-link">Editing channels</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#effect-chains" class="nav-link">Effect chains</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#master-channel" class="nav-link">Master channel</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#instrument-channels" class="nav-link">Instrument channels</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#editing-instruments" class="nav-link">Editing instruments</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#automating-parameters" class="nav-link">Automating parameters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h1 id="overview">Overview</h1>
+<p>The <strong>Project Explorer</strong> allows editing the various parameters of the objects in your projects : songs, instruments, generators, effects, samples, etc. </p>
+<p>This section will try to break down each major type of object, explain their various parameters and show how most of them can be <strong>automated</strong> (i.e. controller) in various ways.</p>
+<p><img alt="" src="../images/ProjectExplorer.png#center" /></p>
+<p>On mobile, the project explorer is not always visible and slides from the right side on demand by pressing the <strong>Project</strong> button from the toolbar. A much quicker way to open it and navigate directly to a channel is to double-tap on a channel's name in the <a href="../sequencer/">sequencer</a>.</p>
+<p><img alt="" src="../images/OpenProjectExplorerMobile.gif#center" /></p>
+<p>The project explorer displays parameters in sections that can be expanded and collapsed. Some sections will be collapsed by default and will need to be expanded to reveal the parameters, especially on mobile where vertical space is limited.</p>
+<h2 id="project-structure">Project structure</h2>
+<p>At the very top of the project explorer is the <strong>Navigation bar</strong>. Much like a folder hierarchy on a computer, it shows the path of the current object in your project. </p>
+<p>In the example below, the "Bitcrushed Drum 1" channel is contained in the "Ruder Buster" song, which is itself part of the "Deltarune" project. Each portion of the path is clickable and will bring you to that specific object.</p>
+<p><img alt="" src="../images/NavBar.png#center" /></p>
+<p>The general structure of a project in KiraStudio is:</p>
+<ul>
+<li>A project contains one or more song(s)<ul>
+<li>Each song contains a series of channel(s)<ul>
+<li>Each channel (which may any of the <a href="../sequencer/">3 types</a>) may contain effect(s). </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>A project also contains zero or more instrument(s)<ul>
+<li>Each instruments is made of generator(s)</li>
+</ul>
+</li>
+<li>A project also contains zero or more samples(s)</li>
+</ul>
+<h1 id="editing-songs">Editing songs</h1>
+<p>When creating a new project, it will already contain 1 song, but a project may contain multiple. To create a new song, navigate back to the root of your project and click the <strong>(+) Add Song</strong> button. Clicking on a song will show its properties and will make it the active one inside the app.</p>
+<p><img alt="" src="../images/SongParameters.png#center" /></p>
+<p>Song have very few parameters. Besides their name and colors, which can be customized, they mostly just have a duration (in bars) and a default time signature. The default time signature is the main time signature that will be used in bars without a <a href="#custom-time-signatures">custom time signature</a>.</p>
+<p>Also displayed along with the song parameters the the list of channels. Clicking a channel will navigate to its parameters, exactly as if you had click on the channel name in the <a href="../sequencer/">sequencer</a>.</p>
+<h1 id="editing-channels">Editing channels</h1>
+<p>Channels are the main type of objects you will be looking at in the project explorer. </p>
+<p>There are <a href="../sequencer/">3 types of channels</a> in KiraStudio, we will explore each one in the next sections.</p>
+<h2 id="effect-chains">Effect chains</h2>
+<p>Effect chains a simple channels that can contain a series of effects (reverb, filters, etc.). Instrument channels can send their outputs to effect chains, and effects chains can be cascaded and should ultimately end at the Master channel. </p>
+<p>Please note that unlike traditional DAWs, audio is always sent fully to a single effect chains. As of version 1.0, it is not possible only partially send audio to a chain, or to send to more than one chain.</p>
+<p><img alt="" src="../images/EffectChainParameters.png#center" /></p>
+<p>Besides their name/color, effect chains have 3 unique parameters:</p>
+<ul>
+<li><strong>Volume</strong> : Basic volume adjustment.</li>
+<li><strong>Balance</strong> : Stereo balance adjustment.</li>
+<li><strong>Effect Send</strong> : The effect chain to send this channel's audio to.</li>
+</ul>
+<p>A much more efficient way of adjusting the volume, balance and effect send of a channel is to use the <a href="../sequencer/#mixer-view">mixer view of the sequencer</a>.</p>
+<p>Effects are applied one at a time, in a top-to-bottom order, but the channel volume and balance are applied at the end, after all effects of the channel have been applied. To alter the volume or balance prior to, or between 2 effects, a dedicated <strong>Volume</strong> and <strong>Pan/Balance</strong> effect exists.</p>
+<p>Effects can be added by pressing the <strong>(+) Add Effect</strong> button below the last effect and can be deleted by right-clicking (or long-pressing on mobile) on a specific effect and selecting the delete option.</p>
+<blockquote>
+<p>TODO : Link to volume + balance effect.</p>
+<p>TODO : Link effect reference here. </p>
+</blockquote>
+<h2 id="master-channel">Master channel</h2>
+<p>The master channel is a special type of effect chain. There is always one in a song, it is always the final effect chain and it can never be deleted.</p>
+<p><img alt="" src="../images/MasterChannelParameters.png#center" /></p>
+<p>Besides the standard effect chain parameters, the master channel as 2 unique parameters:</p>
+<ul>
+<li><strong>BPM</strong> : The main BPM of the song. This value can be automated to create tempo variations.</li>
+<li><strong>Final DC Removal Frequency (Hz)</strong> : There is a very slightly high-pass filter applied on the final output to remove any DC component. Some channels will have their own DC removal feature, but this one is there to avoid clipping when combining asymmetric waveforms. </li>
+</ul>
+<p>The master channel may also contain effect(s) and it works the exact same way as effect chains. Placing effects on the master channel is actually the most efficient place to put them as this will ensure they are only applied once, keeping the  CPU usage low. </p>
+<h2 id="instrument-channels">Instrument channels</h2>
+<p>Instrument channels are the most complex type of channel. They feature all the same parameters as effect chains, but also reference an instrument.</p>
+<p>Is it important to understand that instrument channels <strong>reference</strong> (i.e. use) an instrument present in your project. An instrument can be used by multiple channels at once. For convenience, when displaying the parameters of an instrument channel, KiraStudio will also show you the parameters of that instrument in the channel. Channels have their own name/color, independent of the name/color of the instrument</p>
+<p>For example, in the image below, the channel "Bitcrushed Drums 1" channel is purple and uses the instrument "GS ROOM", which is yellow. We are effectively looking at 2 objects : an instrument at the top and a channel at the bottom. This order is to emphasis that effects are applied <em>after</em> generating the audio of the instrument.</p>
+<p><img alt="" src="../images/InstrumentChannelParameters.png#center" /></p>
+<p>Besides the standard effect chain parameters, instrument channels have a single unique parameter:</p>
+<ul>
+<li><strong>Instrument</strong> : This allow changing the instrument used by the channel. Clicking this will allow choosing a different one, or create a new one from scratch.</li>
+</ul>
+<h1 id="editing-instruments">Editing instruments</h1>
+<p>Instruments in KiraStudio are composed of <strong>Generators</strong>. A generator is a small unit able to produce an audio signal. They range from very basic oscillators such as sawtooth and square waves, all the way to complex things like SoundFonts. </p>
+<p>This section will only explain the general principles, a comprehensive <a href="../generators/">generator reference</a> is also provided.</p>
+<p>Most instruments will only contain a single generator, but combining them can yield interesting effects. In the example below, a lead instrument is created by adding a pulse-modulated square waveform and a sawtooth waveform.</p>
+<p><img alt="" src="../images/InstrumentParameters.png#center" /></p>
+<p>Generators are combined in a top-to-bottom order. When adding generators this is not very important, but when using different <strong>Blend Modes</strong>, this becomes important.</p>
+<p>Generators can be added by pressing the <strong>(+) Add Generator</strong> button below the last generator and can be deleted by right-clicking (or long-pressing on mobile) on a specific generator and selecting the delete option.</p>
+<p>As mentioned in the previous section, instruments can be edited through a channel using the instrument. They can also be edited on their own by navigating to the root of the project and clicking an instrument. Both achieve the same result, the only difference is that some form of automation, namely automation tracks and note parameters can only exist when an instrument is used of a channel. In other words, the same instrument, used by 2 different channels may different parameters automated. This will me covered in the next sections.</p>
+<h1 id="automating-parameters">Automating parameters</h1>
+<blockquote>
+<p>Mention that auto track + per note slides can still be changed, for preview purpose.</p>
+</blockquote></div>
             </div>
         </div>
 
