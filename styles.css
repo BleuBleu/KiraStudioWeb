@@ -327,15 +327,8 @@ p.note {
 }
 
 .lightbox-img {
-  max-width: calc(100% - 8rem);
-  max-height: 80%;
-}
-
-@media (max-width: 768px) {
-  .lightbox-img {
-    max-width: 100%;
-    max-height: 100%;
-  }
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .lightbox button {
@@ -345,18 +338,15 @@ p.note {
   color: white;
   font-size: 3rem;
   cursor: pointer;
+  z-index: 1001;
 }
 
 .lightbox-button-img {
   width: 3rem;
   height: 3rem;
+  filter: drop-shadow(2px 2px 2px #000);
 }
 
 .close { top: 0.5rem; right: 0.5rem; }
 .prev  { left: 0.5rem; }
 .next  { right: 0.5rem; }
-
-@media (max-width: 768px) {
-  .prev  { bottom: 0.5rem; }
-  .next  { bottom: 0.5rem; }
-}
