@@ -89,6 +89,9 @@ const FADE_DURATION = 250;
 const startTime = performance.now();
 const thumbImageIndices = [0, 1, 2];
 
+let lastWidth = window.innerWidth;
+let resized = false;
+
 thumbImages[0].src = getScreenshots()[0];
 thumbImages[1].src = getScreenshots()[1];
 thumbImages[2].src = getScreenshots()[2];
@@ -115,15 +118,16 @@ function animate(now) {
       opacity = 1 - (cycleTime - (SWITCH_INTERVAL - FADE_DURATION)) / FADE_DURATION;
     }
 
-    //if (opacity != 1) {
+    if (thumbImageIndices[i] != imageIndex || resized) {
       thumb.src = images[imageIndex];
       thumbImageIndices[i] = imageIndex;
-    //}
+    }
 
     thumb.style.opacity = opacity;
   });
 
   requestAnimationFrame(animate);
+  resized = false;
 }
 
 function startCycling() {
@@ -131,8 +135,14 @@ function startCycling() {
 }
 
 document.addEventListener("visibilitychange", () => {
-  if (document.hidden) cancelAnimationFrame(animate);
-  else requestAnimationFrame(animate);
+  if (document.hidden) 
+      cancelAnimationFrame(animate);
+  else 
+    requestAnimationFrame(animate);
 });
 
-let lastWidth = window.innerWidth;
+window.addEventListener("resize", () => {
+  const w = window.innerWidth;
+  if (w != lastWidth)
+    resized = true;
+});

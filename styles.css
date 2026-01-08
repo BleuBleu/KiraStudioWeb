@@ -123,6 +123,7 @@ p.note {
   object-fit: contain;
   cursor: pointer; 
   border-radius: 8px;
+  will-change: opacity;
 }
 
 .cell-desc {
