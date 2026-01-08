@@ -115,10 +115,10 @@ function animate(now) {
       opacity = 1 - (cycleTime - (SWITCH_INTERVAL - FADE_DURATION)) / FADE_DURATION;
     }
 
-    if (opacity != 1) {
+    //if (opacity != 1) {
       thumb.src = images[imageIndex];
       thumbImageIndices[i] = imageIndex;
-    }
+    //}
 
     thumb.style.opacity = opacity;
   });
