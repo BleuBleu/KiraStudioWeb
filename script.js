@@ -78,22 +78,23 @@ function show(i)
 
 const thumbImages = document.querySelectorAll('.cell-image img');
 
-thumbImages.forEach((img) =>
-  img.onclick = () => show(0)
-);
 
 document.querySelector('.close').onclick = () => lightbox.classList.remove('open');
 document.querySelector('.prev').onclick = () => show(index - 1);
 document.querySelector('.next').onclick = () => show(index + 1);
 
-thumbImages[0].src = getScreenshots()[0];
-thumbImages[1].src = getScreenshots()[1];
-thumbImages[2].src = getScreenshots()[2];
-
 const SWITCH_INTERVAL = 5000;
 const OFFSET = 500;
 const FADE_DURATION = 250;
 const startTime = performance.now();
+const thumbImageIndices = [0, 1, 2];
+
+thumbImages[0].src = getScreenshots()[0];
+thumbImages[1].src = getScreenshots()[1];
+thumbImages[2].src = getScreenshots()[2];
+thumbImages[0].onclick = () => show(thumbImageIndices[0]);
+thumbImages[1].onclick = () => show(thumbImageIndices[1]);
+thumbImages[2].onclick = () => show(thumbImageIndices[2]);
 
 function animate(now) {
   thumbImages.forEach((thumb, i) => {
@@ -116,6 +117,7 @@ function animate(now) {
 
     if (opacity != 1) {
       thumb.src = images[imageIndex];
+      thumbImageIndices[i] = imageIndex;
     }
 
     thumb.style.opacity = opacity;
