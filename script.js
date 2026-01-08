@@ -77,9 +77,6 @@ function show(i)
 }
 
 const thumbImages = document.querySelectorAll('.cell-image img');
-let activeThumb = 0;
-let screenshotIndex = 3;
-const thumbShotIndex = [0, 1, 2];
 
 thumbImages.forEach((img) =>
   img.onclick = () => show(0)
@@ -93,47 +90,47 @@ thumbImages[0].src = getScreenshots()[0];
 thumbImages[1].src = getScreenshots()[1];
 thumbImages[2].src = getScreenshots()[2];
 
-function swapImage(img, nextSrc) {
-  const onFadeOut = (e) => {
-    if (e.propertyName !== "opacity") return;
+const SWITCH_INTERVAL = 4000;
+const OFFSET = 250;
+const FADE_DURATION = 250;
+const startTime = performance.now();
 
-    img.removeEventListener("transitionend", onFadeOut);
+function animate(now) {
+  thumbImages.forEach((thumb, i) => {
+    const elapsed = now - startTime - i * OFFSET;
+    
+    if (elapsed < SWITCH_INTERVAL - FADE_DURATION) 
+    	return;
+    
+	const images = getScreenshots();
+    const cycleTime = elapsed % SWITCH_INTERVAL;
+    const imageIndex = (Math.floor(elapsed / SWITCH_INTERVAL) * 3 + i) % images.length;
 
-    img.src = nextSrc;
+    let opacity = 1;
 
-    // ensure src change is applied before fading back in
-    requestAnimationFrame(() => {
-      img.style.opacity = 1;
-    });
-  };
+    if (cycleTime < FADE_DURATION) {
+      opacity = cycleTime / FADE_DURATION;
+    } else if (cycleTime > SWITCH_INTERVAL - FADE_DURATION) {
+      opacity = 1 - (cycleTime - (SWITCH_INTERVAL - FADE_DURATION)) / FADE_DURATION;
+    }
 
-  img.addEventListener("transitionend", onFadeOut);
+    if (cycleTime < FADE_DURATION) {
+      thumb.src = images[imageIndex];
+    }
 
-  // start fade out
-  img.style.opacity = 0;
+    thumb.style.opacity = opacity;
+  });
+
+  requestAnimationFrame(animate);
 }
 
 function startCycling() {
-  setInterval(() => 
-  {
-    const img = thumbImages[activeThumb];
-    const list = getScreenshots();
-
-    swapImage(img, list[screenshotIndex]);
-
-    thumbShotIndex[activeThumb] = screenshotIndex;
-    activeThumb = (activeThumb + 1) % thumbImages.length;
-    screenshotIndex = (screenshotIndex + 1) % list.length;
-  }, 2000);
+	requestAnimationFrame(animate);
 }
 
-let lastWidth = window.innerWidth;
-
-window.addEventListener("resize", () => {
-  const w = window.innerWidth;
-  if (w === lastWidth) return; // ignore scroll-induced resize
-  thumbImages.forEach((img, i) => {
-    const list = getScreenshots(i);
-    img.src = list[thumbShotIndex[i]];
-  });
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) cancelAnimationFrame(animate);
+  else requestAnimationFrame(animate);
 });
+
+let lastWidth = window.innerWidth;

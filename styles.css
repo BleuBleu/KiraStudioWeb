@@ -122,7 +122,6 @@ p.note {
   max-height: 100%;
   object-fit: contain;
   cursor: pointer; 
-  transition: opacity 0.25s ease;
 }
 
 .cell-desc {
