@@ -83,6 +83,14 @@ document.querySelector('.close').onclick = () => lightbox.classList.remove('open
 document.querySelector('.prev').onclick = () => show(index - 1);
 document.querySelector('.next').onclick = () => show(index + 1);
 
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) 
+    return;
+  if (e.key === 'Escape') lightbox.classList.remove('open');
+  if (e.key === 'ArrowLeft') show(index - 1);
+  if (e.key === 'ArrowRight') show(index + 1);
+});
+
 const SWITCH_INTERVAL = 5000;
 const OFFSET = 500;
 const FADE_DURATION = 250;
