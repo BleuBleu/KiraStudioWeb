@@ -316,12 +316,15 @@ p.note {
 .lightbox {
   position: fixed;
   inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
   background: rgba(0,0,0,0.75);
   display: none;
-  align-items: center;
-  justify-content: center;
-  height: 100dvh;
   z-index: 1000;
+  overscroll-behavior: contain;
+  align-items: center;
+  justify-content: center;  
 }
 
 .lightbox.open {
