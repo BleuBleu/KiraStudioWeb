@@ -81,17 +81,32 @@ thumbImages[0].src = getScreenshots()[0];
 thumbImages[1].src = getScreenshots()[1];
 thumbImages[2].src = getScreenshots()[2];
 
+function swapImage(img, nextSrc) {
+  const onFadeOut = (e) => {
+    if (e.propertyName !== "opacity") return;
+
+    img.removeEventListener("transitionend", onFadeOut);
+
+    img.src = nextSrc;
+
+    // ensure src change is applied before fading back in
+    requestAnimationFrame(() => {
+      img.style.opacity = 1;
+    });
+  };
+
+  img.addEventListener("transitionend", onFadeOut);
+
+  // start fade out
+  img.style.opacity = 0;
+}
+
 setInterval(() => 
 {
   const img = thumbImages[activeThumb];
   const list = getScreenshots();
 
-  img.style.opacity = 0;
-
-  setTimeout(() => {
-    img.src = list[screenshotIndex];
-    img.style.opacity = 1;
-  }, 250);
+  swapImage(img, list[screenshotIndex]);
 
   activeThumb = (activeThumb + 1) % thumbImages.length;
   screenshotIndex = (screenshotIndex + 1) % list.length;
