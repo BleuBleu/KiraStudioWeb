@@ -108,6 +108,7 @@ setInterval(() =>
 
   swapImage(img, list[screenshotIndex]);
 
+  thumbShotIndex[activeThumb] = screenshotIndex;
   activeThumb = (activeThumb + 1) % thumbImages.length;
   screenshotIndex = (screenshotIndex + 1) % list.length;
 }, 2000);
