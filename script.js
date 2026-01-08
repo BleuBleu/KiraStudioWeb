@@ -101,7 +101,7 @@ function animate(now) {
     
     if (elapsed < SWITCH_INTERVAL - FADE_DURATION) 
     	return;
-    
+
 	const images = getScreenshots();
     const cycleTime = elapsed % SWITCH_INTERVAL;
     const imageIndex = (Math.floor(elapsed / SWITCH_INTERVAL) * 3 + i) % images.length;
@@ -114,7 +114,7 @@ function animate(now) {
       opacity = 1 - (cycleTime - (SWITCH_INTERVAL - FADE_DURATION)) / FADE_DURATION;
     }
 
-    if (cycleTime < FADE_DURATION) {
+    if (opacity != 1) {
       thumb.src = images[imageIndex];
     }
 
