@@ -112,7 +112,11 @@ setInterval(() =>
   screenshotIndex = (screenshotIndex + 1) % list.length;
 }, 2000);
 
+let lastWidth = window.innerWidth;
+
 window.addEventListener("resize", () => {
+  const w = window.innerWidth;
+  if (w === lastWidth) return; // ignore scroll-induced resize
   thumbImages.forEach((img, i) => {
     const list = getScreenshots(i);
     img.src = list[thumbShotIndex[i]];
