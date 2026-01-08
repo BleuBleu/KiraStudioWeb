@@ -90,8 +90,8 @@ thumbImages[0].src = getScreenshots()[0];
 thumbImages[1].src = getScreenshots()[1];
 thumbImages[2].src = getScreenshots()[2];
 
-const SWITCH_INTERVAL = 4000;
-const OFFSET = 250;
+const SWITCH_INTERVAL = 5000;
+const OFFSET = 500;
 const FADE_DURATION = 250;
 const startTime = performance.now();
 
