@@ -2,49 +2,61 @@ const header = document.querySelector('.header-parallax');
 
 const layers = 
 [
-	{ el: document.querySelector('.bg'),     speed: 0.20 },
-	{ el: document.querySelector('.layer1'), speed: 0.35 },
-	{ el: document.querySelector('.layer2'), speed: 0.50 },
-	{ el: document.querySelector('.layer3'), speed: 0.65 },
+  { el: document.querySelector('.bg'),     speed: 0.20 },
+  { el: document.querySelector('.layer1'), speed: 0.35 },
+  { el: document.querySelector('.layer2'), speed: 0.50 },
+  { el: document.querySelector('.layer3'), speed: 0.65 },
 ];
 
 window.addEventListener('scroll', () => 
 {
-	const scrollY = window.scrollY;
+  const scrollY = window.scrollY;
 
-	for (const layer of layers) 
-	{
-		layer.el.style.transform = `translateX(-50%) translateY(${scrollY * -layer.speed}px)`;
-	}
+  for (const layer of layers) 
+  {
+    layer.el.style.transform = `translateX(-50%) translateY(${scrollY * -layer.speed}px)`;
+  }
 });
 
 const screenshotsDesktop = [
-	'screenshots/desktop1.png',
-	'screenshots/desktop2.png',
-	'screenshots/desktop3.png',
-	'screenshots/desktop4.png',
-	'screenshots/desktop5.png',
-	'screenshots/desktop6.png',
-	'screenshots/desktop7.png',
-	'screenshots/desktop8.png'
-	];
+  'screenshots/desktop1.png',
+  'screenshots/desktop2.png',
+  'screenshots/desktop3.png',
+  'screenshots/desktop4.png',
+  'screenshots/desktop5.png',
+  'screenshots/desktop6.png',
+  'screenshots/desktop7.png',
+  'screenshots/desktop8.png'
+  ];
 
 const screenshotsMobile = [
-	'screenshots/mobile1.png',
-	'screenshots/mobile2.png',
-	'screenshots/mobile3.png',
-	'screenshots/mobile4.png',
-	'screenshots/mobile5.png',
-	'screenshots/mobile6.png',
-	'screenshots/mobile7.png',
-	'screenshots/mobile8.png'
-	];
+  'screenshots/mobile1.png',
+  'screenshots/mobile2.png',
+  'screenshots/mobile3.png',
+  'screenshots/mobile4.png',
+  'screenshots/mobile5.png',
+  'screenshots/mobile6.png',
+  'screenshots/mobile7.png',
+  'screenshots/mobile8.png'
+  ];
 
 // preload all images
-[...screenshotsDesktop, ...screenshotsMobile].flat().forEach(src => {
-  const img = new Image();
-  img.src = src;
-});
+const allScreenshots = [...screenshotsDesktop, ...screenshotsMobile].flat();
+
+function preloadImage(src) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(src);
+    img.onerror = reject;
+    img.src = src;
+  });
+}
+
+Promise.all(allScreenshots.map(preloadImage))
+  .then(startCycling)
+  .catch(err => {
+    console.error("Image preload failed", err);
+  });
 
 function getScreenshots()
 {
@@ -58,10 +70,10 @@ let index = 0;
 
 function show(i) 
 {
-	screenshots = getScreenshots();
-	index = (i + screenshots.length) % screenshots.length;
-	lightboxImage.src = screenshots[index];
-	lightbox.classList.add('open');
+  screenshots = getScreenshots();
+  index = (i + screenshots.length) % screenshots.length;
+  lightboxImage.src = screenshots[index];
+  lightbox.classList.add('open');
 }
 
 const thumbImages = document.querySelectorAll('.cell-image img');
@@ -70,7 +82,7 @@ let screenshotIndex = 3;
 const thumbShotIndex = [0, 1, 2];
 
 thumbImages.forEach((img) =>
-	img.onclick = () => show(0)
+  img.onclick = () => show(0)
 );
 
 document.querySelector('.close').onclick = () => lightbox.classList.remove('open');
@@ -101,17 +113,19 @@ function swapImage(img, nextSrc) {
   img.style.opacity = 0;
 }
 
-setInterval(() => 
-{
-  const img = thumbImages[activeThumb];
-  const list = getScreenshots();
+function startCycling() {
+  setInterval(() => 
+  {
+    const img = thumbImages[activeThumb];
+    const list = getScreenshots();
 
-  swapImage(img, list[screenshotIndex]);
+    swapImage(img, list[screenshotIndex]);
 
-  thumbShotIndex[activeThumb] = screenshotIndex;
-  activeThumb = (activeThumb + 1) % thumbImages.length;
-  screenshotIndex = (screenshotIndex + 1) % list.length;
-}, 2000);
+    thumbShotIndex[activeThumb] = screenshotIndex;
+    activeThumb = (activeThumb + 1) % thumbImages.length;
+    screenshotIndex = (screenshotIndex + 1) % list.length;
+  }, 2000);
+}
 
 let lastWidth = window.innerWidth;
 
