@@ -320,6 +320,7 @@ p.note {
   display: none;
   align-items: center;
   justify-content: center;
+  height: 100dvh;
   z-index: 1000;
 }
 
