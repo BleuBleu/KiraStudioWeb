@@ -18,30 +18,15 @@ window.addEventListener('scroll', () =>
   }
 });
 
-const screenshotsDesktop = [
-  'screenshots/desktop1.png',
-  'screenshots/desktop2.png',
-  'screenshots/desktop3.png',
-  'screenshots/desktop4.png',
-  'screenshots/desktop5.png',
-  'screenshots/desktop6.png',
-  'screenshots/desktop7.png',
-  'screenshots/desktop8.png'
-  ];
+const NUM_SCREENSHOTS = 8;
 
-const screenshotsMobile = [
-  'screenshots/mobile1.png',
-  'screenshots/mobile2.png',
-  'screenshots/mobile3.png',
-  'screenshots/mobile4.png',
-  'screenshots/mobile5.png',
-  'screenshots/mobile6.png',
-  'screenshots/mobile7.png',
-  'screenshots/mobile8.png'
-  ];
+const thumbnailsDesktop  = Array.from({length: NUM_SCREENSHOTS}, (_, index) => 'thumbnails/desktop' + (index + 1) + '.png');
+const thumbnailsMobile   = Array.from({length: NUM_SCREENSHOTS}, (_, index) => 'thumbnails/mobile'  + (index + 1) + '.png');
+const screenshotsDesktop = Array.from({length: NUM_SCREENSHOTS}, (_, index) => 'screenshots/desktop' + (index + 1) + '.png');
+const screenshotsMobile  = Array.from({length: NUM_SCREENSHOTS}, (_, index) => 'screenshots/mobile'  + (index + 1) + '.png');
 
 // preload all images
-const allScreenshots = [...screenshotsDesktop, ...screenshotsMobile].flat();
+const allThumbnails = [...thumbnailsDesktop, ...thumbnailsMobile].flat();
 
 function preloadImage(src) {
   return new Promise((resolve, reject) => {
@@ -52,11 +37,16 @@ function preloadImage(src) {
   });
 }
 
-Promise.all(allScreenshots.map(preloadImage))
+Promise.all(allThumbnails.map(preloadImage))
   .then(startCycling)
   .catch(err => {
     console.error("Image preload failed", err);
   });
+
+function getThumbnails()
+{
+  return window.innerWidth < 768 ? thumbnailsMobile : thumbnailsDesktop;
+}
 
 function getScreenshots()
 {
@@ -100,9 +90,9 @@ const thumbImageIndices = [0, 1, 2];
 let lastWidth = window.innerWidth;
 let resized = false;
 
-thumbImages[0].src = getScreenshots()[0];
-thumbImages[1].src = getScreenshots()[1];
-thumbImages[2].src = getScreenshots()[2];
+thumbImages[0].src = getThumbnails()[0];
+thumbImages[1].src = getThumbnails()[1];
+thumbImages[2].src = getThumbnails()[2];
 thumbImages[0].onclick = () => show(thumbImageIndices[0]);
 thumbImages[1].onclick = () => show(thumbImageIndices[1]);
 thumbImages[2].onclick = () => show(thumbImageIndices[2]);
@@ -112,9 +102,9 @@ function animate(now) {
     const elapsed = now - startTime - i * OFFSET;
     
     if (elapsed < SWITCH_INTERVAL - FADE_DURATION) 
-    	return;
+      return;
 
-	const images = getScreenshots();
+    const images = getThumbnails();
     const cycleTime = elapsed % SWITCH_INTERVAL;
     const imageIndex = (Math.floor(elapsed / SWITCH_INTERVAL) * 3 + i) % images.length;
 
@@ -139,7 +129,7 @@ function animate(now) {
 }
 
 function startCycling() {
-	requestAnimationFrame(animate);
+  requestAnimationFrame(animate);
 }
 
 document.addEventListener("visibilitychange", () => {
