@@ -2,7 +2,6 @@
 <html>
 	<head>
 
-		<!-- MATTT Review all these! -->	
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -11,6 +10,7 @@
 		<link rel="icon" type="image/png" href="logo32.png">
 		<meta charset="utf-8" name="viewport" content= "width=device-width, initial-scale=1.0">
 		<meta name="Description" content="Official website of KiraStudio. KiraStudio is a lightweight, cross-platform music studio built around clarity and automation. Compose in a piano roll, build custom instruments, use SoundFonts, and automate nearly every parameter with powerful curves.">
+
 
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="KiraStudio" />
@@ -108,13 +108,14 @@
 					<div class="cell a">
 						<div class="feature-icon-text">
 							<img src='latest.png'>
-							<span>PlaceHolder</span>
+							<span>Febuary 7th 2026</span>
 						</div>
 					</div>
 					<div class="cell c">
-						<!-- This is the beginning of a new adventure! Please be patient as there is a lot I did not manage to put in the app for this first release. The app will grow to accomodate the needs of the people who use it. -->
-						This is a placeholder website.
-					</div>		
+						Version 1.0.0 was just released! This represents 1000+h of work over 16 months, but this is only the start! There's much more planned, and KiraStudio will grow and evolve alongside the people who use it. Please check out the <a href="doc/index.html">documentation</a> for a 25 minute tutorial on both desktop and mobile.
+						<iframe src="https://www.youtube.com/embed/p_fpMZ4vyxA?si=4jo2wJ-tA-CZc0LJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 100%; aspect-ratio: 16/9;padding-top:16px;"></iframe>
+					</div>
+
 				</div>
 
 				<h1 id="download">Download</h1>
@@ -124,20 +125,22 @@
 					<div class="cell">
 						<div class="cell-header">Windows</div>
 						<div class="cell-desc">
-							<a href="https://example.com/download/windows" class="download-btn">
+							<a href="https://github.com/BleuBleu/KiraStudioPublic/releases/download/1.0.0/KiraStudio100-WinPortableExe.zip" class="download-btn">
 							  <img src="windows.png" alt="Windows" class="btn-icon"><span class="btn-text">Portable (Free)*</span>
 							</a><br/>
+							<!--
 							<a href="https://example.com/download/windows" class="download-btn">
 							  <img src="windows.png" alt="Windows" class="btn-icon"><span class="btn-text">Windows Store (Free)</span>
 							</a>
-							<p class="note">*Please see the <a href="doc/index.html">documentation</a> if you get warnings while installing.</p>
+							-->
+							<p class="note">*Please see the <a href="doc/install/#windows">documentation</a> if you get warnings while installing.</p>
 						</div>				
 					</div>
 
 					<div class="cell">
 						<div class="cell-header">MacOS</div>
 						<div class="cell-desc">
-							<a href="https://example.com/download/windows" class="download-btn">
+							<a href="https://apps.apple.com/us/app/kirastudio/id6754920847" class="download-btn">
 							  <img src="apple.png" alt="MacOS" class="btn-icon"><span class="btn-text">App Store</span>
 							</a>
 						</div>				
@@ -146,7 +149,7 @@
 					<div class="cell">
 						<div class="cell-header">iOS</div>
 						<div class="cell-desc">
-							<a href="https://example.com/download/windows" class="download-btn">
+							<a href="https://apps.apple.com/us/app/kirastudio/id6754920847" class="download-btn">
 							  <img src="apple.png" alt="iOS" class="btn-icon"><span class="btn-text">App Store</span>
 							</a>
 						</div>			
@@ -155,7 +158,7 @@
 					<div class="cell">
 						<div class="cell-header">Android</div>
 						<div class="cell-desc">
-							<a href="https://example.com/download/windows" class="download-btn">
+							<a href="https://play.google.com/store/apps/details?id=org.kirastudio" class="download-btn">
 							  <img src="android.png" alt="Android" class="btn-icon"><span class="btn-text">Google Play Store</span>
 							</a>
 						</div>				
@@ -207,12 +210,11 @@
 							<li>Famicom/NES emulation: Basic 2A03 channels and most audio expansions**</li>
 							<li>GameBoy emulation : Basic channels**</li>
 						</ul><br>
-						<!-- MATTT Documentation links! --> 
 						<p class="note">
-							* Please see the <a href="doc/index.html">documentation</a> for limitations, especially when it comes to modulator support.
+							* Please see the <a href="doc/generators/#soundfont">documentation</a> for limitations, especially when it comes to modulator support.
 						</p>
 						<p class="note">
-							** Include multiple "fakebit" quality of life enhancements such as full polyphony support and infinite ROM storage. Please see the <a href="doc/index.html">documentation</a> for details on emulation limitations as this is app is not aiming at high hardware emulation accuracy.
+							** Include multiple "fakebit" quality of life enhancements such as full polyphony support and infinite ROM storage. Please see the <a href="doc/generators/">documentation</a> for details on emulation limitations as this is app is not aiming at high hardware emulation accuracy.
 						</p>
 					</div>		
 
@@ -266,11 +268,11 @@
 				</div>
 
 				<center>
-					<a href="mailto:famistudio@outlook.com"><img style="padding: 4px;" src="email.png"></a>
+					<a href="mailto:kirastudioapp@outlook.com"><img style="padding: 4px;" src="email.png"></a>
 					<a href="https://twitter.com/nesbleubleu"><img style="padding: 4px;" src="twitter.png"></a>
-					<a href="https://www.youtube.com/channel/UC-dGLo2XZqXNA_aOYjaucgA"><img style="padding: 4px;" src="youtube.png"></a>
-					<a href="https://bleubleu.itch.io/famistudio"><img style="padding: 4px;" src="itchio.png"></a>
-					<a href="https://discord.gg/QRCMe595Pv"><img style="padding: 4px;" src="discord.png"></a>
+					<a href="https://www.youtube.com/@kirastudioapp"><img style="padding: 4px;" src="youtube.png"></a>
+					<a href="https://bleubleu.itch.io/kirastudio"><img style="padding: 4px;" src="itchio.png"></a>
+					<a href="https://discord.gg/Pbzw2Cwsb6"><img style="padding: 4px;" src="discord.png"></a>
 				</center>
 			
 			</div>
