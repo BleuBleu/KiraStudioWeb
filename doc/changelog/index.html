@@ -149,7 +149,11 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#change-log" class="nav-link">Change Log</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#version-100-feubuary-7th-2026" class="nav-link">Version 1.0.0 (Feubuary 7th 2026)</a>
+            <li class="nav-item" data-bs-level="2"><a href="#version-101-hotfix" class="nav-link">Version 1.0.1 (Hotfix)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#version-100" class="nav-link">Version 1.0.0</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -162,7 +166,41 @@
 
 <h1 id="change-log">Change Log</h1>
 <p>Version history / release notes for each release. </p>
-<h2 id="version-100-feubuary-7th-2026">Version 1.0.0 (Feubuary 7th 2026)</h2>
+<h2 id="version-101-hotfix">Version 1.0.1 (Hotfix)</h2>
+<p>Changes/Fixes:</p>
+<ul>
+<li>Fixed incorrect automation track value when starting the song exactly on a vertex that is alone in a pattern</li>
+<li>Fixed crash using "select all" in a Sequence automation</li>
+<li>Fixed crash pasting curves then using undo/redo</li>
+<li>Fixed crash loading some soundfonts</li>
+<li>Fixed crash right-clicking (or long pressing on mobile) past the end of the song on the timeline</li>
+<li>Fixed crash trying to bind "Enter" as a keyboard shortcut</li>
+<li>Fixed crash unloading projects with missing soundfont presets</li>
+<li>Fixed crash when exporting to a full disks, read-only folders, etc. on Windows</li>
+<li>Fixed crash playing after deleting an instrument</li>
+<li>Fixed crash when changing channel instrument when automation tracks are present</li>
+<li>Fixed note parameter curves disappearing when saving in some situations</li>
+<li>Fixed project explorer not refreshing the channel list when deleting from sequencer, could lead to crash</li>
+<li>Fixed wavetable loop/release points not saving</li>
+<li>Fixed missing note sample colors on C notes when on top of viewport</li>
+<li>Fixed first item of context menus not being highlighting immediately after opening</li>
+<li>Fixed Cmd+Q tooltip being displayed on MacOS, will display Ctrl+Q now</li>
+<li>Fixed FDS modulation table changes not being detected sometimes</li>
+<li>Fixed wavetable playing at wrong frequency after a changing the table size</li>
+<li>Fixed incorrect envelope delay on custom curves</li>
+<li>Fixed window being not-resizable on MacOS, or having the wrong size when maximized</li>
+<li>Greyed out the preset min/max when not using a preset (i.e. Custom)</li>
+<li>Changed the min/max frequencies for the EQ so that all frequencies are accessible</li>
+<li>Allowed Project Explorer to be almost 40% smaller.</li>
+<li>Changed default follow mode position to 50%</li>
+<li>Added a shake to the sound font notification so it draws more attention</li>
+<li>Added French and Chinese translations (thanks Lancel0t and FREirc!)</li>
+</ul>
+<p>Breaking/Behavior changes:</p>
+<ul>
+<li>The file format has changed, meaning file saved with version 1.0.1 will not open in 1.0.0. This usually never happens in a hotfix, but we are in the early days of the app and I will need to make a few exceptions.</li>
+</ul>
+<h2 id="version-100">Version 1.0.0</h2>
 <p>Initial release.</p></div>
             </div>
         </div>
