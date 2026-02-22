@@ -149,6 +149,10 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#change-log" class="nav-link">Change Log</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#version-102-hotfix" class="nav-link">Version 1.0.2 (Hotfix)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#version-101-hotfix" class="nav-link">Version 1.0.1 (Hotfix)</a>
               <ul class="nav flex-column">
               </ul>
@@ -166,6 +170,29 @@
 
 <h1 id="change-log">Change Log</h1>
 <p>Version history / release notes for each release. </p>
+<h2 id="version-102-hotfix">Version 1.0.2 (Hotfix)</h2>
+<p>Changes/Fixes:</p>
+<ul>
+<li>Fixed crash trying to play notes without instruments (gray)</li>
+<li>Fixed crash playing audio after undo/redo a set/clear loop point</li>
+<li>Fixed crash using soundfonts with zones lacking sample IDs</li>
+<li>Fixed crash pasting between projects</li>
+<li>Fixed more crashes when trying to save on a full disk, read-only folders, etc.</li>
+<li>Fixed a few crashes and issues on tablet when the bottom panel becomes too small with certain scalings</li>
+<li>Fixed files not truncating on Android, meaning they would only grow in size, never shrink</li>
+<li>Fixed notes in instanced patterns loosing their selection in the piano roll when moving them</li>
+<li>Improved overzealous fling gesture on IOS causing views to always scroll a bit after lifting your finger.</li>
+<li>Added a few error messages when failing to open project files (new version, corrupted, etc.)</li>
+<li>Added list of already loaded soundfonts to avoid having to having to constantly open from storage</li>
+<li>Added context menu to solo/mute channels</li>
+<li>Added support for drag and dropping samples in the window to load them (Desktop-only)</li>
+<li>Added keyboard shortcuts to control snapping in Piano Roll and Automation Track editor (Alt+S toggles snap, Alt+1/2/3/4/6/8 changes grid)</li>
+<li>Added a single decimal to generic square duty cycle so we can do 12.5% for example</li>
+<li>Added context menu to type in note parameter values : select notes, right-click in note param editor or long press on the scale on mobile</li>
+<li>Added slide notes in ghost notes</li>
+<li>Added ability to use per-note curves on all duty cycle parameters</li>
+<li>Added Chinese translation for real this time, was missing on Windows in 1.0.1 (Thanks FREirc!)</li>
+</ul>
 <h2 id="version-101-hotfix">Version 1.0.1 (Hotfix)</h2>
 <p>Changes/Fixes:</p>
 <ul>
