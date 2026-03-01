@@ -149,15 +149,19 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#change-log" class="nav-link">Change Log</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#version-103-hotfix" class="nav-link">Version 1.0.3 (Hotfix)</a>
+            <li class="nav-item" data-bs-level="2"><a href="#version-104" class="nav-link">Version 1.0.4</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#version-102-hotfix" class="nav-link">Version 1.0.2 (Hotfix)</a>
+            <li class="nav-item" data-bs-level="2"><a href="#version-103" class="nav-link">Version 1.0.3</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#version-101-hotfix" class="nav-link">Version 1.0.1 (Hotfix)</a>
+            <li class="nav-item" data-bs-level="2"><a href="#version-102" class="nav-link">Version 1.0.2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#version-101" class="nav-link">Version 1.0.1</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -174,13 +178,31 @@
 
 <h1 id="change-log">Change Log</h1>
 <p>Version history / release notes for each release. </p>
-<h2 id="version-103-hotfix">Version 1.0.3 (Hotfix)</h2>
-<p>Changes/Fixes:</p>
+<h2 id="version-104">Version 1.0.4</h2>
+<p>Fixes:</p>
+<ul>
+<li>Fixed CTRL+E keyboard (Export Audio) shortcut that was not hooked up </li>
+<li>Fixed playback inconsistencies when copy/pasting generator parameters with envelopes</li>
+<li>Fixed wave tables using multiple waves not immediately restarting at wave #0</li>
+</ul>
+<p>Changes:</p>
+<ul>
+<li>Added ability to display multiple channels as ghost notes</li>
+<li>Added clear undo/redo on save and autosave options on mobile.</li>
+<li>Added support for dragging MIDI files in the window to open them on desktop</li>
+<li>Added support to save some UI settings (splitter positions, expanded sections, snapping options, etc) so they can persist when restarting the app</li>
+<li>Added Portuguese translation (Thanks Sharper and Omega Zero!)</li>
+<li>Upgraded Built-in GeneralUser GS Soundfont to 2.0.3 and improved the quality of looping samples.</li>
+</ul>
+<p><a href="" id="version-103-hotfix"></a></p>
+<h2 id="version-103">Version 1.0.3</h2>
+<p>Fixes:</p>
 <ul>
 <li>Fixed crash moving notes on top of each other introduced in 1.0.2</li>
 </ul>
-<h2 id="version-102-hotfix">Version 1.0.2 (Hotfix)</h2>
-<p>Changes/Fixes:</p>
+<p><a href="" id="version-102-hotfix"></a></p>
+<h2 id="version-102">Version 1.0.2</h2>
+<p>Fixes:</p>
 <ul>
 <li>Fixed crash trying to play notes without instruments (gray)</li>
 <li>Fixed crash playing audio after undo/redo a set/clear loop point</li>
@@ -190,6 +212,9 @@
 <li>Fixed a few crashes and issues on tablet when the bottom panel becomes too small with certain scalings</li>
 <li>Fixed files not truncating on Android, meaning they would only grow in size, never shrink</li>
 <li>Fixed notes in instanced patterns loosing their selection in the piano roll when moving them</li>
+</ul>
+<p>Changes:</p>
+<ul>
 <li>Improved overzealous fling gesture on IOS causing views to always scroll a bit after lifting your finger.</li>
 <li>Added a few error messages when failing to open project files (new version, corrupted, etc.)</li>
 <li>Added list of already loaded soundfonts to avoid having to having to constantly open from storage</li>
@@ -202,8 +227,9 @@
 <li>Added ability to use per-note curves on all duty cycle parameters</li>
 <li>Added Chinese translation for real this time, was missing on Windows in 1.0.1 (Thanks FREirc!)</li>
 </ul>
-<h2 id="version-101-hotfix">Version 1.0.1 (Hotfix)</h2>
-<p>Changes/Fixes:</p>
+<p><a href="" id="version-101-hotfix"></a></p>
+<h2 id="version-101">Version 1.0.1</h2>
+<p>Fixes:</p>
 <ul>
 <li>Fixed incorrect automation track value when starting the song exactly on a vertex that is alone in a pattern</li>
 <li>Fixed crash using "select all" in a Sequence automation</li>
@@ -225,6 +251,9 @@
 <li>Fixed wavetable playing at wrong frequency after a changing the table size</li>
 <li>Fixed incorrect envelope delay on custom curves</li>
 <li>Fixed window being not-resizable on MacOS, or having the wrong size when maximized</li>
+</ul>
+<p>Changes:</p>
+<ul>
 <li>Greyed out the preset min/max when not using a preset (i.e. Custom)</li>
 <li>Changed the min/max frequencies for the EQ so that all frequencies are accessible</li>
 <li>Allowed Project Explorer to be almost 40% smaller.</li>
@@ -234,7 +263,7 @@
 </ul>
 <p>Breaking/Behavior changes:</p>
 <ul>
-<li>The file format has changed, meaning file saved with version 1.0.1 will not open in 1.0.0. This usually never happens in a hotfix, but we are in the early days of the app and I will need to make a few exceptions.</li>
+<li>The file format has changed, meaning file saved with version 1.0.1 will not open in 1.0.0. This usually never happens in a minor (last digit) update, but we are in the early days of the app and I will need to make a few exceptions.</li>
 </ul>
 <h2 id="version-100">Version 1.0.0</h2>
 <p>Initial release.</p></div>
