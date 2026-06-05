@@ -149,7 +149,35 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#change-log" class="nav-link">Change Log</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#version-100-feubuary-7th-2026" class="nav-link">Version 1.0.0 (Feubuary 7th 2026)</a>
+            <li class="nav-item" data-bs-level="2"><a href="#version-107" class="nav-link">Version 1.0.7</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#version-106" class="nav-link">Version 1.0.6</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#version-105" class="nav-link">Version 1.0.5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#version-104" class="nav-link">Version 1.0.4</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#version-103" class="nav-link">Version 1.0.3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#version-102" class="nav-link">Version 1.0.2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#version-101" class="nav-link">Version 1.0.1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#version-100" class="nav-link">Version 1.0.0</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -162,7 +190,125 @@
 
 <h1 id="change-log">Change Log</h1>
 <p>Version history / release notes for each release. </p>
-<h2 id="version-100-feubuary-7th-2026">Version 1.0.0 (Feubuary 7th 2026)</h2>
+<h2 id="version-107">Version 1.0.7</h2>
+<p>Fixes:</p>
+<ul>
+<li>Fixed crash doing undo/redo after editing different types of ADSR envelopes</li>
+<li>Fixed crash when simultaneously playing and resizing the pop-up piano on IOS</li>
+<li>Fixed MIDI export not exporting the last channel</li>
+<li>Fixed Delay effect misbehaving when set to 0ms</li>
+</ul>
+<h2 id="version-106">Version 1.0.6</h2>
+<p>Fixes:</p>
+<ul>
+<li>Fixed crash dragging patterns outside of the sequencer</li>
+<li>Fixed crash when moving patterns while song is playing</li>
+<li>Fixed crash using the "Merge Identical Patterns" features while the song is playing</li>
+<li>Fixed crash using arpeggios and hitting the instrument "Kill released notes after" time limit</li>
+<li>Fixed crash when manipulating invalid time signature</li>
+<li>Fixed swapped stereo panning on YMF262</li>
+<li>Fixed possibility of created notes/vertices beyond the last pattern of a song</li>
+<li>Fixed vertex picking in automation editor for vertices near edges of patterns</li>
+</ul>
+<p>Changes:</p>
+<ul>
+<li>Added chinese translation to IOS/MacOS</li>
+</ul>
+<h2 id="version-105">Version 1.0.5</h2>
+<p>Fixes:</p>
+<ul>
+<li>Fixed crash deleting last instrument channel when piano roll is open</li>
+<li>Fixed system language detection</li>
+<li>Fixed icon alignment in some context menus</li>
+</ul>
+<h2 id="version-104">Version 1.0.4</h2>
+<p>Fixes:</p>
+<ul>
+<li>Fixed CTRL+E keyboard (Export Audio) shortcut that was not hooked up </li>
+<li>Fixed playback inconsistencies when copy/pasting generator parameters with envelopes</li>
+<li>Fixed wave tables using multiple waves not immediately restarting at wave #0</li>
+</ul>
+<p>Changes:</p>
+<ul>
+<li>Added ability to display multiple channels as ghost notes</li>
+<li>Added clear undo/redo on save and autosave options on mobile.</li>
+<li>Added support for dragging MIDI files in the window to open them on desktop</li>
+<li>Added support to save some UI settings (splitter positions, expanded sections, snapping options, etc) so they can persist when restarting the app</li>
+<li>Added Portuguese translation (Thanks Sharper and Omega Zero!)</li>
+<li>Upgraded Built-in GeneralUser GS Soundfont to 2.0.3 and improved the quality of looping samples.</li>
+</ul>
+<p><a href="" id="version-103-hotfix"></a></p>
+<h2 id="version-103">Version 1.0.3</h2>
+<p>Fixes:</p>
+<ul>
+<li>Fixed crash moving notes on top of each other introduced in 1.0.2</li>
+</ul>
+<p><a href="" id="version-102-hotfix"></a></p>
+<h2 id="version-102">Version 1.0.2</h2>
+<p>Fixes:</p>
+<ul>
+<li>Fixed crash trying to play notes without instruments (gray)</li>
+<li>Fixed crash playing audio after undo/redo a set/clear loop point</li>
+<li>Fixed crash using soundfonts with zones lacking sample IDs</li>
+<li>Fixed crash pasting between projects</li>
+<li>Fixed more crashes when trying to save on a full disk, read-only folders, etc.</li>
+<li>Fixed a few crashes and issues on tablet when the bottom panel becomes too small with certain scalings</li>
+<li>Fixed files not truncating on Android, meaning they would only grow in size, never shrink</li>
+<li>Fixed notes in instanced patterns loosing their selection in the piano roll when moving them</li>
+</ul>
+<p>Changes:</p>
+<ul>
+<li>Improved overzealous fling gesture on IOS causing views to always scroll a bit after lifting your finger.</li>
+<li>Added a few error messages when failing to open project files (new version, corrupted, etc.)</li>
+<li>Added list of already loaded soundfonts to avoid having to having to constantly open from storage</li>
+<li>Added context menu to solo/mute channels</li>
+<li>Added support for drag and dropping samples in the window to load them (Desktop-only)</li>
+<li>Added keyboard shortcuts to control snapping in Piano Roll and Automation Track editor (Alt+S toggles snap, Alt+1/2/3/4/6/8 changes grid)</li>
+<li>Added a single decimal to generic square duty cycle so we can do 12.5% for example</li>
+<li>Added context menu to type in note parameter values : select notes, right-click in note param editor or long press on the scale on mobile</li>
+<li>Added slide notes in ghost notes</li>
+<li>Added ability to use per-note curves on all duty cycle parameters</li>
+<li>Added Chinese translation for real this time, was missing on Windows in 1.0.1 (Thanks FREirc!)</li>
+</ul>
+<p><a href="" id="version-101-hotfix"></a></p>
+<h2 id="version-101">Version 1.0.1</h2>
+<p>Fixes:</p>
+<ul>
+<li>Fixed incorrect automation track value when starting the song exactly on a vertex that is alone in a pattern</li>
+<li>Fixed crash using "select all" in a Sequence automation</li>
+<li>Fixed crash pasting curves then using undo/redo</li>
+<li>Fixed crash loading some soundfonts</li>
+<li>Fixed crash right-clicking (or long pressing on mobile) past the end of the song on the timeline</li>
+<li>Fixed crash trying to bind "Enter" as a keyboard shortcut</li>
+<li>Fixed crash unloading projects with missing soundfont presets</li>
+<li>Fixed crash when exporting to a full disks, read-only folders, etc. on Windows</li>
+<li>Fixed crash playing after deleting an instrument</li>
+<li>Fixed crash when changing channel instrument when automation tracks are present</li>
+<li>Fixed note parameter curves disappearing when saving in some situations</li>
+<li>Fixed project explorer not refreshing the channel list when deleting from sequencer, could lead to crash</li>
+<li>Fixed wavetable loop/release points not saving</li>
+<li>Fixed missing note sample colors on C notes when on top of viewport</li>
+<li>Fixed first item of context menus not being highlighting immediately after opening</li>
+<li>Fixed Cmd+Q tooltip being displayed on MacOS, will display Ctrl+Q now</li>
+<li>Fixed FDS modulation table changes not being detected sometimes</li>
+<li>Fixed wavetable playing at wrong frequency after a changing the table size</li>
+<li>Fixed incorrect envelope delay on custom curves</li>
+<li>Fixed window being not-resizable on MacOS, or having the wrong size when maximized</li>
+</ul>
+<p>Changes:</p>
+<ul>
+<li>Greyed out the preset min/max when not using a preset (i.e. Custom)</li>
+<li>Changed the min/max frequencies for the EQ so that all frequencies are accessible</li>
+<li>Allowed Project Explorer to be almost 40% smaller.</li>
+<li>Changed default follow mode position to 50%</li>
+<li>Added a shake to the sound font notification so it draws more attention</li>
+<li>Added French and Chinese translations (thanks Lancel0t and FREirc!)</li>
+</ul>
+<p>Breaking/Behavior changes:</p>
+<ul>
+<li>The file format has changed, meaning file saved with version 1.0.1 will not open in 1.0.0. This usually never happens in a minor (last digit) update, but we are in the early days of the app and I will need to make a few exceptions.</li>
+</ul>
+<h2 id="version-100">Version 1.0.0</h2>
 <p>Initial release.</p></div>
             </div>
         </div>

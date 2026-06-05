@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <meta name="description" content="The Automation Track Editor is where you edit vertices of automation tracks. Automation tracks are special tracks that control the value of a single parameter, typically a pameter belonging to an instrument or effect of the parent channel, over the course of a song.">
+        <meta name="description" content="The Automation Track Editor is where you edit vertices of automation tracks. Automation tracks are special tracks that control the value of a single parameter, typically one belonging to an instrument or effect of the parent channel over the course of a song.">
         
         
         
@@ -190,27 +190,28 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="overview">Overview</h1>
-<p>The <strong>Automation Track Editor</strong> is where you edit vertices of automation tracks. Automation tracks are special tracks that control the value of a single parameter, typically a pameter belonging to an instrument or effect of the parent channel, over the course of a song.</p>
+<p>The <strong>Automation Track Editor</strong> is where you edit vertices of automation tracks. Automation tracks are special tracks that control the value of a single parameter, typically one belonging to an instrument or effect of the parent channel over the course of a song.</p>
 <!--
 > TODO : Link to relevant PE section!
+
+To learn how to create an automation track for a given parameter, please refer to [this section](instruments.md#Automating-parameters).
 -->
 
-<p>To learn how to create an automation track for a given parameter, please refer to <a href="projectexplorer.md">this section</a>.</p>
 <p>The automation track editor is made of a few components:</p>
 <ul>
-<li>On the left is the <strong>Scale</strong> which shows the horizontal grid values</li>
-<li>On the top is the <strong>Timeline</strong> which display the beats in a <code>Bar.Beat</code> format and the pattern names/colors.</li>
-<li>In the middle is the editor itself where curves are edited.</li>
-<li>In the top-right corner is the <strong>Floating Toolbar</strong> which contains various snapping and view options.</li>
+<li>On the left is the <strong>Scale</strong>, which shows the horizontal grid values.</li>
+<li>On the top is the <strong>Timeline</strong>, which display the beats in a <code>Bar.Beat</code> format and the pattern names/colors.</li>
+<li>In the middle is the editor itself where curves are edited, and...</li>
+<li>In the top-right corner is the <strong>Floating Toolbar</strong>, which contains various snapping and view options.</li>
 </ul>
 <p><img alt="" src="../images/AutomationEditor.png#center" /></p>
 <h1 id="editing-automation-curves">Editing automation curves</h1>
 <p>This next section will focus on curve editing. </p>
-<p>Curves are either smooth (interpolated) or not. Uninterpolated curves will switch values abruptly which may be desirable for some types of parameters. As of version 1.0, there is no way to mix smooth and non-smooth segments.</p>
-<p>As seen in the image above, vertices belonging to the same pattern will be connected by a solid line, while vertices between different patterns wont show a line. This is simply a visual cue to help you differenciate the lines you have intentionally drawn, and the ones the app is implicitely adding between patterns.</p>
+<p>Curves are either smooth (interpolated) or not. Uninterpolated curves will switch values abruptly, which may be desirable for some types of parameters. As of version 1.0, there is no way to mix smooth and non-smooth segments.</p>
+<p>As seen in the image above, vertices belonging to the same pattern will be connected by a solid line, while vertices between different patterns won't show a line. This is simply a visual cue to help you differentiate the lines you have intentionally drawn, and the ones the app is implicitly adding between patterns.</p>
 <h2 id="adding-deleting-vertices">Adding &amp; deleting vertices</h2>
-<p>Adding vertices is done with a single click. On desktop, you can keep holding the mouse button to fine tune its position until you release. </p>
-<p>Deleting a single vertex can be done by double-clicking. To deleting the entire selection simply press DEL on desktop, or use the Delete (X) button on the toolbar on mobile.</p>
+<p>Adding vertices is done with a single click. On desktop, you can keep holding the mouse button to fine-tune its position until you release. </p>
+<p>Deleting a single vertex can be done by double-clicking. To deleting the entire selection simply press <strong>Del</strong> on desktop, or use the <strong>Delete (X)</strong> button on the toolbar on mobile.</p>
 <h2 id="selecting-vertices">Selecting vertices</h2>
 <p>Selected vertices appear white and can be modified as a group.</p>
 <ul>
@@ -220,8 +221,8 @@
 <p>You can also select a time range of vertices by doing a selection from the timeline, which is the row with the bar/beat numbers at the top.</p>
 <p>This is very similar to how selection works in the <a href="../pianoroll/#selecting-notes">piano roll</a>. </p>
 <h2 id="moving-vertices">Moving vertices</h2>
-<p>To move vertices simple click and drag. When starting a drag from a selected vertex, all the selected vertices will together.</p>
-<p>Desktop can also move vertices using the arrow keys. Pressing up/down will move them by 1 major grid increment. Pressing left/right will move by the amount of the currently selected snapping precision.</p>
+<p>To move vertices, simply click and drag. When starting a drag from a selected vertex, all the selected vertices will move together.</p>
+<p>On desktop, you can also move vertices using the arrow keys. Pressing up/down will move them by 1 major grid increment. Pressing left/right will move by the amount of snapping precision currently selected.</p>
 <h2 id="duplicating-vertices-desktop-only">Duplicating vertices (desktop only)</h2>
 <p>While dragging vertices, you can duplicate the current selection by pressing and holding <strong>Ctrl</strong>. </p>
 <h2 id="copy-pasting-vertices">Copy &amp; pasting vertices</h2>
@@ -229,7 +230,7 @@
 <h2 id="snapping-to-beats">Snapping to beats</h2>
 <p>This works exactly as in the <a href="../pianoroll/#snapping-to-beats">piano roll</a>.</p>
 <h2 id="changing-the-zoom-level">Changing the zoom level</h2>
-<p>This works exactly as in the <a href="../pianoroll/#changing-the-zoom-level">piano roll</a>, the only difference being that to zoom vertically, you need to mouse wheel (or pinch using trackpad controls) on the left side scale.</p></div>
+<p>This works exactly as in the <a href="../pianoroll/#changing-the-zoom-level">piano roll</a>. The only difference is that to zoom vertically, you need to mouse wheel (or pinch using trackpad controls) on the scale to the left.</p></div>
             </div>
         </div>
 
