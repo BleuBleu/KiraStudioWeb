@@ -10,7 +10,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Editing Notes in the Piano Roll - KiraStudio Documentation</title>
+        <title>Piano Roll - KiraStudio Documentation</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -53,31 +53,31 @@
 </li>
                                     
 <li>
-    <a href="../sequencer/" class="dropdown-item">Editing Channels, Tracks & Patterns</a>
+    <a href="../sequencer/" class="dropdown-item">Channels, Tracks and Patterns</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Editing Notes in the Piano Roll</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Piano Roll</a>
 </li>
                                     
 <li>
-    <a href="../autotrack/" class="dropdown-item">Editing Automation Tracks</a>
+    <a href="../autotrack/" class="dropdown-item">Automation Tracks</a>
 </li>
                                     
 <li>
-    <a href="../instruments/" class="dropdown-item">Editing Instruments, Effects & Automating Parameters</a>
+    <a href="../projectexplorer/" class="dropdown-item">Instruments, Effects and Automating Parameters</a>
 </li>
                                     
 <li>
-    <a href="../envelopes/" class="dropdown-item">Editing ADSR Envelopes, Custom Curves & Sequences</a>
+    <a href="../envelopes/" class="dropdown-item">ADSR Envelopes, Custom Curves and Sequences</a>
 </li>
                                     
 <li>
-    <a href="../samples/" class="dropdown-item">Editing Samples</a>
+    <a href="../samples/" class="dropdown-item">Samples Workflow</a>
 </li>
                                     
 <li>
-    <a href="../wavetables/" class="dropdown-item">Editing WaveTables</a>
+    <a href="../wavetables/" class="dropdown-item">WaveTables</a>
 </li>
                                     
 <li>
@@ -89,11 +89,19 @@
 </li>
                                     
 <li>
+    <a href="../config/" class="dropdown-item">Configuration</a>
+</li>
+                                    
+<li>
+    <a href="../export/" class="dropdown-item">Export</a>
+</li>
+                                    
+<li>
     <a href="../troubleshooting/" class="dropdown-item">Troubleshooting</a>
 </li>
                                     
 <li>
-    <a href="../thanks/" class="dropdown-item">Acknowledgements & Licences</a>
+    <a href="../thanks/" class="dropdown-item">Acknowledgements and Licences</a>
 </li>
                                     
 <li>
@@ -147,14 +155,14 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#overview" class="nav-link">Overview</a>
+            <li class="nav-item" data-bs-level="1"><a href="#piano-roll" class="nav-link">Piano Roll</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
             <li class="nav-item" data-bs-level="1"><a href="#editing-notes" class="nav-link">Editing Notes</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#adding-deleting-notes" class="nav-link">Adding &amp; deleting notes</a>
+            <li class="nav-item" data-bs-level="2"><a href="#adding-and-deleting-notes" class="nav-link">Adding and deleting notes</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -162,7 +170,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#moving-transposing-resizing-notes" class="nav-link">Moving, transposing &amp; resizing notes</a>
+            <li class="nav-item" data-bs-level="2"><a href="#moving-transposing-and-resizing-notes" class="nav-link">Moving, transposing and resizing notes</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -170,7 +178,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#copy-pasting-notes" class="nav-link">Copy &amp; pasting notes</a>
+            <li class="nav-item" data-bs-level="2"><a href="#copy-and-pasting-notes" class="nav-link">Copy and pasting notes</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -194,11 +202,15 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#release-modes" class="nav-link">Release modes</a>
+            <li class="nav-item" data-bs-level="2"><a href="#manual-release" class="nav-link">Manual release</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#ghost-notes" class="nav-link">Ghost notes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#scales" class="nav-link">Scales</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -230,7 +242,7 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="overview">Overview</h1>
+<h1 id="piano-roll">Piano Roll</h1>
 <p>The <strong>Piano Roll</strong> is where you enter notes inside of patterns, and likely where you will be spending most of your time in the app.</p>
 <p>The piano roll is made of a few components:</p>
 <ul>
@@ -244,7 +256,7 @@
 <p>Unlike other apps like FL Studio, the piano roll does not only show you the notes of the current pattern in a vacuum, it displays a continuous view of a track. Notes can be freely moved from one pattern to another. Notes can extend far beyond the end of a pattern, but ultimately they belong to the pattern where they start from.</p>
 <h1 id="editing-notes">Editing Notes</h1>
 <p>We will focus our attention to the center of the piano roll where all the notes lie.</p>
-<h2 id="adding-deleting-notes">Adding &amp; deleting notes</h2>
+<h2 id="adding-and-deleting-notes">Adding and deleting notes</h2>
 <p>To add a new note, simply click on an empty space.</p>
 <p>On desktop, you can choose between 2 editing modes in the floating toolbar. Both will create a note of the last duration used, they only differ on what happens when you move afterwards, while still holding the mouse button.</p>
 <ul>
@@ -255,15 +267,15 @@
 <h2 id="selecting-notes">Selecting notes</h2>
 <p>Selected notes have a white outline around them and can be modified as a group.</p>
 <ul>
-<li>On desktop, you can select notes by right-clicking in the background and dragging to draw a rectangle. </li>
+<li>On desktop, you can select notes by right-clicking in the background and dragging to draw a rectangle. You can also add to the existing selecting by holding <strong>Ctrl</strong> while performing a selection.</li>
 <li>On mobile, you can long-press in the background and start drawing a rectangle once the pulsating circle appears. </li>
 </ul>
 <p>You can also select a time range of notes by doing a selection from the timeline, which is the row with the bar/beat numbers at the top.</p>
 <!--
-> TODO : Animated GIF, desktop/mobile.
+TODO : Animated GIF would be nice here, desktop + mobile.
 -->
 
-<h2 id="moving-transposing-resizing-notes">Moving, transposing &amp; resizing notes</h2>
+<h2 id="moving-transposing-and-resizing-notes">Moving, transposing and resizing notes</h2>
 <p>To move notes, simply click and drag. When starting a drag from a selected note, all the selected notes will move together.</p>
 <ul>
 <li>On desktop, notes can be resized by grabbing their left or right side edge and dragging. Desktop can also move notes using the arrow keys. Pressing up/down will transpose by 1 semitone, or 1 octave if <strong>Ctrl</strong> is held at the same time. Pressing left/right will move by the amount of the currently selected snapping precision.</li>
@@ -278,7 +290,7 @@
 <p><img alt="" src="../images/DuplicateNotesMobile.gif#center" /></p>
 </div>
 </div>
-<h2 id="copy-pasting-notes">Copy &amp; pasting notes</h2>
+<h2 id="copy-and-pasting-notes">Copy and pasting notes</h2>
 <p>An alternative way of duplicating notes is to use copy &amp; paste. This provides more flexibility, as it allows copy and pasting notes between tracks.</p>
 <ol>
 <li>Copy notes to the clipboard by making a selection and pressing <strong>Ctrl+C</strong>, or by using the toolbar button.</li>
@@ -289,11 +301,7 @@
 <p>Snapping to beats (i.e. vertical grid) can be toggled from the floating toolbar on the right, and the precision can be adjusted. </p>
 <p>The snapping precision is expressed in beats. This mean that using a 4/4 time signature, for example, snapping to 1/4 Beat snaps to 1/16th notes.</p>
 <h2 id="changing-the-zoom-level">Changing the zoom level</h2>
-<!--
-> TODO : Check link to trackpad controls!
--->
-
-<p>On desktop, like in most views of the app, zooming horizontally is done using the mouse wheel, or a pinch gesture when using <a href="config.md">trackpad controls</a>. To zoom in vertically, simply use the mousewheel (or pinch on trackpad) on the vertical piano on the left. </p>
+<p>On desktop, like in most views of the app, zooming horizontally is done using the mouse wheel, or a pinch gesture when using <a href="../config/#input">trackpad controls</a>. To zoom in vertically, simply use the mousewheel (or pinch on trackpad) on the vertical piano on the left. </p>
 <p>On mobile, all zooming is done with a pinch gesture. </p>
 <h2 id="slide-notes">Slide notes</h2>
 <p>Slide notes are notes that start at a given pitch (the pitch of the note) and slowly change to hit a target pitch, which is represented by where the triangle ends.</p>
@@ -308,8 +316,8 @@
 <p>The frequency and period linear modes will display a convex or concave slide note. Please note that this is simply a rough visual cue and does not accurately represent the pitch of the note that will actually play. </p>
 <p>The target and duration of a slide note can be modified by dragging the <strong>Four-Arrows Icon</strong> that will appear if a slide note is present. </p>
 <ul>
-<li>When using the <a href="#release-modes">note end release mode</a>, slide notes can extend beyond the release of the note, as sound can still be heard during the release. </li>
-<li>When using the <a href="#release-modes">manual release mode</a>, slide notes will be required to end exactly at the end of the note, as this represent a hard-kill.</li>
+<li>When using the <a href="../projectexplorer/#release-modes">note end release mode</a>, slide notes can extend beyond the release of the note, as sound can still be heard during the release. </li>
+<li>When using the <a href="../projectexplorer/#release-modes">manual release mode</a>, slide notes will be required to end exactly at the end of the note, as this represent a hard-kill.</li>
 </ul>
 <h2 id="disabling-attack">Disabling attack</h2>
 <p>By default notes have an attack, which means they will restart their envelopes from the beginning. </p>
@@ -326,21 +334,17 @@
 <p><strong>Arpeggio Chords</strong> take the notes of a chord and arpeggiate it rapidly, in a pre-defined sequence. This option is mostly there to mimic a trick often used in chiptune songs, where composers would play notes of a chords in quick succession to make up for the lack of polyphony on old hardware.</p>
 <p>To enable arpeggio chords, simply select the notes of a chord, right-click on any selected note (long-press on mobile) and select <strong>Toggle Selection Arpeggio Chords</strong> from the contextual menu. Visually, notes with arpeggio chords enabled will be drawn with a stripe pattern.</p>
 <p><img alt="" src="../images/ArpeggioChord.png#center" /></p>
-<p>The speed and order in which individual notes of an arpeggio is played is controlled in the channel settings, under the <strong>Arpeggio</strong> tab.</p>
-<p><img alt="" src="../images/ArpeggioSettings.png#center" /></p>
-<!--
-> TODO : Do we explain the settings here? Or in PE page?
--->
-
-<h2 id="release-modes">Release modes</h2>
-<!--
-> TODO : Explain both modes, with images.
--->
-
+<p>The speed and order in which individual notes of an arpeggio is played is controlled in the <a href="../projectexplorer/#instrument-channels">channel settings</a>.</p>
+<h2 id="manual-release">Manual release</h2>
+<p>When a channel uses the <a href="../projectexplorer/#release-modes">Manual Release Mode</a>, you can send the location of the release, which is represented by a dot along the note. To toggle the manual release, right-click on any selected note (long-press on mobile) and select <strong>Toggle Manual Release</strong>.</p>
+<p>Notes with a manual release will show an extra round handle allowing you to move the release along the note.</p>
 <h2 id="ghost-notes">Ghost notes</h2>
 <p><strong>Ghost Notes</strong> are a visual tool allowing you to see a semi-transparent version of the notes of a channel while editing another. This can be useful to align notes across several channels. </p>
 <p><img alt="" src="../images/GhostNotes.png#center" /></p>
-<p>As of version 1.0, the feature is quite primitive. Ghost notes can be enabled for a single channel, or for all channels at once using the option from the floating toolbar.</p>
+<p>You can select which other channels you want to see as ghost notes by checking them in the menu from the floating toolbar.</p>
+<h2 id="scales">Scales</h2>
+<p>By default, the piano roll highlights the white and black keys, which is the C major scale. You can change the type of scale as well as the root note from the floating toolbar. This setting is per-track, so different tracks may choose to highligt different scales.</p>
+<p>As of 1.x, the app supports the following scales: Major (Ionian), Natural Minor (Aeolian), Harmonic Minor, Melodic Minor (Jazz Minor, Dorian, Phrygian, Lydian, Mixolydian, Major Pentatonic, Minor Pentatonic, Blues and Whole Tone.</p>
 <h1 id="note-parameters">Note Parameters</h1>
 <p>The note parameter editor can be opening using the option in the floating toolbar. This panel allows you to edit additional properties of notes, such as note velocity, stereo panning, etc.</p>
 <p><img alt="" src="../images/NoteParamEditor.png#center" /></p>
@@ -359,10 +363,11 @@
 <li><strong>Curve</strong> : a value that can change abrutly.</li>
 <li><strong>Curve (Interpolated)</strong> : a value that changes smoothly</li>
 </ul>
-<p>Once a note is set to either curve modes, you can edit its curve by enabling the <strong>Curve Edit Mode</strong> from the floating toolbar. As of version 1.0, this feature is quite primitive and can only be enabled when a single note is selected.</p>
+<p>Once a note is set to either curve modes, you can edit its curve by enabling the <strong>Curve Edit Mode</strong> from the floating toolbar.</p>
 <p>When curve edit mode is active, a single-click on the curve will add a new vertex, and double-click with delete and existing one.  The first and last vertex cannot be deleted and the last vertex is currently required to be at the end of the note duration. </p>
 <p>Vertices can be moved by dragging and will respect any snapping setting.</p>
-<p><img alt="" src="../images/NoteParamCurve.gif#center" /></p></div>
+<p><img alt="" src="../images/NoteParamCurve.gif#center" /></p>
+<p>When multiple notes are selected, any modification to a curve will cause all other selected notes' curves to become identical to the one being editing.</p></div>
             </div>
         </div>
 

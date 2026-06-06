@@ -5,12 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <meta name="description" content="Coming soon.">
+        <meta name="description" content="Samples are little bits of audio that can be loaded in the app, assigned to keys of the piano and played when certain notes of the piano are triggered.">
         
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Editing Samples - KiraStudio Documentation</title>
+        <title>Samples Workflow - KiraStudio Documentation</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -53,31 +53,31 @@
 </li>
                                     
 <li>
-    <a href="../sequencer/" class="dropdown-item">Editing Channels, Tracks & Patterns</a>
+    <a href="../sequencer/" class="dropdown-item">Channels, Tracks and Patterns</a>
 </li>
                                     
 <li>
-    <a href="../pianoroll/" class="dropdown-item">Editing Notes in the Piano Roll</a>
+    <a href="../pianoroll/" class="dropdown-item">Piano Roll</a>
 </li>
                                     
 <li>
-    <a href="../autotrack/" class="dropdown-item">Editing Automation Tracks</a>
+    <a href="../autotrack/" class="dropdown-item">Automation Tracks</a>
 </li>
                                     
 <li>
-    <a href="../instruments/" class="dropdown-item">Editing Instruments, Effects & Automating Parameters</a>
+    <a href="../projectexplorer/" class="dropdown-item">Instruments, Effects and Automating Parameters</a>
 </li>
                                     
 <li>
-    <a href="../envelopes/" class="dropdown-item">Editing ADSR Envelopes, Custom Curves & Sequences</a>
+    <a href="../envelopes/" class="dropdown-item">ADSR Envelopes, Custom Curves and Sequences</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Editing Samples</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Samples Workflow</a>
 </li>
                                     
 <li>
-    <a href="../wavetables/" class="dropdown-item">Editing WaveTables</a>
+    <a href="../wavetables/" class="dropdown-item">WaveTables</a>
 </li>
                                     
 <li>
@@ -89,11 +89,19 @@
 </li>
                                     
 <li>
+    <a href="../config/" class="dropdown-item">Configuration</a>
+</li>
+                                    
+<li>
+    <a href="../export/" class="dropdown-item">Export</a>
+</li>
+                                    
+<li>
     <a href="../troubleshooting/" class="dropdown-item">Troubleshooting</a>
 </li>
                                     
 <li>
-    <a href="../thanks/" class="dropdown-item">Acknowledgements & Licences</a>
+    <a href="../thanks/" class="dropdown-item">Acknowledgements and Licences</a>
 </li>
                                     
 <li>
@@ -147,8 +155,24 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#overview" class="nav-link">Overview</a>
+            <li class="nav-item" data-bs-level="1"><a href="#working-with-samples" class="nav-link">Working with Samples</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#importing-samples" class="nav-link">Importing Samples</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#sample-parameters" class="nav-link">Sample Parameters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#sample-editor" class="nav-link">Sample Editor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#sample-map-editor" class="nav-link">Sample Map Editor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -156,8 +180,94 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="overview">Overview</h1>
-<p>Coming soon.</p></div>
+<h1 id="working-with-samples">Working with Samples</h1>
+<p>Samples are little bits of audio that can be loaded in the app, assigned to keys of the piano and played when certain notes of the piano are triggered.</p>
+<p>They are well suited for percussion and sampled instruments in general, but they were not designed for things like vocals in mind. Vocal/audio tracks will be coming in future version. </p>
+<p>That being said, as of version 1.x, samples are the only way to load external audio in the app.</p>
+<p>The general sample workflow is:</p>
+<ol>
+<li>Import samples in an instrument and optionally set their target formats.</li>
+<li>Create a generator that supports the format of sample you are targeting.</li>
+<li>Edit the Sample Map of that generator and assigned the samples to keys of the piano.</li>
+<li>Add notes in the piano roll to play those samples.</li>
+</ol>
+<p>Generators that support samples will have a Sample Map that can be edited. These generator will usually support one of more sample formats. Samples have a "Source Format", the format of the file you imported, and a "Target Format" that can be set. The app will perform any required conversion when setting the Target Format. Some formats, notably the ones related to retro gaming hardware, will incur a quality loss during conversion. </p>
+<p>Some generators will allow you to use a sample over multiple notes of the piano, automatically shifting the pitch relative to the root note as needed. This is similar to what SoundFonts do and allows you to cover a large range of the piano with just a handful of samples. </p>
+<p>Here is the current list of sample generators, the format(s) they support and if they support pitch-shifting:</p>
+<table>
+<thead>
+<tr>
+<th>Generator</th>
+<th>Format(s)</th>
+<th>Pitch-Shifting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generic PCM Sampler</td>
+<td>PCM (32-Bit Float)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>NES 1-Bit DPCM</td>
+<td>DPCM (1-Bit)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>NES 7-bit PCM</td>
+<td>PCM (7-Bit)</td>
+<td>Yes, may sound out of tune</td>
+</tr>
+<tr>
+<td>YM2610 Sample</td>
+<td>ADPCM A or B</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>The 32-Bit PCM sample format also supports setting a loop point on samples, allowing you to artificially extend samples similar to what SoundFonts so. </p>
+<h2 id="importing-samples">Importing Samples</h2>
+<p>Samples exists as part of an instrument, and are used by its generator(s). Navigate the <a href="../projectexplorer/#editing-instruments">Project Explorer</a> to an instrument, by either going to that instrument directly, or clicking a channel using this instrument. The list of sample will be located below the list of generators. Samples can be previewed by pressing the little "Play" button next to their name.</p>
+<p>Please note that in version 1.0, samples were at the project level. This was changed in 1.1 to moved them on the instrument to make instrument sharing easier. Older projects are automatically migrated.</p>
+<p><img alt="" src="../images/InstrumentSamples.png#center" /></p>
+<p>To import a new sample, simply press the <strong>(+) Add Sample(s)</strong> button and choose the file(s) to import. Alternatively, on desktop, you can simply drag files on the KiraStudio window to load them on the currently selected instrument.</p>
+<p>The app currently supports the following file formats:</p>
+<ul>
+<li>Wave files (.wav)</li>
+<li>1-Bit DPCM Samples (.dmc)</li>
+<li>ADPCM-A Samples (.rom)</li>
+</ul>
+<h2 id="sample-parameters">Sample Parameters</h2>
+<p>Samples have a few high-level parameters than can be edited directly in the Project Explorer by expanding their button.</p>
+<p><img alt="" src="../images/SampleParams.png#center" /></p>
+<p>Besides their name and color, you can change the Target Format and perform minor volume adjustments. For more in-depth editing, pressing the Edit button will open the Sample Editor.</p>
+<h2 id="sample-editor">Sample Editor</h2>
+<p>The Sample Editor allows to perform light editing of samples such as minor volume adjustment, pitch shifting, trimming and setting loop points. It is not a full fledged audio editor like Audacity. That being said, its capabilities will hopefully grow in the future.</p>
+<p><img alt="" src="../images/SampleEditor.png#center" /></p>
+<p>The sample workflow in KiraStudio is lossless in the sense that the source sample is always left unmodified and any parameter you change simply regenerates the target sample. The target sample is the sample you will ultimately hear in your song. </p>
+<p>When modifications are made, the source sample will appear gray, and the target sample will be colored. In the screenshot above, the user pitched down the sample by 50 cents, and the target sample now appears out of sync with the source sample.</p>
+<p>The floating toolbar on the left contains a few of the same parameters present in the Project Explorer, notably the Target Format and volume adjustment, but it also adds a few more.</p>
+<ul>
+<li><strong>Fine Tuning</strong> : Simple fine tuning adjustment, in cents, for more substantial adjustment, an external app is recommended.</li>
+<li><strong>Normalize</strong> : Adjust the overall volume of the sample based on the detected peak amplitude.</li>
+<li><strong>Trimming</strong> : Enabled trimming of the sample, useful to remove unused parts</li>
+<li><strong>Loop Point</strong> : Enables loop point, only available on certain target formats.</li>
+<li><strong>Show Loop Stitch</strong> : When enabled, a close-up of the loop stitch will be displayed to help make the looping section seamless.</li>
+</ul>
+<p>Below these parameters will be format-specific setting for the source/target format. </p>
+<p>Samples can be trimmed to remove undesired parts. Additionally, some sample formats will allow setting a loop point. This is similar to what you would find in a SoundFont editor. </p>
+<p>In the example below, the C5 note of a violin is trimmed to only keep the attack and a loop point is set so that it keeps playing the sustained part indefinitely. Notice the close-up of the stitch in the bottom left corner. When trimming is enabled, the looping section is between the loop point and the end trim point, otherwise between the loop point and the end of the sample.</p>
+<p><img alt="" src="../images/SampleTrimLoopStitch.png#center" /></p>
+<p>Note that the preview buttons in the Sample Editor do not preview the actual looping part, just the raw sample. To hear the proper loop in context, you should play the instrument itself with pop-up piano or MIDI controller.</p>
+<h2 id="sample-map-editor">Sample Map Editor</h2>
+<p>Once you have some samples loaded, the final step is to assign them to keys of the piano via a Sample Map. The sample map editor can be opened by pressing the "Edit Sample Map..." button any generator that supports samples. </p>
+<p>The sample map editor is pretty straightforward. The floating toolbar on the top right allows you to pick a sample, and clicking anywhere on a free space in the background will assign that sample to the corresponding piano key. Just like the other editors, you can drag things to move them, make a selection with right click, delete things, etc.</p>
+<p><img alt="" src="../images/SampleMapEditor.png#center" /></p>
+<p>Some generators, notably the PCM sampler will allow you to extend samples over a range of notes and handle the pitch-shifting from the root note automatically. Simply click on a sample, and drag the 2 round arrow to set the low/high range that the sample should cover. In the example above, 3 octaves of bass are covered with only 3 samples.</p>
+<p>Some sample types, such as 1-Bit DPCM, will have some extra property on each entry in the map. These will provide additional information to the generator that will use them and can be modified for the selected entry/entries.</p>
+<p><img alt="" src="../images/SampleMapEntryParams.png#center" /></p>
+<p>Finally, when samples are correctly assigned, the keys of the piano, both in the piano roll and the pop-up piano, will be tinted by the color of the samples as an extra visual cue to show where the valid notes are.</p>
+<p><img alt="" src="../images/SampleColors.png#center" /></p></div>
             </div>
         </div>
 

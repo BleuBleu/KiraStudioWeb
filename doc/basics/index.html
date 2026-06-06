@@ -51,31 +51,31 @@
 </li>
                                     
 <li>
-    <a href="../sequencer/" class="dropdown-item">Editing Channels, Tracks & Patterns</a>
+    <a href="../sequencer/" class="dropdown-item">Channels, Tracks and Patterns</a>
 </li>
                                     
 <li>
-    <a href="../pianoroll/" class="dropdown-item">Editing Notes in the Piano Roll</a>
+    <a href="../pianoroll/" class="dropdown-item">Piano Roll</a>
 </li>
                                     
 <li>
-    <a href="../autotrack/" class="dropdown-item">Editing Automation Tracks</a>
+    <a href="../autotrack/" class="dropdown-item">Automation Tracks</a>
 </li>
                                     
 <li>
-    <a href="../instruments/" class="dropdown-item">Editing Instruments, Effects & Automating Parameters</a>
+    <a href="../projectexplorer/" class="dropdown-item">Instruments, Effects and Automating Parameters</a>
 </li>
                                     
 <li>
-    <a href="../envelopes/" class="dropdown-item">Editing ADSR Envelopes, Custom Curves & Sequences</a>
+    <a href="../envelopes/" class="dropdown-item">ADSR Envelopes, Custom Curves and Sequences</a>
 </li>
                                     
 <li>
-    <a href="../samples/" class="dropdown-item">Editing Samples</a>
+    <a href="../samples/" class="dropdown-item">Samples Workflow</a>
 </li>
                                     
 <li>
-    <a href="../wavetables/" class="dropdown-item">Editing WaveTables</a>
+    <a href="../wavetables/" class="dropdown-item">WaveTables</a>
 </li>
                                     
 <li>
@@ -87,11 +87,19 @@
 </li>
                                     
 <li>
+    <a href="../config/" class="dropdown-item">Configuration</a>
+</li>
+                                    
+<li>
+    <a href="../export/" class="dropdown-item">Export</a>
+</li>
+                                    
+<li>
     <a href="../troubleshooting/" class="dropdown-item">Troubleshooting</a>
 </li>
                                     
 <li>
-    <a href="../thanks/" class="dropdown-item">Acknowledgements & Licences</a>
+    <a href="../thanks/" class="dropdown-item">Acknowledgements and Licences</a>
 </li>
                                     
 <li>
@@ -162,6 +170,24 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#undo-redo" class="nav-link">Undo / Redo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#sliders" class="nav-link">Sliders</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#precision-scrolling" class="nav-link">Precision scrolling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#text-input" class="nav-link">Text input</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
@@ -187,7 +213,7 @@
 </ul>
 </li>
 </ul>
-<p>If you are working on a trackpad, please check out how to enable <a href="config.md#input-configuration">Trackpad controls</a> in the configuration dialog.</p>
+<p>If you are working on a trackpad, please check out how to enable <a href="../config/#input">Trackpad controls</a> in the configuration dialog.</p>
 <h2 id="basic-mobile-controls">Basic Mobile Controls</h2>
 <p>On mobile, there are 4 main gestures used:</p>
 <ul>
@@ -209,16 +235,12 @@
 <p>Below the Sequencer are various views such as the <strong><a href="../pianoroll/">Piano Roll</a></strong>, <strong><a href="../autotrack/">Automation Track Editor</a></strong>, various <strong><a href="../envelopes/">Curve Editors</a></strong> and so on. On mobile, these views are full-screen and can be opened and closed as needed. </p>
 </li>
 <li>
-<p>The right-side panel is the <strong><a href="../instruments/">Project Explorer</a></strong>. This panel allows for navigating through the various objects in your projects (songs, instruments, effects, etc). It also enables the editing and automating of parameters for these objects. On mobile, this panel retracts and can be opened by either pressing the <strong>Project</strong> button in the toolbar or by double-tapping a channel in the Sequencer. </p>
+<p>The right-side panel is the <strong><a href="../projectexplorer/">Project Explorer</a></strong>. This panel allows for navigating through the various objects in your projects (songs, instruments, effects, etc). It also enables the editing and automating of parameters for these objects. On mobile, this panel retracts and can be opened by either pressing the <strong>Project</strong> button in the toolbar or by double-tapping a channel in the Sequencer. </p>
 </li>
 <li>
 <p>The <strong>Pop-up Piano</strong> is at the very bottom. This piano allows the previewing of instruments associated with the <strong>Active Channel</strong>, which is the highlighted channel in the Sequencer. This piano can be toggled using the <strong>Piano</strong> button in the toolbar.</p>
 </li>
 </ul>
-<!--
-- TODO : Tablet screenshot + crop titlebar + write name of things on images.
--->
-
 <div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Desktop</label><div class="tabbed-content">
 <p><img alt="" src="../images/MainWindowDesktop.png#center" /></p>
 </div>
@@ -226,14 +248,26 @@
 <p><img alt="" src="../images/MainWindowMobile.png#center" /></p>
 </div>
 <input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Tablet</label><div class="tabbed-content">
-<p><img alt="" src="../images/MainWindowMobile.png#center" /></p>
+<p><img alt="" src="../images/MainWindowTablet.png#center" /></p>
 </div>
 </div>
-<!--
-- TODO : Mention text editing on desktop somewhere.
-- TODO : Talk about sliders here, desktop + mobile
-- TODO : Undo redo, autosaves, etc.
---></div>
+<h1 id="undo-redo">Undo / Redo</h1>
+<p>The app has full support for undo/redo, so you can edit confidently knowing you can always go back to an earlier point in time. </p>
+<p>Undo/redo is accessed through the 2 arrows buttons on the toolbar, or using <strong>Ctrl+Z</strong> for undo and <strong>Ctrl+Y</strong> for redo (or alternatively <strong>Ctrl+Shift+Z</strong>). </p>
+<p>By default, the app clears the undo/redo stack when saving a project. This is done to save memory, but cant be disabled in the <a href="../config/#general">settings</a> of the app. </p>
+<h1 id="sliders">Sliders</h1>
+<p>Unlike other audio apps that like to use various knobs for numeric parameters, KiraStudio relies entirely on sliders. You will find them all over the app and they are also through them that you will <a href="../projectexplorer/#automating-parameters">automate various parameters</a>. </p>
+<p>These sliders have a few features that may not be immediately apparent.</p>
+<h2 id="precision-scrolling">Precision scrolling</h2>
+<p>To dial-in a value more accurately, you can switch to <strong>precision scrolling</strong>. On desktop, this is achieved by holding <strong>Ctrl</strong> while changing the value. </p>
+<p>On mobile, this is done by moving your finger above or below the axis or a slider. </p>
+<p>In the animation below, you can see that at first, the slider moves 1:1 with the finger, but that as soon as the finger moves outside of the slider (above or below), the app switches to precision scrolling.</p>
+<p><img alt="" src="../images/PrecisionScroll.gif#center" /></p>
+<h2 id="text-input">Text input</h2>
+<p>On desktop, you type-in values in widgets like textboxes and sliders. For textbox, just clicking on them with switch to keyboard input, but on sliders you will need to <strong>Double-Click</strong>. </p>
+<p>Moreover, using the <strong>Tab</strong> key will always just to the next widget supporting text input in the current view. If you are not already inputting text, it will jump to the first widget that can receive text. </p>
+<p>This allows quickly jumping between sliders as shown in the animation below.</p>
+<p><img alt="" src="../images/TextInputTab.gif#center" /></p></div>
             </div>
         </div>
 

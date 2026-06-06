@@ -5,12 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <meta name="description" content="Coming soon.">
+        <meta name="description" content="Wavetables are user-defined oscillator. They traditionnaly consist of a single, user-drawn, rapidly looping waveform that repeats at the freqency of the playing note.">
         
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Editing WaveTables - KiraStudio Documentation</title>
+        <title>WaveTables - KiraStudio Documentation</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -53,31 +53,31 @@
 </li>
                                     
 <li>
-    <a href="../sequencer/" class="dropdown-item">Editing Channels, Tracks & Patterns</a>
+    <a href="../sequencer/" class="dropdown-item">Channels, Tracks and Patterns</a>
 </li>
                                     
 <li>
-    <a href="../pianoroll/" class="dropdown-item">Editing Notes in the Piano Roll</a>
+    <a href="../pianoroll/" class="dropdown-item">Piano Roll</a>
 </li>
                                     
 <li>
-    <a href="../autotrack/" class="dropdown-item">Editing Automation Tracks</a>
+    <a href="../autotrack/" class="dropdown-item">Automation Tracks</a>
 </li>
                                     
 <li>
-    <a href="../instruments/" class="dropdown-item">Editing Instruments, Effects & Automating Parameters</a>
+    <a href="../projectexplorer/" class="dropdown-item">Instruments, Effects and Automating Parameters</a>
 </li>
                                     
 <li>
-    <a href="../envelopes/" class="dropdown-item">Editing ADSR Envelopes, Custom Curves & Sequences</a>
+    <a href="../envelopes/" class="dropdown-item">ADSR Envelopes, Custom Curves and Sequences</a>
 </li>
                                     
 <li>
-    <a href="../samples/" class="dropdown-item">Editing Samples</a>
+    <a href="../samples/" class="dropdown-item">Samples Workflow</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Editing WaveTables</a>
+    <a href="./" class="dropdown-item active" aria-current="page">WaveTables</a>
 </li>
                                     
 <li>
@@ -89,11 +89,19 @@
 </li>
                                     
 <li>
+    <a href="../config/" class="dropdown-item">Configuration</a>
+</li>
+                                    
+<li>
+    <a href="../export/" class="dropdown-item">Export</a>
+</li>
+                                    
+<li>
     <a href="../troubleshooting/" class="dropdown-item">Troubleshooting</a>
 </li>
                                     
 <li>
-    <a href="../thanks/" class="dropdown-item">Acknowledgements & Licences</a>
+    <a href="../thanks/" class="dropdown-item">Acknowledgements and Licences</a>
 </li>
                                     
 <li>
@@ -147,8 +155,20 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#overview" class="nav-link">Overview</a>
+            <li class="nav-item" data-bs-level="1"><a href="#wavetables" class="nav-link">Wavetables</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#wavetable-editor" class="nav-link">Wavetable Editor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#multi-wave-cycling" class="nav-link">Multi-Wave Cycling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#resampling" class="nav-link">Resampling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -156,8 +176,76 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="overview">Overview</h1>
-<p>Coming soon.</p></div>
+<h1 id="wavetables">Wavetables</h1>
+<p>Wavetables are user-defined oscillator. They traditionnaly consist of a single, user-drawn, rapidly looping waveform that repeats at the freqency of the playing note. </p>
+<p>While some software represent them as smooth curve, KiraStudio represent them as simple series of values spaced evenly in time.</p>
+<p>There a multiple generator using wavetables, and all of them use the same editor. Not all generator types will allow the same flexibility. Some may allow resizing the table, changing the bit-depth, cycling through multiple waveforms, etc. Obviously the generators emulating existing hardware will mimic the limitations of said hardware.</p>
+<p>The table below list all the generators using wavetables and their capabilities. </p>
+<table>
+<thead>
+<tr>
+<th>Generator</th>
+<th>Wavetable Size</th>
+<th>Bit Depth</th>
+<th>Multi-Wave Cycling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generic Wavetable</td>
+<td>Configurable 4 to 256</td>
+<td>Configurable 4 to 8</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>NES Namco 163</td>
+<td>Configurable 4 to 240</td>
+<td>Fixed 4-Bit</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>NES FDS</td>
+<td>Fixed at 64</td>
+<td>Fixed 6-Bit</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Game Boy Wave</td>
+<td>Fixed at 32</td>
+<td>Fixed 4-Bit</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="wavetable-editor">Wavetable Editor</h2>
+<p>The wave table editor can be opened by pressing the "Edit Wavetable..." button on any generator listed above.</p>
+<p><img alt="" src="../images/WaveTableEditor.png#center" /></p>
+<p>The basic operations (drawing values, selection, etc.) are extremely similar to the <a href="../envelopes/#drawing-values">sequence editor</a> so we will avoid repeating them here and focus on what is unique to the wave table editor.</p>
+<p>The floating toolbar in the top-right corner contains general parameters of the wavetable:</p>
+<ul>
+<li><strong>Wave Size</strong> : Number of entries in the wavetable, higher counts give more resolution</li>
+<li><strong>Bit-Depth</strong> : The bit depth affect the precision of each value in the wavetable. At 4-bit you only get 16 values to choose from, while at 8 bit you get 256. Lower bit depths can sound more retro.</li>
+<li><strong>Preset</strong> : Choose from one of the built-in preset, some are designed with multi-wave in mind.</li>
+</ul>
+<h2 id="multi-wave-cycling">Multi-Wave Cycling</h2>
+<p>Multi-wave cycling is the idea of periodially changing to an entirely different waveform, allowing the sound to evolve with time. Some applications represents this as a "stack" of waveforms that you can choose from, KiraStudio places them contiguously next to each other on the X axis of the editor. </p>
+<p>Wavetables using multiple waveforms can also optionally have a loop and release point. The release point is the waveform to jump to when a note is released and the loop point is the waveform to jump to when going past the last waveform, or when going past the release point (if any).</p>
+<p><img alt="" src="../images/MultiWavePWM.png#center" /></p>
+<p>In the example above, 8 waveforms are used to create a square wave with Pulse-Width Modulation that advances to the next waveform every 1/30th of a second. Note the loop point on the left side.</p>
+<p>Here are a breakdown of the parameters in the floating toolbar that relates to multi-wave cycling:</p>
+<ul>
+<li><strong>Multi-Wave Advance Rate</strong> : Rate at which we advance to the next waveform, as a multiple of the project frequency. When cycling through multiple waveforms, project frequency divided by this number, will give you the rate at which the application will jump to the next waveform. For example, if the project update rate is at the default of 1500 Hz and the Advance Rate is 25, the app will skip to the next waveform 1500 / 25 = 60 times per seconds.  </li>
+<li><strong>Wave Count</strong> : Number of waves to cycle through, can be used to animate the waveform. This will be covered in the next section.</li>
+<li><strong>Loop Point</strong> : Allows setting a loop point in the wavetable, must be at wave boundaries.</li>
+<li><strong>Release Point</strong> : Allows setting a release point in the wavetable, must be at wave boundaries.</li>
+</ul>
+<h2 id="resampling">Resampling</h2>
+<p>While wavetables are traditionally hand drawn, you can convert a sample (ex: a wav file) to a wave table. We call this process resampling.</p>
+<p>To use a sample for resample, it first needs to be loaded on to the instrument, as explained in the <a href="../samples/#importing-samples">samples section</a> of the documentation. Once a sample is loaded, it will be selectable as the Source Sample in the floating toolbar. </p>
+<p><img alt="" src="../images/WaveTableResampling.png#center" /></p>
+<p>When selected, you need to adjust the Sample Offset and Sample Period to align the sample to your wavetable. Typically you will want to extra a neat single loop of the sample. When using multiple waveforms, you will want each waveform to be a single oscillation of an evolving sound. </p>
+<p>The Sample Period is the number of sample in a single oscillation of the waveform, and the Sample Offset is simply the index of the first sample to consider for resampling. If you know the root note of your sample and the sample rate, you can calculate the sample period by dividing the sample rate by the frequency of the root note. </p>
+<p>In the example above, a 44.1 kHz violin sample playing a C5 note was loaded and resampled into an 8-waveform wavetable. The user eyeballed 85 samples by oscillation, 44100 / 85 = 518.82 is very close to a C5 (523.25 Hz) but it could have been calculated more accurately by doing 44100 / 523.25 = 84.28.</p></div>
             </div>
         </div>
 

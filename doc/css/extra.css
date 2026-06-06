@@ -28,13 +28,17 @@ h3 {
   font-weight: 700;
 }
 h4 {
-  color: #f0f;
-  font-size: 28px;  
+  color: #B4BEC8;
+  font-size: 16px;  
   font-weight: 700;
 }
 img[src*="#center"] {
     display: block;
     margin: 0 auto;
+}
+img[src*="#header"] {
+    filter: brightness(70%);
+    transform: translateY(-2px);
 }
 img[src*="#grey"] {
     filter: brightness(70%)

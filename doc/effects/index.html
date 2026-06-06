@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <meta name="description" content="Coming soon.">
+        <meta name="description" content="This page contains information about all the audio effects supported by the app and their various parameters.">
         
         
         
@@ -53,31 +53,31 @@
 </li>
                                     
 <li>
-    <a href="../sequencer/" class="dropdown-item">Editing Channels, Tracks & Patterns</a>
+    <a href="../sequencer/" class="dropdown-item">Channels, Tracks and Patterns</a>
 </li>
                                     
 <li>
-    <a href="../pianoroll/" class="dropdown-item">Editing Notes in the Piano Roll</a>
+    <a href="../pianoroll/" class="dropdown-item">Piano Roll</a>
 </li>
                                     
 <li>
-    <a href="../autotrack/" class="dropdown-item">Editing Automation Tracks</a>
+    <a href="../autotrack/" class="dropdown-item">Automation Tracks</a>
 </li>
                                     
 <li>
-    <a href="../instruments/" class="dropdown-item">Editing Instruments, Effects & Automating Parameters</a>
+    <a href="../projectexplorer/" class="dropdown-item">Instruments, Effects and Automating Parameters</a>
 </li>
                                     
 <li>
-    <a href="../envelopes/" class="dropdown-item">Editing ADSR Envelopes, Custom Curves & Sequences</a>
+    <a href="../envelopes/" class="dropdown-item">ADSR Envelopes, Custom Curves and Sequences</a>
 </li>
                                     
 <li>
-    <a href="../samples/" class="dropdown-item">Editing Samples</a>
+    <a href="../samples/" class="dropdown-item">Samples Workflow</a>
 </li>
                                     
 <li>
-    <a href="../wavetables/" class="dropdown-item">Editing WaveTables</a>
+    <a href="../wavetables/" class="dropdown-item">WaveTables</a>
 </li>
                                     
 <li>
@@ -89,11 +89,19 @@
 </li>
                                     
 <li>
+    <a href="../config/" class="dropdown-item">Configuration</a>
+</li>
+                                    
+<li>
+    <a href="../export/" class="dropdown-item">Export</a>
+</li>
+                                    
+<li>
     <a href="../troubleshooting/" class="dropdown-item">Troubleshooting</a>
 </li>
                                     
 <li>
-    <a href="../thanks/" class="dropdown-item">Acknowledgements & Licences</a>
+    <a href="../thanks/" class="dropdown-item">Acknowledgements and Licences</a>
 </li>
                                     
 <li>
@@ -124,7 +132,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../troubleshooting/" class="nav-link">
+                                <a rel="next" href="../config/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -147,8 +155,52 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#overview" class="nav-link">Overview</a>
+            <li class="nav-item" data-bs-level="1"><a href="#effects-reference" class="nav-link">Effects Reference</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#volume" class="nav-link">Volume</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#pan" class="nav-link">Pan</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#filter" class="nav-link">Filter</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#equalizer" class="nav-link">Equalizer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#reverb-freeverb" class="nav-link">Reverb (Freeverb)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#reverb-cloud-seed" class="nav-link">Reverb (Cloud Seed)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#chorus" class="nav-link">Chorus</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#delay" class="nav-link">Delay</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#bit-crusher" class="nav-link">Bit Crusher</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#compressor" class="nav-link">Compressor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#distortion" class="nav-link">Distortion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -156,8 +208,128 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="overview">Overview</h1>
-<p>Coming soon.</p></div>
+<h1 id="effects-reference">Effects Reference</h1>
+<p>This page contains information about all the audio effects supported by the app and their various parameters.</p>
+<p>Effects a little modules that can be added to any channel to alter the raw output of the channel. Once the audio of all the various generators is generated, is it processed by each effect, in order, from top to bottom. It is then fed to downstream effect chains, if any. </p>
+<p>For this reason, effects cannot use the "Trigger" mode on their envelopes, since effects are applied on the final audio audio generated by all notes playing. In other words, by the time effects are applied, the notion of individual notes being triggered no longer exists. </p>
+<h2 id="volume"><img alt="" src="../images/EffectIcons/EffectVolume.png#header" /> Volume</h2>
+<p>A simple volume adjustment. Unlike the channel volume which is applied after all channel effects, this one can be placed anywhere in the effect list. This allows doing minor volume adjustments before or after a specific effect.</p>
+<h3 id="parameters">Parameters:</h3>
+<p><img alt="" src="../images/EffectParams/EffectVolume.png#center" /></p>
+<ul>
+<li><strong>Volume</strong> : Volume adjustment</li>
+</ul>
+<h2 id="pan"><img alt="" src="../images/EffectIcons/EffectPan.png#header" /> Pan</h2>
+<p>A simple stereo balance adjustment. Unlike the channel balance which is applied after all channel effects, this one can be placed anywhere in the effect list. This allows doing panning adjustments before or after a specific effect.</p>
+<h3 id="parameters_1">Parameters:</h3>
+<p><img alt="" src="../images/EffectParams/EffectPan.png#center" /></p>
+<ul>
+<li><strong>Channels</strong> : Optional processing to apply to the stereo channels prior to panning such as swapping L/R and mixing down to mono.</li>
+<li><strong>Mode</strong> : Balance simply attenuates one of the channels, Pan can make channels bleed into each other.</li>
+<li><strong>Pan</strong> : Left/right panning or balance.</li>
+</ul>
+<h2 id="filter"><img alt="" src="../images/EffectIcons/EffectFilter.png#header" /> Filter</h2>
+<p>A collection of versatile filters (low-pass, high-pass, band-pass, notch, etc) designed to selectively shape, attenuate, or emphasize specific frequency ranges of the audio signal.</p>
+<p><img alt="" src="../images/EffectParams/EffectFilter.png#center" /></p>
+<ul>
+<li><strong>Filter Mode</strong> : The type of filter to apply, lowpass, highpass, bandpass or notch. </li>
+<li><strong>Frequency</strong> : The frequency of the filter, exact meaning depends on the type of filter.</li>
+<li><strong>Filter Q</strong> : Controls how narrow and resonant the filter is around its cutoff frequency.</li>
+<li><strong>Wet/Dry Mix</strong> : How much of the filtered signal to mix in.</li>
+</ul>
+<h2 id="equalizer"><img alt="" src="../images/EffectIcons/EffectEQ.png#header" /> Equalizer</h2>
+<p>A three-band parametric equalizer with bass, mid, and treble controls, offering advanced options to adjust each band's frequency and resonance (Q) for precise tonal shaping.</p>
+<p>Internally it is the combination of 3 filters (low, mid, high) applied in succession.</p>
+<h3 id="general-parameters">General Parameters:</h3>
+<p><img alt="" src="../images/EffectParams/EffectEqualizer.png#center" /></p>
+<ul>
+<li><strong>Bass</strong> : Intensity of the low frequencies.</li>
+<li><strong>Mid</strong> : Intensity of the mid frequencies.</li>
+<li><strong>Treble</strong> : Intensity of the high frequencies.</li>
+<li><strong>Wet/Dry Mix</strong> : How much of the equalized signal to mix in.</li>
+</ul>
+<h3 id="advanced-parameters">Advanced Parameters:</h3>
+<p><img alt="" src="../images/EffectParams/EffectEqualizerAdvanced.png#center" /></p>
+<ul>
+<li><strong>Bass Frequency</strong> : Center frequency of the bass filter.</li>
+<li><strong>Mid Frequency</strong> : Center frequency of the mid filter.</li>
+<li><strong>Treble Frequency</strong> : Center frequency of the high filter.</li>
+<li><strong>Bass Q</strong> : The bandwidth of the bass filter.</li>
+<li><strong>Mid Q</strong> : The bandwidth of the mid filter.</li>
+<li><strong>Treble Q</strong> : Center frequency of the high filter.</li>
+</ul>
+<h2 id="reverb-freeverb"><img alt="" src="../images/EffectIcons/EffectReverb.png#header" /> Reverb (Freeverb)</h2>
+<p>The original Freeverb by Jezar at Dreampoint. The audio community is eternally grateful for their amazing contribution.</p>
+<p>This reverb is very straightforward and easy to use, but is somewhat limited in functionality. </p>
+<p><img alt="" src="../images/EffectParams/EffectFreeverb.png#center" /></p>
+<ul>
+<li><strong>Wet/Dry Mix</strong> : Ratio of the reverberated to dry signal to mix in.</li>
+<li><strong>Room Size</strong> : Controls reverb length and spaciousness, larger values simulate bigger rooms.</li>
+<li><strong>Damp</strong> : Reduces high frequencies over time, simulating absorption by soft surfaces.</li>
+<li><strong>Width</strong> : Adjusts stereo spread, from mono (narrow) to wide stereo image.</li>
+</ul>
+<h2 id="reverb-cloud-seed"><img alt="" src="../images/EffectIcons/EffectCloudSeed.png#header" /> Reverb (Cloud Seed)</h2>
+<p>Cloud Seed is an algorithmic reverb plugin, designed for emulating huge, endless spaces and modulated echoes. It is powerful and flexible but considerably more complex than Freeverb. </p>
+<p>The core code is gracefully provided by Ghost Note Audio under MIT license. Please visit their website to see all their products, including a VST version of this reverb, which comes with a much nicer user interface.</p>
+<p>Instead of documenting every parameter here, we refer users to the <a href="https://ghostnoteaudio.uk/pages/cloud-seed-user-guide">Cloud Seed user guide</a>. </p>
+<p>All parameters in KiraStudio are exactly the same as in the user guide, the only different being that in KiraStudio, they are expressed in their proper units (Hz, seconds, dB, etc.) instead of the simple 0-100% knobs the original plugin provides.</p>
+<p><img alt="" src="../images/EffectParams/EffectCloudSeedReverb.png#center" /></p>
+<h2 id="chorus"><img alt="" src="../images/EffectIcons/EffectChorus.png#header" /> Chorus</h2>
+<p>A three-phase stereo chorus effect that thickens and widens the sound, adding subtle movement, depth, and lush spatial texture.</p>
+<p><img alt="" src="../images/EffectParams/EffectChorus.png#center" /></p>
+<ul>
+<li><strong>Wet/Dry Mix</strong> : Ratio of the choruse to dry signal to mix in.</li>
+<li><strong>Rate</strong> : Controls how fast the pitch modulation cycles.</li>
+<li><strong>Depth</strong> : Sets how much the delay time is modulated.</li>
+<li><strong>Feedback</strong> : Feeds output back into input for thicker, more resonant sound.</li>
+</ul>
+<h2 id="delay"><img alt="" src="../images/EffectIcons/EffectDelay.png#header" /> Delay</h2>
+<p>A flexible delay effect featuring mono, cross, and ping-pong modes, with an optional low-pass filter to smooth repeated echoes for a polished, spacious sound.</p>
+<p>Automation of the delay amount (seconds or quarter notes) is possible, but can create audible artefacts if changed too rapidly. Changing it slightly (ex: +/- 5ms) using a slow sine or triangle wave can be used to create a <em>time-swept modulated delay</em>, which can prevent the delayed audio from being perflectly in phase with the dry audio.</p>
+<p><img alt="" src="../images/EffectParams/EffectDelay.png#center" /></p>
+<ul>
+<li><strong>Mode</strong> : Various delaying mode supporting both mono and stereo. Ping-pong makes the audio continuously bounce from L/R, while cross swaps L/R.</li>
+<li><strong>Wet/Dry Mix</strong> : Ratio of the delayed to dry signal to mix in.</li>
+<li><strong>Units</strong> : The units to use for the delay amount, can be seconds or quarter notes, to more easily sync up with the song.</li>
+<li><strong>Delay</strong> : The delay amount, in the unit chosen.</li>
+<li><strong>Feedback</strong> : Controls how much delayed signal is re-fed into the delay, affecting echo repetitions and decay length.</li>
+<li><strong>Filter</strong> : Optional filter to apply to the delayed echoes.</li>
+<li><strong>Filter Frequency</strong> : The frequency of the filter, exact meaning depends on the type of filter.</li>
+<li><strong>Filter Q</strong> : Controls how narrow and resonant the filter is around its cutoff frequency.</li>
+</ul>
+<h2 id="bit-crusher"><img alt="" src="../images/EffectIcons/EffectBitCrusher.png#header" /> Bit Crusher</h2>
+<p>A bit crusher effect that intentionally degrades audio by lowering bit depth and sample rate, producing gritty, lo-fi, and digitally distorted textures.</p>
+<p><img alt="" src="../images/EffectParams/EffectBitCrusher.png#center" /></p>
+<ul>
+<li><strong>Sample Rate</strong> : Lowering the sample rate reduces the temporal resolution, adding aliasing and harsh, digital artifacts.</li>
+<li><strong>Bit Depth</strong> : Lowering the bit depth increases quantization noise, creating gritty, distorted, crunchy textures.</li>
+<li><strong>Wet/Dry Mix</strong> : How much of the degraded signal to mix in.</li>
+</ul>
+<h2 id="compressor"><img alt="" src="../images/EffectIcons/EffectCompressor.png#header" /> Compressor</h2>
+<p>A versatile compressor that reduces dynamic range by attenuating signals above a threshold. Features adjustable ratio, soft knee, attack/release timing and makeup gain for transparent or punchy dynamics control. </p>
+<p>The compressor effect can optionally use another channel as a side-chain. The side-chain channel needs to be located upstream of the channel the compressor is on. In other words, the side-chain channel cannot be a channel depends on the output of the compressor.</p>
+<p><img alt="" src="../images/EffectParams/EffectCompressor.png#center" /></p>
+<ul>
+<li><strong>Wet/Dry Mix</strong> : How much of the compressed signal to mix in.</li>
+<li><strong>Threshold</strong> : Signal level where compression begins reducing volume to control dynamic range</li>
+<li><strong>Ratio</strong> : Determines how strongly audio above the threshold is reduced by the compressor</li>
+<li><strong>Knee</strong> : Smooths the transition between uncompressed and compressed signal levels around the threshold</li>
+<li><strong>Make-Up Gain</strong> : Boosts output volume after compression compensates for reduced signal level</li>
+<li><strong>Attack</strong> : Controls how quickly compression engages after the signal exceeds the threshold</li>
+<li><strong>Release</strong> : Controls how quickly compression stops after the signal falls below threshold</li>
+<li><strong>Side-Chain</strong> : Optional channel to use as input for the compressor, needs to be upstream from current channel</li>
+<li><strong>Side-Chain High-Pass Filter Frequency</strong> : Removes low frequencies from the detector to reduce bass-triggered compression</li>
+</ul>
+<h2 id="distortion"><img alt="" src="../images/EffectIcons/EffectDistortion.png#header" /> Distortion</h2>
+<p>A simple distortion effect with adjustable drive and multiple shaping modes. Focuses purely on waveshaping and clipping, leaving tone shaping and filtering to be added separately in your signal chain.</p>
+<p><img alt="" src="../images/EffectParams/EffectDistortion.png#center" /></p>
+<ul>
+<li><strong>Wet/Dry Mix</strong> : How much of the distorted signal to mix in.</li>
+<li><strong>Shape</strong> : The wave shaper to use, affects the shape of the distorted waveform and how it is clipped. <strong>Soft</strong> is based on <code>tanh</code>, <strong>Hard</strong> is a simple clamp and <strong>Soft Saturation</strong> is based on this <a href="https://www.musicdsp.org/en/latest/Effects/42-soft-saturation.html">Music DSP post</a>.</li>
+<li><strong>Drive</strong> : The gain to apply to the input signal, higher value leads to more clipping.</li>
+<li><strong>Hardness</strong> : For waveshapers supporting it, how hard the clipping is.</li>
+<li><strong>Post-Chain</strong> : Gain applied to the waveform after the distortion is applied.</li>
+</ul></div>
             </div>
         </div>
 

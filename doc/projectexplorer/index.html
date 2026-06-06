@@ -10,7 +10,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Editing Instruments, Effects & Automating Parameters - KiraStudio Documentation</title>
+        <title>Instruments, Effects and Automating Parameters - KiraStudio Documentation</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -53,31 +53,31 @@
 </li>
                                     
 <li>
-    <a href="../sequencer/" class="dropdown-item">Editing Channels, Tracks & Patterns</a>
+    <a href="../sequencer/" class="dropdown-item">Channels, Tracks and Patterns</a>
 </li>
                                     
 <li>
-    <a href="../pianoroll/" class="dropdown-item">Editing Notes in the Piano Roll</a>
+    <a href="../pianoroll/" class="dropdown-item">Piano Roll</a>
 </li>
                                     
 <li>
-    <a href="../autotrack/" class="dropdown-item">Editing Automation Tracks</a>
+    <a href="../autotrack/" class="dropdown-item">Automation Tracks</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Editing Instruments, Effects & Automating Parameters</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Instruments, Effects and Automating Parameters</a>
 </li>
                                     
 <li>
-    <a href="../envelopes/" class="dropdown-item">Editing ADSR Envelopes, Custom Curves & Sequences</a>
+    <a href="../envelopes/" class="dropdown-item">ADSR Envelopes, Custom Curves and Sequences</a>
 </li>
                                     
 <li>
-    <a href="../samples/" class="dropdown-item">Editing Samples</a>
+    <a href="../samples/" class="dropdown-item">Samples Workflow</a>
 </li>
                                     
 <li>
-    <a href="../wavetables/" class="dropdown-item">Editing WaveTables</a>
+    <a href="../wavetables/" class="dropdown-item">WaveTables</a>
 </li>
                                     
 <li>
@@ -89,11 +89,19 @@
 </li>
                                     
 <li>
+    <a href="../config/" class="dropdown-item">Configuration</a>
+</li>
+                                    
+<li>
+    <a href="../export/" class="dropdown-item">Export</a>
+</li>
+                                    
+<li>
     <a href="../troubleshooting/" class="dropdown-item">Troubleshooting</a>
 </li>
                                     
 <li>
-    <a href="../thanks/" class="dropdown-item">Acknowledgements & Licences</a>
+    <a href="../thanks/" class="dropdown-item">Acknowledgements and Licences</a>
 </li>
                                     
 <li>
@@ -147,9 +155,31 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#overview" class="nav-link">Overview</a>
+            <li class="nav-item" data-bs-level="1"><a href="#project-explorer" class="nav-link">Project Explorer</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#project-structure" class="nav-link">Project structure</a>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#project-structure" class="nav-link">Project structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#editing-the-project" class="nav-link">Editing the project</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#project-parameters" class="nav-link">Project parameters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#adding-songs" class="nav-link">Adding songs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#adding-instruments" class="nav-link">Adding instruments</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#importing-songs-instruments" class="nav-link">Importing songs &amp; instruments</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -180,6 +210,15 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#editing-instruments" class="nav-link">Editing instruments</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#release-modes" class="nav-link">Release modes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#automating-parameters" class="nav-link">Automating parameters</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -187,14 +226,15 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="overview">Overview</h1>
+<h1 id="project-explorer">Project Explorer</h1>
 <p>The <strong>Project Explorer</strong> allows editing the various parameters of the objects in your projects: songs, instruments, generators, effects, samples, etc. </p>
 <p>This section will try to break down each major type of object, explain their various parameters and show how most of them can be <strong>automated</strong> (i.e. controller) in various ways.</p>
 <p><img alt="" src="../images/ProjectExplorer.png#center" /></p>
 <p>On mobile the project explorer is not always visible, and slides from the right side on demand by pressing the <strong>Project</strong> button from the toolbar. A much quicker way to open it and navigate directly to a channel is to double-tap on a channel's name in the <a href="../sequencer/">sequencer</a>.</p>
 <p><img alt="" src="../images/OpenProjectExplorerMobile.gif#center" /></p>
 <p>The project explorer displays parameters in sections that can be expanded and collapsed. Some sections will be collapsed by default, and will need to be expanded to reveal the parameters, especially on mobile where vertical space is limited.</p>
-<h2 id="project-structure">Project structure</h2>
+<p>Some items (songs, instruments, generators, effects) will show little re-order grips that can be used to move them up/down in a stack. Also, most item will have context menus that can be accessed by right-clicking desktop or long pressing on mobile. The context menus will contain functionalities to duplicate and copy/paste parameters.</p>
+<h1 id="project-structure">Project structure</h1>
 <p>At the very top of the project explorer is the <strong>Navigation bar</strong>. Much like the folder hierarchy on a computer, it shows the path of the current object in your project. </p>
 <p>In the example below, the "Bitcrushed Drum 1" channel is contained in the "Ruder Buster" song, which is itself part of the "Deltarune" project. Each portion of the path is clickable and will bring you to that specific object.</p>
 <p><img alt="" src="../images/NavBar.png#center" /></p>
@@ -208,15 +248,35 @@
 </ul>
 </li>
 <li>A project also contains zero or more instrument(s)<ul>
-<li>Each instruments is made of generator(s)</li>
+<li>Each instruments is made of generator(s) and may contains sample(s)</li>
 </ul>
 </li>
-<li>A project also contains zero or more samples(s)</li>
+</ul>
+<h1 id="editing-the-project">Editing the project</h1>
+<p>The project is accessed by clicking the first link in the navigation bar.</p>
+<p><img alt="" src="../images/ProjectParams.png#center" /></p>
+<h2 id="project-parameters">Project parameters</h2>
+<p>The project itself has some basic parameters such as a name and author. The only other one worth mentionning is the <strong>Update Frequency</strong>. This is the frequency at which the app will perform tasks like : advancing the song, update the various forms of automation, advancing the envelopes/sequences, etc. </p>
+<p>Lowering the update frequency to something like 50 or 60 Hz can be used to mimic how retro game system only updated their state once per frame (60 FPS on NTSC, 50 FPS on PAL). It can make things sound a bit more uneven and crunchy.</p>
+<p>Some things like <a href="../envelopes/#sequence-editor">sequences</a> and <a href="../wavetables/">wavetables</a> are intimately connected to the project update rate, so understanding this concept is important if you are planning to use those.</p>
+<p>On the technical side, KiraStudio generates all audio in chunks of 32 samples. Things like envelopes and automation curves are only evaluated once every chunk since those are basically assumed to be LFOs. At 48 KHz, which is the sample rate used by the app, this gives a maximum update rate of 48000 / 32 = 1500 Hz. </p>
+<h2 id="adding-songs">Adding songs</h2>
+<p>Below the project parameters is the list of songs. When creating a new project it will already contain a song by default, but it can contain more. </p>
+<p>To create a new song, navigate back to the root of your project and click the <strong>(+) Add Song</strong> button. Clicking on a song will show its properties and will make it the active one inside the app.</p>
+<h2 id="adding-instruments">Adding instruments</h2>
+<p>Finally, below the list of songs will be the list of all instruments in the project. </p>
+<p>A new instruments can be created by pressing the <strong>(+) Add Instrument</strong> button. </p>
+<h2 id="importing-songs-instruments">Importing songs &amp; instruments</h2>
+<p>Both songs and instruments can be imported from other projects. This allows things like merging multiple songs into a single project or using a project as an "instrument library" that you can import instrument from or share with other users. </p>
+<p>When importing songs or instruments from other projects, an important thing to consider is how the app will deal with conflicting instrument names. </p>
+<p>For example, if you already have an instrument named "Piano" and you import an instrument also named "Piano" (or a song using an instrument of that name), you will have to tell the app how to resolve the conflict. </p>
+<ul>
+<li>You may choose to use the existing piano of the current project and ignore the incoming one</li>
+<li>You may choose to import the other one under a different name</li>
 </ul>
 <h1 id="editing-songs">Editing songs</h1>
-<p>When creating a new project it will already contain a song by default, but it can contain more. To create a new song, navigate back to the root of your project and click the <strong>(+) Add Song</strong> button. Clicking on a song will show its properties and will make it the active one inside the app.</p>
+<p>Songs have very few parameters. Besides their name and colors, which can be customized, they mostly just have a duration (in bars) and a default time signature. The default time signature is the main time signature that will be used in bars without a <a href="../sequencer/#custom-time-signatures">custom time signature</a>.</p>
 <p><img alt="" src="../images/SongParameters.png#center" /></p>
-<p>Songs have very few parameters. Besides their name and colors, which can be customized, they mostly just have a duration (in bars) and a default time signature. The default time signature is the main time signature that will be used in bars without a <a href="#custom-time-signatures">custom time signature</a>.</p>
 <p>Also displayed along with the song parameters the the list of channels. Clicking a channel will navigate to its parameters, exactly as if you had clicked on the channel name in the <a href="../sequencer/">sequencer</a>.</p>
 <h1 id="editing-channels">Editing channels</h1>
 <p>Channels are the main type of objects you will be looking at in the project explorer. </p>
@@ -232,48 +292,94 @@
 <li><strong>Effect Send</strong> : The effect chain to send this channel's audio to.</li>
 </ul>
 <p>A much more efficient way of adjusting the volume, balance and effect send of a channel is to use the <a href="../sequencer/#mixer-view">mixer view of the sequencer</a>.</p>
-<p>Effects are applied one at a time, in a top-to-bottom order, but the channel volume and balance are applied at the end, after all effects of the channel have been applied. To alter the volume or balance prior to, or between 2 effects, a dedicated <strong>Volume</strong> and <strong>Pan/Balance</strong> effect exists.</p>
+<p>Effects are applied one at a time, in a top-to-bottom order, but the channel volume and balance are applied at the end, after all effects of the channel have been applied. To alter the volume or balance prior to, or between 2 effects, a dedicated <a href="../effects/#volume">Volume</a> and <a href="../effects/#pan">Pan/Balance</a> effect exists.</p>
+<p>For the full list of available effects, please check out the <a href="../effects/">effects reference</a>.</p>
 <p>Effects can be added by pressing the <strong>(+) Add Effect</strong> button below the last effect, and can be deleted by right-clicking (or long-pressing on mobile) on a specific effect and selecting the delete option.</p>
-<!--
-> TODO : Link to volume + balance effect.
-> TODO : Link effect reference here. 
--->
-
+<p>Finally, just like <a href="../sequencer/#muting-and-soloing-channels">channels in the Sequencer</a>, clicking on the little icon of an effect will disable it. A disable effect will just act as pass-through its icon will appear dimmed.</p>
 <h2 id="master-channel">Master channel</h2>
 <p>The master channel is a special type of effect chain. There is always one in a song, it is always the final effect chain, and it can never be deleted.</p>
 <p><img alt="" src="../images/MasterChannelParameters.png#center" /></p>
 <p>Besides the standard effect chain parameters, the master channel has 2 unique parameters:</p>
 <ul>
 <li><strong>BPM</strong> : The main BPM of the song. This value can be automated to create tempo variations.</li>
+<li><strong>Tuning</strong> : Frequency (in Hz) of A. The standard, concert pitch, is A = 440 Hz. Can be automated to change the tuning mid-song.</li>
 <li><strong>Final DC Removal Frequency (Hz)</strong> : There is a very slight high-pass filter applied on the final output to remove any DC component. Some channels will have their own DC removal feature, but this one is present to avoid clipping when combining asymmetric waveforms. </li>
 </ul>
 <p>The master channel may also contain effect(s), and it works the same way as effect chains. Placing effects on the master channel is actually quite efficient, as this will ensure they are only applied once and keep the CPU usage low. </p>
 <h2 id="instrument-channels">Instrument channels</h2>
 <p>Instrument channels are the most complex type of channel. They feature all the same parameters as effect chains, but also reference an instrument.</p>
 <p>Is it important to understand that instrument channels <strong>reference</strong> (i.e. use) an instrument present in your project, which can be used by several channels at once. For convenience, when displaying the parameters of an instrument channel, KiraStudio will also show you the parameters of that instrument in the channel. Channels have their own name/color, independent of the name/color of the instrument.</p>
-<p>For example, in the image below, the "Bitcrushed Drums 1" channel is purple and uses the instrument "GS ROOM", which is yellow. We are effectively looking at 2 objects: an instrument at the top and a channel at the bottom. This order is to emphasise that effects are applied <em>after</em> generating the audio of the instrument.</p>
+<p>For example, in the image below, the "Bitcrushed Drums 1" channel is purple and uses the instrument "GS ROOM", which is yellow. We are effectively looking at 2 objects: an instrument at the top and a channel at the bottom. This order is to emphasize that effects are applied <em>after</em> generating the audio of the instrument.</p>
 <p><img alt="" src="../images/InstrumentChannelParameters.png#center" /></p>
 <p>Besides the standard effect chain parameters, instrument channels have a single unique parameter:</p>
 <ul>
 <li><strong>Instrument</strong> : This allows changing the instrument used by the channel. Clicking this will allow choosing a different one, or create a new one from scratch.</li>
 </ul>
+<p>Instrument channels will also display all the parameters on an instrument, for convenience. These are documented in the <a href="#editing-instruments">section below</a>.</p>
+<h3 id="polyphony-parameters">Polyphony parameters</h3>
+<p>In the polyphony tab, you can change the maximum polyphony of a channel. This can be interesting to create more retro-style instruments where the polyphony of a channel was often 1. When the app runs out of voices, it will kill the voice that has been released for the longest time. If it cannot find any, it will simply kill the oldest voice. Future version may offer more options on how that works.</p>
+<p><img alt="" src="../images/PolyphonyParams.png#center" /></p>
+<h3 id="arpeggio-parameters">Arpeggio parameters</h3>
+<p>The last tab of the instrument channel parameters is dedicated to arpeggios. Arpeggios are used in the piano roll by turning chords into <a href="../pianoroll/#arpeggio-chords">arpeggio chords</a>. This will make chords play as quick succession of notes, mimicking the limited polyphony that early video game consoles had.</p>
+<p><img alt="" src="../images/ArpeggioParams.png#center" /></p>
+<ul>
+<li><strong>Sequence</strong> : Order in which to play the notes of the arpeggio. If we use the example of a C major chord:<ul>
+<li><strong>Up</strong> : Will play it as C-E-G</li>
+<li><strong>Down</strong> : Will play it as G-E-C</li>
+<li><strong>Up then Down</strong> : Will play it as C-E-G-E-C</li>
+<li><strong>Down then Up</strong> : Will play it as G-E-C-E-C</li>
+</ul>
+</li>
+<li><strong>Sequence Start Index</strong> : First note in the chose to play, 0 is first note, 1 is second, -1 is last, etc. In our C major example, 0 would start at C, 1 at E, etc.</li>
+<li><strong>Frequency Units</strong> : Unit to use for the duration of arpeggiated notes. <strong>Quarter Notes</strong> are self-explanatory, <strong>Project Update Period</strong> is related to the <a href="./#project-parameters">Update Frequency</a> of the project.</li>
+<li><strong>Frequency</strong> : The frequency, in the selected units.</li>
+</ul>
 <h1 id="editing-instruments">Editing instruments</h1>
 <p>Instruments in KiraStudio are composed of <strong>Generators</strong>. A generator is a small unit able to produce an audio signal. They range from very basic oscillators, such as sawtooth and square waves, all the way to complex things like SoundFonts. </p>
 <p>This section will only explain the general principles, a comprehensive <a href="../generators/">generator reference</a> is also provided.</p>
 <p>Most instruments will only contain a single generator, but combining them can yield interesting effects. In the example below, a lead instrument is created by adding a pulse-modulated square waveform and a sawtooth waveform.</p>
-<p><img alt="" src="../images/InstrumentParameters.png#center" /></p>
+<p><img alt="" src="../images/InstrumentGenerators.png#center" /></p>
 <p>Generators are combined in a top-to-bottom order. When adding generators this is not very important, but when using different <strong>Blend Modes</strong>, this becomes important.</p>
+<p>Much like <a href="../sequencer/#muting-and-soloing-channels">channels in the Sequencer</a>, clicking on the little icon of a generator will mute it. A muted generator will just output silence and its icon will appear dimmed.</p>
 <p>Generators can be added by pressing the <strong>(+) Add Generator</strong> button below the last generator, and can be deleted by right-clicking (or long-pressing on mobile) on a specific generator and selecting the delete option.</p>
-<p>As mentioned in the previous section, instruments can be edited through a channel using the instrument. They can also be edited on their own, by navigating to the root of the project and clicking an instrument. Both achieve the same result, the only difference being that some forms of automation, namely automation tracks and note parameters, can only exist when an instrument is used as part of a channel. In other words, the same instrument used by 2 different channels may have different parameters automated. This will be covered in sections that will be added soon.</p>
-<!--
-> TODO : Add the Automating parameters section, and when they are added change the last sentence from "This will be covered in sections that will be added soon" to "This will be covered in the following sections".
-
-# Automating parameters
--->
-
-<!--
-> Mention that auto track + per note slides can still be changed, for preview purpose.
---></div>
+<p>Similarly, samples can be imported by pressing the <strong>(+) Add Sample(s)</strong> button below the list of generators.</p>
+<p>As mentioned in the previous section, instruments can be edited through a channel using the instrument. They can also be edited on their own, by navigating to the root of the project and clicking an instrument. Both achieve the same result, the only difference being that some forms of automation, namely automation tracks and note parameters, can only exist when an instrument is used as part of a channel. In other words, the same instrument used by 2 different channels may have different parameters automated. This will be covered in the following section.</p>
+<p>Besides generators, instruments have a couple noteworthy parameters (besides their name/color).</p>
+<p><img alt="" src="../images/InstrumentParams.png#center" /></p>
+<ul>
+<li><strong>Preview Generator Group</strong> : The generator group to trigger when using a MIDI controller or the pop-up piano.</li>
+<li><strong>Kill Released Notes After</strong> : Delay after which any released note will be killed. This is more of an emergency feature to prevent badly designed envelopes from running too long. </li>
+<li><strong>Release Mode</strong> : See section below.</li>
+</ul>
+<h2 id="release-modes">Release modes</h2>
+<p>The release mode determines at which moment this instrument should trigger its release. There are 2 release modes:</p>
+<ul>
+<li><strong>Note End</strong> : This is what you see in typical DAWs, then the note ends in the piano roll, the release part of the envelope is triggered. This mean there is still sound potentially playing after the note visually ended. </li>
+</ul>
+<p><img alt="" src="../images/ReleaseNoteEnd.png#center" /></p>
+<ul>
+<li><strong>Manual Release</strong> : This mode is when you need to more accurately control when the sound stops exactly, which is often the case when trying to match the sound of retro-gaming. In this mode, the release starts at a point point the note that you manually set in the piano roll (represented by a dot), and any audio will be killed when the note visually ends.</li>
+</ul>
+<p><img alt="" src="../images/ReleaseManual.png#center" /></p>
+<h1 id="automating-parameters">Automating parameters</h1>
+<p>Automation is the idea of controlling a numeric parameter automatically in some way. In KiraStudio, almost any numeric parameter present on a channel, generator or effect can be automated in various ways.</p>
+<p>To automate a parameter, simply right-click (or long press on mobile) on a slider with a numeric parameter, and choose one of the <strong>Control Parameter With ...</strong>. Depending on the option, this will either create a new curve, new track, etc.</p>
+<p>The app supports automating parameters in 5 different ways:</p>
+<ul>
+<li><a href="../envelopes/#adsr-envelope-editor">ADSR envelope</a> : A traditional ADSR envelope with simple control over the various Attack/Decay/Sustain/Release phases.</li>
+<li><a href="../envelopes/#custom-curve-editor">Custom curve</a> : A custom drawn curve containing an arbitrary number of vertices and segments, with optional loop and release points.</li>
+<li><a href="../envelopes/#sequence-editor">Sequence</a> : A discrete sequence of values that advances at a fixed frequency.</li>
+<li><a href="../autotrack/">Automation track</a> : A track on a channel that can have curve segments existing in patterns. </li>
+<li><a href="../pianoroll/#note-parameters">Per-note parameter in the piano roll</a> : An additional parameter that is added to every single note in the piano roll.</li>
+</ul>
+<p>Not every option will be available on every parameter, the application will try to offer what makes sense for a given parameter. </p>
+<p>When it comes to instruments, the list of possible automation methods will vary depending on how the instrument is being edited:</p>
+<ol>
+<li>When editing the instrument alone (Project &rarr; Instrument), outside of a channel by selecting it from the project explorer, you will not have the option of automating anything with automation tracks or per-note parameter since the app needs a channel to do so.</li>
+<li>When editing the instrument from an instrument channel (Project &rarr; Song &rarr; Instrument Channel), you will have all the options.</li>
+</ol>
+<p>When a parameter is controlled by a curve (ADSR, custom curve or sequence), that parameter is completely taken over by the curve and the automation will be audible even when previewing instruments using a MIDI controller or the pop-up piano. The slider will be disabled</p>
+<p>Parameters controlled by automation tracks or per-note will only have their automation active when playing the song. The slider will remain active and can be tweaked to affect the preview of instruments. For automation tracks, the slider value also dictate the default value of the automation track, which is the initial value before any vertices are drawn.</p></div>
             </div>
         </div>
 

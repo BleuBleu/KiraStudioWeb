@@ -10,7 +10,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Editing Automation Tracks - KiraStudio Documentation</title>
+        <title>Automation Tracks - KiraStudio Documentation</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -53,31 +53,31 @@
 </li>
                                     
 <li>
-    <a href="../sequencer/" class="dropdown-item">Editing Channels, Tracks & Patterns</a>
+    <a href="../sequencer/" class="dropdown-item">Channels, Tracks and Patterns</a>
 </li>
                                     
 <li>
-    <a href="../pianoroll/" class="dropdown-item">Editing Notes in the Piano Roll</a>
+    <a href="../pianoroll/" class="dropdown-item">Piano Roll</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Editing Automation Tracks</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Automation Tracks</a>
 </li>
                                     
 <li>
-    <a href="../instruments/" class="dropdown-item">Editing Instruments, Effects & Automating Parameters</a>
+    <a href="../projectexplorer/" class="dropdown-item">Instruments, Effects and Automating Parameters</a>
 </li>
                                     
 <li>
-    <a href="../envelopes/" class="dropdown-item">Editing ADSR Envelopes, Custom Curves & Sequences</a>
+    <a href="../envelopes/" class="dropdown-item">ADSR Envelopes, Custom Curves and Sequences</a>
 </li>
                                     
 <li>
-    <a href="../samples/" class="dropdown-item">Editing Samples</a>
+    <a href="../samples/" class="dropdown-item">Samples Workflow</a>
 </li>
                                     
 <li>
-    <a href="../wavetables/" class="dropdown-item">Editing WaveTables</a>
+    <a href="../wavetables/" class="dropdown-item">WaveTables</a>
 </li>
                                     
 <li>
@@ -89,11 +89,19 @@
 </li>
                                     
 <li>
+    <a href="../config/" class="dropdown-item">Configuration</a>
+</li>
+                                    
+<li>
+    <a href="../export/" class="dropdown-item">Export</a>
+</li>
+                                    
+<li>
     <a href="../troubleshooting/" class="dropdown-item">Troubleshooting</a>
 </li>
                                     
 <li>
-    <a href="../thanks/" class="dropdown-item">Acknowledgements & Licences</a>
+    <a href="../thanks/" class="dropdown-item">Acknowledgements and Licences</a>
 </li>
                                     
 <li>
@@ -124,7 +132,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../instruments/" class="nav-link">
+                                <a rel="next" href="../projectexplorer/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -147,14 +155,14 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#overview" class="nav-link">Overview</a>
+            <li class="nav-item" data-bs-level="1"><a href="#automation-track-editor" class="nav-link">Automation Track Editor</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
             <li class="nav-item" data-bs-level="1"><a href="#editing-automation-curves" class="nav-link">Editing automation curves</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#adding-deleting-vertices" class="nav-link">Adding &amp; deleting vertices</a>
+            <li class="nav-item" data-bs-level="2"><a href="#adding-and-deleting-vertices" class="nav-link">Adding and deleting vertices</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -170,7 +178,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#copy-pasting-vertices" class="nav-link">Copy &amp; pasting vertices</a>
+            <li class="nav-item" data-bs-level="2"><a href="#copy-and-pasting-vertices" class="nav-link">Copy and pasting vertices</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -189,14 +197,9 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="overview">Overview</h1>
+<h1 id="automation-track-editor">Automation Track Editor</h1>
 <p>The <strong>Automation Track Editor</strong> is where you edit vertices of automation tracks. Automation tracks are special tracks that control the value of a single parameter, typically one belonging to an instrument or effect of the parent channel over the course of a song.</p>
-<!--
-> TODO : Link to relevant PE section!
-
-To learn how to create an automation track for a given parameter, please refer to [this section](instruments.md#Automating-parameters).
--->
-
+<p>To learn how to create an automation track for a given parameter, please refer to <a href="../projectexplorer/#automating-parameters">this section</a>.</p>
 <p>The automation track editor is made of a few components:</p>
 <ul>
 <li>On the left is the <strong>Scale</strong>, which shows the horizontal grid values.</li>
@@ -209,13 +212,13 @@ To learn how to create an automation track for a given parameter, please refer t
 <p>This next section will focus on curve editing. </p>
 <p>Curves are either smooth (interpolated) or not. Uninterpolated curves will switch values abruptly, which may be desirable for some types of parameters. As of version 1.0, there is no way to mix smooth and non-smooth segments.</p>
 <p>As seen in the image above, vertices belonging to the same pattern will be connected by a solid line, while vertices between different patterns won't show a line. This is simply a visual cue to help you differentiate the lines you have intentionally drawn, and the ones the app is implicitly adding between patterns.</p>
-<h2 id="adding-deleting-vertices">Adding &amp; deleting vertices</h2>
+<h2 id="adding-and-deleting-vertices">Adding and deleting vertices</h2>
 <p>Adding vertices is done with a single click. On desktop, you can keep holding the mouse button to fine-tune its position until you release. </p>
 <p>Deleting a single vertex can be done by double-clicking. To deleting the entire selection simply press <strong>Del</strong> on desktop, or use the <strong>Delete (X)</strong> button on the toolbar on mobile.</p>
 <h2 id="selecting-vertices">Selecting vertices</h2>
 <p>Selected vertices appear white and can be modified as a group.</p>
 <ul>
-<li>On desktop, you can select vertices by right-clicking in the background and dragging to draw a rectangle. </li>
+<li>On desktop, you can select vertices by right-clicking in the background and dragging to draw a rectangle. You can add to the existing selecting by holding <strong>Ctrl</strong> while performing a selection.</li>
 <li>On mobile, you can long-press in the background and start drawing a rectangle once the pulsating circle appears. </li>
 </ul>
 <p>You can also select a time range of vertices by doing a selection from the timeline, which is the row with the bar/beat numbers at the top.</p>
@@ -225,8 +228,8 @@ To learn how to create an automation track for a given parameter, please refer t
 <p>On desktop, you can also move vertices using the arrow keys. Pressing up/down will move them by 1 major grid increment. Pressing left/right will move by the amount of snapping precision currently selected.</p>
 <h2 id="duplicating-vertices-desktop-only">Duplicating vertices (desktop only)</h2>
 <p>While dragging vertices, you can duplicate the current selection by pressing and holding <strong>Ctrl</strong>. </p>
-<h2 id="copy-pasting-vertices">Copy &amp; pasting vertices</h2>
-<p>This works exactly as in the <a href="../pianoroll/#copy-pasting-notes">piano roll</a>.</p>
+<h2 id="copy-and-pasting-vertices">Copy and pasting vertices</h2>
+<p>This works exactly as in the <a href="../pianoroll/#copy-and-pasting-notes">piano roll</a>.</p>
 <h2 id="snapping-to-beats">Snapping to beats</h2>
 <p>This works exactly as in the <a href="../pianoroll/#snapping-to-beats">piano roll</a>.</p>
 <h2 id="changing-the-zoom-level">Changing the zoom level</h2>
