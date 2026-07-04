@@ -116,6 +116,10 @@
 <li>
     <a href="./" class="dropdown-item active" aria-current="page">All Version History</a>
 </li>
+                                    
+<li>
+    <a href="../releases/110/" class="dropdown-item">KiraStudio 1.1.0 Highlights</a>
+</li>
                                 </ul>
                             </li>
                         </ul>
@@ -132,7 +136,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../releases/110/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -157,6 +161,10 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#change-log" class="nav-link">Change Log</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#version-110" class="nav-link">Version 1.1.0</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#version-107" class="nav-link">Version 1.0.7</a>
               <ul class="nav flex-column">
               </ul>
@@ -198,6 +206,51 @@
 
 <h1 id="change-log">Change Log</h1>
 <p>Version history / release notes for each release. </p>
+<h2 id="version-110">Version 1.1.0</h2>
+<p><img alt="" src="../releases/110/110.png#center" /></p>
+<p>Changes:</p>
+<ul>
+<li>Introduced the CloudSeed reverb effect</li>
+<li>Introduced a Compressor with optional side-chain support</li>
+<li>Introduced a Distortion effect</li>
+<li>Introduced a SuperSaw generator</li>
+<li>Introduced a generic noise generator</li>
+<li>Added dedicated filters to all generic generators</li>
+<li>Expanded ADSR envelope support to most parameters (no longer limited to 0–100% ranges)</li>
+<li>Added support for custom tuning (A not 440 Hz), fully automatable</li>
+<li>Added 16-bit WAV export option</li>
+<li>Channels can now be exported as separate audio files</li>
+<li>The note parameter editor in the piano roll is now resizable</li>
+<li>Added MIDI controller input support on mobile</li>
+<li>Added velocity support for MIDI controller input</li>
+<li>Most objects (songs, instruments, channels, tracks, effects, generators) can now be duplicated</li>
+<li>Improved multi-selection: hold CTRL to add to selection across most views</li>
+<li>On mobile, long-press "Del" in the 8-bit Calculator to clear the expression</li>
+<li>Patterns can now be merged into larger ones using the option from the context menu</li>
+<li>Added mixdown and L/R swap options to the Pan effect</li>
+<li>Generators and effects can now be muted individually</li>
+<li>Added scale highlighting to the piano roll</li>
+<li>Delay effect now supports quarter-note units, smooth delay time automation has been fixed</li>
+<li>Songs and instruments can now be imported from other projects</li>
+<li>Added sorting and filtering to the sound font preset list</li>
+<li>Added a progress bar during project and sound font loading to prevent freezes/crashes on some mobile devices</li>
+<li>Added a temporary loop section in the sequencer</li>
+<li>Added basic support for generator groups with arpeggios (switching groups stops previous arpeggiated notes)</li>
+<li>Added BPM and time signature indicators to the toolbar, along with general UI improvements</li>
+<li>Added a preview generator group on instruments</li>
+<li>The first loop of the SMPL chunk in wave files is now imported</li>
+<li>Multiple parameter curves can now be edited simultaneously (other curves will match the edited one)</li>
+<li>Pressing the playhead play button now correctly starts playback</li>
+<li>MIDI export now exports velocity and slide notes, but pitch bend will affect all playing notes</li>
+<li>More complete online documentation</li>
+<li>Performance improvements on all platforms</li>
+<li>Added Spanish translation (thanks LagMage!)</li>
+</ul>
+<p>Breaking/Behavior Changes:</p>
+<ul>
+<li>Samples have been moved from the project to the instruments. This conversion will be done automatically when opening older projects, duplicating samples if needed. Samples that were loaded but unused by any instruments will be discarded.</li>
+<li>The "transpose" parameter will no longer be rounded to an integer and can now smoothly glide between notes. </li>
+</ul>
 <h2 id="version-107">Version 1.0.7</h2>
 <p>Fixes:</p>
 <ul>
