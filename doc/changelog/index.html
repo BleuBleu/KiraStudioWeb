@@ -161,6 +161,10 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#change-log" class="nav-link">Change Log</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#version-112" class="nav-link">Version 1.1.2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#version-111" class="nav-link">Version 1.1.1</a>
               <ul class="nav flex-column">
               </ul>
@@ -210,6 +214,24 @@
 
 <h1 id="change-log">Change Log</h1>
 <p>Version history / release notes for each release. </p>
+<h2 id="version-112">Version 1.1.2</h2>
+<p>Fixes:</p>
+<ul>
+<li>Fixed issues with compressor effect when the side-chain channel was located below the channel using the compressor</li>
+<li>Fixed crash when trying to open a file with an unrecognized extension</li>
+<li>Fixed parsing of MIDI files containing system exclusive messages</li>
+<li>Fixed filters not working on wavetable generator</li>
+<li>Fixed import of stereo samples being twice as long as they should and padded with zeroes</li>
+<li>Fixed sample rate conversion when importing samples with rate higher than 48KHz</li>
+<li>Fixed release point on custom curves constantly coming back on undo/redo</li>
+<li>Fixed crackling audio when using generic FM generators in projects using low update frequencies</li>
+<li>Fixed some soundfont samples unintentionally being but short</li>
+<li>Fixed effect chain colors not being updated in mixer view</li>
+<li>Fixed SuperSaw generator breaking when using 3 oscillators and 100% mix/falloff</li>
+<li>Slightly reduce memory usage when exporting audio (still pretty bad in most cases)</li>
+<li>Improved consistency of parameters in the floating toolbar when editing 1-bit DPCM samples </li>
+<li>Improved parsing of MIDI file containing quantization errors, such as notes OFF -&gt; ON on the same tick</li>
+</ul>
 <h2 id="version-111">Version 1.1.1</h2>
 <p>Changes:</p>
 <ul>
